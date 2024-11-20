@@ -1,7 +1,7 @@
 function AppPage() {
   return (
     <main>
-      <h1>App</h1>
+      <h1>App Page</h1>
     </main>
   )
 }
