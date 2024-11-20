@@ -5,10 +5,25 @@ export enum Routes {
   AuthLogin = '/auth/login',
   AuthRegister = '/auth/register',
   App = '/app',
+  AppCourses = '/app/courses',
+  AppAppStore = '/app/app-store',
+  AppProjects = '/app/projects',
+  AppConsultations = '/app/consultations',
+  AppAboutAppSheet = '/app/app-sheet',
   Dashboard = '/dashboard',
   PrivacyPolicy = '/privacy-policy',
-  TermsAndConditions = '/terms-and-conditions'
+  TermsAndConditions = '/terms-and-conditions',
+  AppProfile = '/app/profile'
 }
+
+export const HEADER_ROUTES = [
+  { label: 'Dashboard', href: Routes.Dashboard },
+  { label: 'Cursos y lecciones', href: Routes.AppCourses },
+  { label: 'AppStore', href: Routes.AppAppStore },
+  { label: 'Proyectos', href: Routes.AppProjects },
+  { label: 'Consultoría', href: Routes.AppConsultations },
+  { label: 'Sobre Appsheet', href: Routes.AppAboutAppSheet }
+]
 
 export const FOOTER_ROUTES = {
   sitemap: [

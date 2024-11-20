@@ -3,11 +3,18 @@
 @tailwind utilities;
 
 body {
-  @apply font-inter;
+  @apply bg-main font-inter text-white;
 }
 
 @layer base {
   :root {
     --radius: 0.5rem;
+  }
+}
+
+@layer components {
+  .DropdownMenuContent {
+    max-width: var(--radix-dropdown-menu-content-available-width);
+    max-height: var(--radix-dropdown-menu-content-available-height);
   }
 }
