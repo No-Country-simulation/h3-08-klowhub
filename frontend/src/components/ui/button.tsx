@@ -17,13 +17,16 @@ const buttonVariants = cva(
         secondary:
           'bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80',
         ghost: 'bg-transparent text-[#D194E2] hover:text-[#9D32BC] focus:text-[#5A1D6B]',
-        link: 'text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50'
+        link: 'text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50',
+        filter:
+          'rounded-lg border border-[#DFD1F3] bg-transparent text-[#DFD1F3] hover:border-[#D194E2] hover:text-[#D194E2]'
       },
       size: {
         default: 'h-11 px-4 py-3.5',
         sm: 'h-8 rounded-md px-3 text-xs',
         lg: 'h-10 rounded-md px-8',
-        icon: 'h-9 w-9'
+        icon: 'h-9 w-9',
+        filter: 'h-7 px-4 py-1'
       }
     },
     defaultVariants: {
