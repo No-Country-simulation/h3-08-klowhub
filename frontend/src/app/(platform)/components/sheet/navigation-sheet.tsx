@@ -13,7 +13,7 @@ import { HEADER_ROUTES, Routes } from '@/utils'
 import { MenuIcon } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { UserNavigationSwitch } from './switch/user-navigation-switch'
+import { UserNavigationSwitch } from '../switch/user-navigation-switch'
 
 function NavigationSheet() {
   const pathname = usePathname()

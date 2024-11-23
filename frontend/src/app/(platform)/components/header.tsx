@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { NotificationsMenu } from './menu/notifications-menu'
 import { UserMenu } from './menu/user-menu'
-import { NavigationSheet } from './navigation-sheet'
+import { NavigationSheet } from './sheet/navigation-sheet'
 import { PageNavigationSwitch } from './switch/page-navigation-switch'
 import { UserNavigationSwitch } from './switch/user-navigation-switch'
 
