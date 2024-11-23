@@ -14,7 +14,7 @@ function Header() {
   return (
     <header className='bg-primary-800'>
       <div className='mx-auto flex max-w-screen-2xl items-center justify-between gap-x-4 px-5 py-2 lg:px-10 lg:py-2.5'>
-        <Link className='shrink-0' href={Routes.Home}>
+        <Link href={Routes.Home}>
           <Image className='object-cover' src='/assets/logo.png' alt='Logo knowhub' width={52} height={54} />
         </Link>
         <PageNavigationSwitch />
@@ -31,11 +31,13 @@ function Header() {
         </nav>
         <div className='ml-auto flex items-center gap-x-4 xl:ml-0'>
           <div className='flex items-center gap-x-2.5 text-white'>
-            <Button className='relative' variant='ghost' size='icon'>
-              <ShoppingCartIcon size={20} />
-              <Badge variant='cart' size='cart'>
-                1
-              </Badge>
+            <Button className='relative' variant='ghost' size='icon' asChild>
+              <Link href={Routes.AppCart}>
+                <ShoppingCartIcon size={20} />
+                <Badge variant='cart' size='cart'>
+                  1
+                </Badge>
+              </Link>
             </Button>
             <NotificationsMenu />
             <Button className='relative' variant='ghost' size='icon'>
