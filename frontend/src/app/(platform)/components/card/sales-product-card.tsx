@@ -1,8 +1,10 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { Routes } from '@/utils'
 import { HeartIcon, MoreVerticalIcon, ShoppingCartIcon } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface SalesProductCardProps {
   variant?: 'courses-list'
@@ -33,7 +35,7 @@ function SalesProductCard({ variant }: SalesProductCardProps) {
         <HeartIcon className='absolute right-2 top-3 fill-white stroke-gray-500' />
       </div>
       <header className='flex flex-col gap-y-3 p-5'>
-        <h2 className='flex items-center justify-between gap-x-2 text-xs font-semibold text-white md:text-base'>
+        <h2 className='flex items-center justify-between gap-x-2 text-sm font-semibold text-white md:text-base'>
           Dominando el desarrollo con AppSheet <MoreVerticalIcon className='shrink-0' />
         </h2>
         <p className='line-clamp-2 text-sm text-white'>
@@ -70,7 +72,9 @@ function SalesProductCard({ variant }: SalesProductCardProps) {
           <Button>
             <ShoppingCartIcon /> Añadir al carrito
           </Button>
-          <Button variant='ghost'>Ver detalles</Button>
+          <Button variant='ghost' asChild>
+            <Link href={Routes.AppAppStore + '/' + '1'}>Ver detalles</Link>
+          </Button>
         </div>
       </header>
     </article>
