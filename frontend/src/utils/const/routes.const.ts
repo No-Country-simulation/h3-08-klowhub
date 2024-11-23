@@ -10,10 +10,14 @@ export enum Routes {
   AppProjects = '/app/projects',
   AppConsultations = '/app/consultations',
   AppAboutAppSheet = '/app/app-sheet',
+  AppProfile = '/app/profile',
+  AppCart = '/app/cart',
+  AppPayment = '/app/payment',
   Dashboard = '/dashboard',
   PrivacyPolicy = '/privacy-policy',
   TermsAndConditions = '/terms-and-conditions',
-  AppProfile = '/app/profile'
+  HelpCenter = '/help-center',
+  Support = '/support'
 }
 
 export const HEADER_ROUTES = [
