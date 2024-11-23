@@ -1,14 +1,29 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import { HeartIcon, MoreVerticalIcon, ShoppingCartIcon } from 'lucide-react'
 import Image from 'next/image'
 
-function SalesProductCard() {
+interface SalesProductCardProps {
+  variant?: 'courses-list'
+}
+
+function SalesProductCard({ variant }: SalesProductCardProps) {
   return (
-    <article className='grid items-center rounded-lg bg-[#1F2937]'>
-      <div className='relative aspect-square h-48 w-full'>
+    <article
+      className={cn(
+        'grid items-center rounded-lg bg-[#1F2937]',
+        variant === 'courses-list' && 'lg:grid-cols-[400px_1fr]'
+      )}
+    >
+      <div
+        className={cn(
+          'relative aspect-square h-48 w-full',
+          variant === 'courses-list' && 'lg:aspect-none lg:h-[25rem]'
+        )}
+      >
         <Image
-          className='rounded-t-lg object-cover'
+          className={cn('rounded-t-lg object-cover', variant === 'courses-list' && 'lg:rounded-l-lg lg:rounded-r-none')}
           src='/assets/sales-course.png'
           alt='Curso en progreso'
           fill
@@ -18,7 +33,7 @@ function SalesProductCard() {
         <HeartIcon className='absolute right-2 top-3 fill-white stroke-gray-500' />
       </div>
       <header className='flex flex-col gap-y-3 p-5'>
-        <h2 className='flex items-center justify-between gap-x-2 text-sm font-semibold text-white md:text-base'>
+        <h2 className='flex items-center justify-between gap-x-2 text-xs font-semibold text-white md:text-base'>
           Dominando el desarrollo con AppSheet <MoreVerticalIcon className='shrink-0' />
         </h2>
         <p className='line-clamp-2 text-sm text-white'>
@@ -51,7 +66,7 @@ function SalesProductCard() {
           (136)
         </p>
         <p className='text-xl font-bold text-white'>$80.000</p>
-        <div className='grid items-center gap-x-4'>
+        <div className={cn('grid items-center gap-x-4', variant === 'courses-list' && 'lg:flex')}>
           <Button>
             <ShoppingCartIcon /> Añadir al carrito
           </Button>
