@@ -81,7 +81,7 @@ function NotificationsMenu() {
           <InfoIcon className='shrink-0' size={16} />
           <p className='flex flex-wrap items-center gap-2'>
             Completa la información relevante para tu perfil de mentor.
-            <Link href={Routes.AppProfile}>Completar perfil</Link>
+            <Link href={Routes.AppMyProfile}>Completar perfil</Link>
           </p>
         </footer>
         <DropdownMenuSeparator className='my-0 bg-[#D194E2]' />
