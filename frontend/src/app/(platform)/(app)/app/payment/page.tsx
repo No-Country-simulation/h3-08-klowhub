@@ -32,6 +32,9 @@ function AppPaymentPage() {
           <p className='text-center text-base'>
             Se ha realizado el pago de tu compra con éxito. Gracias por tu compra.
           </p>
+          <Link className='mx-auto text-sm text-[#D194E2]' href={Routes.AppMyApplications}>
+            Ver mis aplicaciones
+          </Link>
         </header>
         <PurchaseSummaryCard />
         <div className='flex flex-col items-center justify-center gap-y-6'>

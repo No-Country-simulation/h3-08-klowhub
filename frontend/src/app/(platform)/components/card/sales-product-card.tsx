@@ -7,10 +7,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 interface SalesProductCardProps {
-  variant?: 'courses-list'
+  variant?: 'courses-list' | 'my-applications-list' | 'default'
 }
 
-function SalesProductCard({ variant }: SalesProductCardProps) {
+function SalesProductCard({ variant = 'default' }: SalesProductCardProps) {
   return (
     <article
       className={cn(
@@ -67,11 +67,13 @@ function SalesProductCard({ variant }: SalesProductCardProps) {
           </span>
           (136)
         </p>
-        <p className='text-xl font-bold text-white'>$80.000</p>
+        {variant !== 'my-applications-list' && <p className='text-xl font-bold text-white'>$80.000</p>}
         <div className={cn('grid items-center gap-x-4', variant === 'courses-list' && 'lg:flex')}>
-          <Button>
-            <ShoppingCartIcon /> Añadir al carrito
-          </Button>
+          {variant !== 'my-applications-list' && (
+            <Button>
+              <ShoppingCartIcon /> Añadir al carrito
+            </Button>
+          )}
           <Button variant='ghost' asChild>
             <Link href={Routes.AppAppStore + '/' + '1'}>Ver detalles</Link>
           </Button>
