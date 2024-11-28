@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { HEADER_ROUTES, Routes } from '@/utils'
+import { createClient } from '@/utils/supabase/server'
 import { MailIcon, ShoppingCartIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,7 +11,10 @@ import { NavigationSheet } from './sheet/navigation-sheet'
 import { PageNavigationSwitch } from './switch/page-navigation-switch'
 import { UserNavigationSwitch } from './switch/user-navigation-switch'
 
-function Header() {
+async function Header() {
+  const supabase = await createClient()
+  const { data: session } = await supabase.auth.getUser()
+
   return (
     <header className='bg-primary-800'>
       <div className='mx-auto flex max-w-screen-2xl items-center justify-between gap-x-4 px-5 py-2 lg:px-10 lg:py-2.5'>
@@ -47,8 +51,12 @@ function Header() {
               </Badge>
             </Button>
           </div>
-          <UserNavigationSwitch className='hidden xl:flex' />
-          <UserMenu />
+          {session.user && (
+            <>
+              <UserNavigationSwitch className='hidden xl:flex' />
+              <UserMenu />
+            </>
+          )}
         </div>
         <NavigationSheet />
       </div>
