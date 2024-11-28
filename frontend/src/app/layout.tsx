@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -22,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={cn('flex min-h-screen flex-col antialiased', inter.variable)}>{children}</body>
+      <body className={cn('flex min-h-screen flex-col antialiased', inter.variable)}>
+        {children}
+        <Toaster closeButton richColors position='top-right' />
+      </body>
     </html>
   )
 }
