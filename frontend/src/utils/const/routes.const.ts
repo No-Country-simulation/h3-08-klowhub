@@ -12,6 +12,7 @@ export enum Routes {
   AppConsultations = '/app/consultations',
   AppAboutAppSheet = '/app/app-sheet',
   AppMyProfile = '/app/my-profile',
+  AppMyProfileSettings = '/app/my-profile/settings',
   AppMyApplications = '/app/my-applications',
   AppCart = '/app/cart',
   AppPayment = '/app/payment',
@@ -19,7 +20,7 @@ export enum Routes {
   PrivacyPolicy = '/privacy-policy',
   TermsAndConditions = '/terms-and-conditions',
   HelpCenter = '/help-center',
-  Support = '/support'
+  Support = '/support',
 }
 
 export const PROTECTED_ROUTES = [

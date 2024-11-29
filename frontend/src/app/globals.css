@@ -39,7 +39,7 @@ body {
 }
 /* F02 - form inputs div, para los contenedores de los inputs */
 .f02-form-inputs-div{
-  @apply flex flex-col gap-12;
+  @apply flex flex-col gap-12 max-md:w-full;
 }
 /* F02 - form inputs div, para los contenedores de los inputs */
 .f02-tabs-style{

@@ -3,7 +3,7 @@ import React from 'react'
 
 function LateralComp() {
   return (
-    <div className='md:block sm:hidden max-w-[22rem] f02-card-02 h-fit'>
+    <div className='md:block max-md:hidden max-w-[22rem] f02-card-02 h-fit'>
       <Image
         className='object-cover rounded-t-md'
         src='/assets/temporal/f02-back-02.png'

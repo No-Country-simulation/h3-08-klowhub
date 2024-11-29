@@ -1,5 +1,5 @@
 import React from 'react'
-import BreadCrumbComp, { BreadcrumbItemIface } from '../components/BreadCrumbComp'
+import BreadCrumbComp, { BreadcrumbItemIface } from './components/BreadCrumbComp'
 import Image from 'next/image'
 
 function TutorProfilePage() {
@@ -22,9 +22,9 @@ function TutorProfilePage() {
     <div className='flex flex-col p-12 gap-4'>
       <BreadCrumbComp list={blist} />
       <h4 className='font-bold'>Perfil de mentor</h4>
-      <div className='flex flex-row gap-6 flex-grow w-full'>
-        <div className='w-[80%] f02-card p-12 gap-8 flex flex-row h-fit'>
-          <div className='w-[40%] flex flex-col items-center gap-4'>
+      <div className='gap-6 flex-grow w-full flex lg:flex-row max-md:flex-col max-md:w-full'>
+        <div className='w-[80%] f02-card p-12 gap-8 h-fit flex md:flex-row max-sm:flex-col max-sm:w-full'>
+          <div className='w-[40%] flex flex-col items-center gap-4 max-sm:w-full'>
             <Image
               className='rounded-full object-cover'
               src={udata.img_usu}
@@ -35,7 +35,7 @@ function TutorProfilePage() {
             <a href={refdata.url_edt_foto_perfil} className='text-primary-400 text-xs'>Editar Foto de perfil</a>
             <p className="font-bold text-lg">{udata.nom_usu}</p>
           </div>
-          <div className='w-[66%] flex-col gap-8'>
+          <div className='w-[66%] flex-col gap-8 max-sm:w-full'>
             <div className='flex flex-col gap-4'>
               <div className='text-secondary-b-100 font-bold text-sm'>
                 {udata.tipo_usu}
@@ -54,7 +54,7 @@ function TutorProfilePage() {
             </div>
           </div>
         </div>
-        <div className='w-[34%] f02-card h-fit'>
+        <div className='lg:w-[34%] f02-card h-fit max-md:w-full'>
           <Image
             className='object-cover w-full rounded-t-md h-56'
             src='/assets/temporal/f02-back.png'
