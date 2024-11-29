@@ -1,14 +1,17 @@
 'use client'
+import { redirectTo } from '@/actions'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { Routes } from '@/utils'
+import { AUTH_ERROR_MESSAGES, getURL, Routes } from '@/utils'
+import { createClient } from '@/utils/supabase/client'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Loader2Icon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 import { SignInSchema, signInSchema } from '../utils/schema/auth.schema'
 
 function SignInForm() {
@@ -22,8 +25,51 @@ function SignInForm() {
   })
   const { isSubmitting } = form.formState
 
-  const onSubmit = (data: SignInSchema) => {
-    console.log(data)
+  const onSubmit = async (values: SignInSchema) => {
+    try {
+      const supabase = createClient()
+      const { error, data } = await supabase.auth.signInWithPassword({
+        email: values.email,
+        password: values.password
+      })
+
+      if (error) return toast.error(AUTH_ERROR_MESSAGES[error.code as string])
+
+      form.reset()
+      toast.success(`¡Bienvenido de nuevo ${data.user.user_metadata.name as string}!`)
+    } catch (error) {
+      return toast.error(error instanceof Error ? error.message : '¡Algo salió mal, inténtalo de nuevo!')
+    }
+
+    await redirectTo(Routes.App)
+  }
+
+  const handleSignInWithGithub = async () => {
+    try {
+      const supabase = createClient()
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'github',
+        options: { redirectTo: getURL() + Routes.AuthCallback }
+      })
+
+      if (error) return toast.error(AUTH_ERROR_MESSAGES[error.code as string])
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : '¡Algo salió mal, inténtalo de nuevo!')
+    }
+  }
+
+  const handleSignInWithGoogle = async () => {
+    try {
+      const supabase = createClient()
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: getURL() + Routes.AuthCallback }
+      })
+
+      if (error) return toast.error(AUTH_ERROR_MESSAGES[error.code as string])
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : '¡Algo salió mal, inténtalo de nuevo!')
+    }
   }
 
   return (
@@ -71,17 +117,24 @@ function SignInForm() {
         </Button>
         <footer className='flex flex-col items-center justify-center gap-y-4'>
           <p className='text-center text-sm text-white'>O continuar con</p>
-          <ul className='flex items-center gap-x-6'>
-            <li>
+          <div className='flex items-center gap-x-6'>
+            <Button
+              className='bg-transparent p-0 hover:bg-transparent'
+              onClick={handleSignInWithGithub}
+              disabled={isSubmitting}
+              type='button'
+            >
               <Image className='object-contain' src='/assets/github-icon.png' width={50} height={50} alt='GitHub' />
-            </li>
-            <li>
-              <Image className='object-contain' src='/assets/facebook-icon.png' width={50} height={50} alt='Facebook' />
-            </li>
-            <li>
+            </Button>
+            <Button
+              className='bg-transparent p-0 hover:bg-transparent'
+              onClick={handleSignInWithGoogle}
+              disabled={isSubmitting}
+              type='button'
+            >
               <Image className='object-contain' src='/assets/google-icon.png' width={50} height={50} alt='Google' />
-            </li>
-          </ul>
+            </Button>
+          </div>
         </footer>
         <FormField
           control={form.control}

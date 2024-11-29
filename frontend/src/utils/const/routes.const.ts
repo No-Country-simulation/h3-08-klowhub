@@ -4,17 +4,37 @@ export enum Routes {
   Home = '/',
   AuthLogin = '/auth/login',
   AuthRegister = '/auth/register',
+  AuthCallback = '/auth/callback',
   App = '/app',
   AppCourses = '/app/courses',
   AppAppStore = '/app/app-store',
   AppProjects = '/app/projects',
   AppConsultations = '/app/consultations',
   AppAboutAppSheet = '/app/app-sheet',
+  AppMyProfile = '/app/my-profile',
+  AppMyApplications = '/app/my-applications',
+  AppCart = '/app/cart',
+  AppPayment = '/app/payment',
   Dashboard = '/dashboard',
   PrivacyPolicy = '/privacy-policy',
   TermsAndConditions = '/terms-and-conditions',
-  AppProfile = '/app/profile'
+  HelpCenter = '/help-center',
+  Support = '/support'
 }
+
+export const PROTECTED_ROUTES = [
+  Routes.App,
+  Routes.AppCourses,
+  Routes.AppAppStore,
+  Routes.AppProjects,
+  Routes.AppConsultations,
+  Routes.AppAboutAppSheet,
+  Routes.AppMyProfile,
+  Routes.AppMyApplications,
+  Routes.AppCart,
+  Routes.AppPayment,
+  Routes.Dashboard
+]
 
 export const HEADER_ROUTES = [
   { label: 'Dashboard', href: Routes.Dashboard },

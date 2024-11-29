@@ -67,7 +67,12 @@ export default {
       },
       backgroundImage: {
         footer: 'linear-gradient(263.17deg, #201C2D 0.4%, #201D43 50.02%, #262136 99.65%)',
-        main: 'linear-gradient(45.46deg, #34395C 11.78%, #181941 41.8%, #1B1B1F 87.01%)'
+        main: 'linear-gradient(45.46deg, #34395C 11.78%, #181941 41.8%, #1B1B1F 87.01%)',
+        banner: 'url(/assets/banner.png)',
+        subscription: 'linear-gradient(270deg, #492181 0%, #514B8F 50%, #556096 75%, #58759D 100%)'
+      },
+      screens: {
+        xsm: '480px'
       }
     }
   },

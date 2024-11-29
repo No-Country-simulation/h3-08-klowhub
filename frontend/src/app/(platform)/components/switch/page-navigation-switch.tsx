@@ -8,7 +8,7 @@ function PageNavigationSwitch() {
   const pathname = usePathname()
 
   return (
-    <Tabs defaultValue={pathname === Routes.App ? 'app' : 'home'} className='ml-auto hidden xl:ml-0 xl:block'>
+    <Tabs defaultValue={pathname.includes(Routes.App) ? 'app' : 'home'} className='ml-auto hidden xl:ml-0 xl:block'>
       <TabsList>
         <TabsTrigger value='home'>
           <Link href={Routes.Home}>Inicio</Link>

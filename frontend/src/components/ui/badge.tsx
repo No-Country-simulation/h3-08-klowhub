@@ -14,7 +14,8 @@ const badgeVariants = cva(
         destructive:
           'border-transparent bg-red-500 text-neutral-50 shadow hover:bg-red-500/80 dark:bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/80',
         outline: 'text-neutral-950 dark:text-neutral-50',
-        cart: 'absolute -right-2 -top-2 rounded-full bg-white text-black'
+        cart: 'absolute -right-2 -top-2 rounded-full bg-white text-black',
+        course: 'border-none bg-[#F3E3FBBF] px-1.5 py-1 text-sm font-semibold text-[#812AAC]'
       },
       size: {
         cart: 'size-5 shrink-0 justify-center p-0'
