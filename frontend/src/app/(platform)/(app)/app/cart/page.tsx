@@ -1,5 +1,7 @@
+'use client'
 import { CardProductsList } from '@/app/(platform)/components/list/card-products-list'
 import { RecommendedProductsList } from '@/app/(platform)/components/list/recommended-products-list'
+import { RecommendedProductsListSkeleton } from '@/app/(platform)/components/skeleton/recommended-products-list-skeleton'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,13 +12,18 @@ import {
 } from '@/components/ui/breadcrumb'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Product } from '@/models'
 import { Routes } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
+import useSWR from 'swr'
 
 function AppCartPage() {
+  const { data: recommendedProducts, isLoading: isLoadingRecommendedProducts } =
+    useSWR<Product[]>('/api/products?limit=4')
+
   return (
-    <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-2 lg:px-10 lg:py-8'>
+    <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-8 lg:px-10 lg:py-8'>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -114,13 +121,16 @@ function AppCartPage() {
       </div>
       <section className='flex flex-col gap-y-6'>
         <header className='grid gap-y-1.5'>
-          <h3 className='text-base font-bold'>Aplicaciones recomendadas</h3>
+          <h3 className='text-base font-bold'>Lista de recomendaciones</h3>
           <p className='text-sm'>
-            Explorá soluciones listas para usar. Encontrá la app perfecta para tu proyecto y empezá a trabajar de
-            inmediato.
+            Explorá soluciones listas para usar. Encontrá la app, curso o lección perfecta para tu proyecto y empezá a
+            trabajar de inmediato.
           </p>
         </header>
-        <RecommendedProductsList />
+        {isLoadingRecommendedProducts && <RecommendedProductsListSkeleton quantity={4} />}
+        {recommendedProducts && recommendedProducts?.length > 0 && (
+          <RecommendedProductsList products={recommendedProducts} />
+        )}
         <Button className='mx-auto w-full max-w-64' variant='outline'>
           Ver más
         </Button>

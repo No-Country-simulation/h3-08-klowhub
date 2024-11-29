@@ -1,5 +1,7 @@
+'use client'
 import { CoursesList } from '@/app/(platform)/components/list/courses-list'
 import { ProductFilterSheet } from '@/app/(platform)/components/sheet/product-filter-sheet'
+import { CoursesListSkeleton } from '@/app/(platform)/components/skeleton/couses-list-skeleton'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -19,12 +21,16 @@ import {
   PaginationNext,
   PaginationPrevious
 } from '@/components/ui/pagination'
+import { Product } from '@/models'
 import { Routes } from '@/utils'
 import { ListOrderedIcon, SearchIcon } from 'lucide-react'
+import useSWR from 'swr'
 
 function AppCoursesPage() {
+  const { data: courses, isLoading: isLoadingCourses } = useSWR<Product[]>('/api/products?type=course')
+
   return (
-    <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-2 lg:px-10 lg:py-8'>
+    <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-8 lg:px-10 lg:py-8'>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -50,7 +56,8 @@ function AppCoursesPage() {
             </Button>
           </div>
         </header>
-        <CoursesList />
+        {isLoadingCourses && <CoursesListSkeleton quantity={5} />}
+        {courses && courses?.length > 0 && <CoursesList products={courses} />}
         <Pagination>
           <PaginationContent>
             <PaginationItem>

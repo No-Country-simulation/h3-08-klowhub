@@ -11,7 +11,7 @@ import { Routes } from '@/utils'
 
 function AppMyApplicationsPage() {
   return (
-    <main className='mx-auto grid max-w-screen-2xl gap-y-8 px-5 py-2 lg:px-10 lg:py-8'>
+    <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-9 lg:px-10 lg:py-8'>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

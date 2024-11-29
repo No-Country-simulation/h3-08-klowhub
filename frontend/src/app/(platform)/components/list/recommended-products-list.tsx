@@ -1,20 +1,18 @@
+import { Product } from '@/models'
 import { SalesProductCard } from '../card/sales-product-card'
 
-function RecommendedProductsList() {
+interface RecommendedProductsListProps {
+  products: Product[]
+}
+
+function RecommendedProductsList({ products }: RecommendedProductsListProps) {
   return (
     <ul className='grid gap-6 sm:grid-cols-2 xl:grid-cols-4'>
-      <li>
-        <SalesProductCard />
-      </li>
-      <li>
-        <SalesProductCard />
-      </li>
-      <li>
-        <SalesProductCard />
-      </li>
-      <li>
-        <SalesProductCard />
-      </li>
+      {products.map((product) => (
+        <li key={product.id}>
+          <SalesProductCard product={product} />
+        </li>
+      ))}
     </ul>
   )
 }
