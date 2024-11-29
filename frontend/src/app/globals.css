@@ -18,3 +18,37 @@ body {
     max-height: var(--radix-dropdown-menu-content-available-height);
   }
 }
+
+/* Clases Específicas (Para evitar repetir estilos) */
+/* F02 - Perfil mentor*/
+/* F02 - Card, para las tarjetas de este flujo */
+.f02-card{
+  @apply bg-[#1F2937] rounded-md ;
+}
+/* F02 - Card 02, para la tarjeta lateral editar perfil mentor */
+.f02-card-02{
+  @apply bg-[#353e4b] rounded-md ;
+}
+/* F02 - input div, para los divs de los inputs */
+.f02-input-div{
+  @apply grid w-full items-center gap-8;
+}
+/* F02 - radio item, para los items de radio buttons */
+.f02-radio-item{
+  @apply flex items-center space-x-2;
+}
+/* F02 - form inputs div, para los contenedores de los inputs */
+.f02-form-inputs-div{
+  @apply flex flex-col gap-12;
+}
+/* F02 - form inputs div, para los contenedores de los inputs */
+.f02-tabs-style{
+  @apply border-b-2 rounded-none;
+}
+/* F02 - dotted space, para los inputs tipo file */
+.f02-dotted-space{
+  @apply border-2 border-primary-b-300 border-dashed rounded 
+    w-[22rem] h-[16rem]
+    flex flex-col gap-4 items-center justify-center p-4
+    bg-[#353e4b];
+}
