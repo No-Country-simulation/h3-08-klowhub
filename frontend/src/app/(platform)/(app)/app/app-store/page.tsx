@@ -1,5 +1,7 @@
+'use client'
 import { RecommendedProductsList } from '@/app/(platform)/components/list/recommended-products-list'
 import { ProductFilterSheet } from '@/app/(platform)/components/sheet/product-filter-sheet'
+import { RecommendedProductsListSkeleton } from '@/app/(platform)/components/skeleton/recommended-products-list-skeleton'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -19,12 +21,16 @@ import {
   PaginationNext,
   PaginationPrevious
 } from '@/components/ui/pagination'
+import { Product } from '@/models'
 import { Routes } from '@/utils'
 import { ListOrderedIcon, SearchIcon } from 'lucide-react'
+import useSWR from 'swr'
 
 function AppAppStorePage() {
+  const { data: apps, isLoading: isLoadingApps } = useSWR<Product[]>('/api/products?type=app')
+
   return (
-    <main className='mx-auto grid max-w-screen-2xl gap-y-8 px-5 py-2 lg:px-10 lg:py-8'>
+    <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-8 lg:px-10 lg:py-8'>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -50,7 +56,8 @@ function AppAppStorePage() {
             </Button>
           </div>
         </header>
-        <RecommendedProductsList />
+        {isLoadingApps && <RecommendedProductsListSkeleton quantity={4} />}
+        {apps && apps?.length > 0 && <RecommendedProductsList products={apps} />}
         <Pagination>
           <PaginationContent>
             <PaginationItem>

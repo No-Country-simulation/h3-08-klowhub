@@ -1,6 +1,7 @@
 'use client'
 import { SalesProductCard } from '@/app/(platform)/components/card/sales-product-card'
 import { RecommendedProductsList } from '@/app/(platform)/components/list/recommended-products-list'
+import { AppStoreDetailPageSkeleton } from '@/app/(platform)/components/skeleton/appstore-detail-page-skeleton'
 import { Badge } from '@/components/ui/badge'
 import {
   Breadcrumb,
@@ -13,6 +14,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { Separator } from '@/components/ui/separator'
+import { Product } from '@/models'
 import { Routes } from '@/utils'
 import {
   CheckIcon,
@@ -26,16 +28,29 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import useSWR from 'swr'
 
 const description =
   'Acceso completo a la aplicación: Descargá y utilizá la app en todos tus dispositivos sin restricciones.\n\nActualizaciones gratuitas: Disfrutá de mejoras y nuevas funcionalidades sin costo adicional.\n\nSoporte técnico dedicado: Asistencia personalizada para resolver cualquier duda o inconveniente que tengas.\n\nGuías y tutoriales: Materiales de apoyo que te ayudarán a aprovechar al máximo todas las características de la app.'
 
-function AppAppStoreDetailPage() {
+interface AppAppStoreDetailPageProps {
+  params: { id: string }
+}
+
+function AppAppStoreDetailPage({ params }: AppAppStoreDetailPageProps) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const { data: product, isLoading, error } = useSWR<Product>(`/api/product/${params.id}`)
+  const { data: recommendedProducts } = useSWR<Product[]>('/api/products?type=app&limit=4')
+
+  // TODO: ADD UI FOR NO RESULTS
+  if (isLoading) return <AppStoreDetailPageSkeleton />
+  if (error) return <div>{error}</div>
+  if (!product) return <div>No se encontró la aplicación</div>
+
   const toggleExpanded = () => setIsExpanded((state) => !state)
 
   return (
-    <main className='mx-auto grid max-w-screen-2xl gap-x-28 gap-y-8 px-5 py-2 lg:grid-cols-[1fr_26rem] lg:px-10 lg:py-8'>
+    <main className='mx-auto grid w-full max-w-screen-2xl gap-x-28 gap-y-8 px-5 py-8 lg:grid-cols-[1fr_26rem] lg:px-10 lg:py-8'>
       <Breadcrumb className='col-span-full'>
         <BreadcrumbList className='flex-wrap'>
           <BreadcrumbItem>
@@ -47,23 +62,19 @@ function AppAppStoreDetailPage() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Aplicación para seguimiento de proyectos</BreadcrumbPage>
+            <BreadcrumbPage>{product.name}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
       <section className='flex flex-col gap-y-6'>
-        <h1 className='text-base font-bold'>Aplicación para seguimiento de proyectos</h1>
+        <h1 className='text-base font-bold'>{product.name}</h1>
         <header className='grid gap-y-3'>
-          <p className='flex items-center gap-x-3 text-xs'>
-            <ClockIcon /> Ultima actualizacion: 6/2024
+          <p className='flex items-center gap-x-2 text-xs'>
+            <ClockIcon size={16} /> Ultima actualizacion: 6/2024
           </p>
-          <p className='text-sm'>
-            Nuestra aplicación de gestión de proyectos te permite organizar tareas, asignar responsabilidades y
-            monitorear el progreso de tu equipo en tiempo real. Desde la planificación hasta la ejecución, cada paso de
-            tu proyecto estará al alcance de tu mano, optimizando la colaboración y mejorando la productividad.{' '}
-          </p>
+          <p className='text-sm'>{product.description}</p>
           <p className='flex items-center gap-x-3 text-base font-medium'>
-            5
+            {product.rating}
             <span className='flex flex-wrap items-center'>
               <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
               <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
@@ -71,13 +82,13 @@ function AppAppStoreDetailPage() {
               <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
               <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
             </span>
-            (74)
+            ({product.reviews})
           </p>
         </header>
         <div className='relative aspect-video max-h-96'>
           <Image
             className='rounded-lg object-cover'
-            src='/assets/product-detail.png'
+            src={product.thumbnail_url ?? '/assets/product-detail.png'}
             alt='Aplicación para seguimiento de proyectos'
             fill
             sizes='70vw'
@@ -87,24 +98,11 @@ function AppAppStoreDetailPage() {
           <p className='pl-2.5 text-sm font-semibold'>Vista previa</p>
           <Carousel>
             <CarouselContent>
-              <CarouselItem className='relative ml-4 h-20 basis-2/5 sm:basis-1/4'>
-                <Image className='rounded-lg object-cover' src='/assets/product-detail.png' alt='Miniatura' fill />
-              </CarouselItem>
-              <CarouselItem className='relative ml-4 h-20 basis-2/5 sm:basis-1/4'>
-                <Image className='rounded-lg object-cover' src='/assets/product-detail.png' alt='Miniatura' fill />
-              </CarouselItem>
-              <CarouselItem className='relative ml-4 h-20 basis-2/5 sm:basis-1/4'>
-                <Image className='rounded-lg object-cover' src='/assets/product-detail.png' alt='Miniatura' fill />
-              </CarouselItem>
-              <CarouselItem className='relative ml-4 h-20 basis-2/5 sm:basis-1/4'>
-                <Image className='rounded-lg object-cover' src='/assets/product-detail.png' alt='Miniatura' fill />
-              </CarouselItem>
-              <CarouselItem className='relative ml-4 h-20 basis-2/5 sm:basis-1/4'>
-                <Image className='rounded-lg object-cover' src='/assets/product-detail.png' alt='Miniatura' fill />
-              </CarouselItem>
-              <CarouselItem className='relative ml-4 h-20 basis-2/5 sm:basis-1/4'>
-                <Image className='rounded-lg object-cover' src='/assets/product-detail.png' alt='Miniatura' fill />
-              </CarouselItem>
+              {product.images_url.map((imageUrl, index) => (
+                <CarouselItem key={index} className='relative ml-4 h-20 basis-2/5 sm:basis-1/4'>
+                  <Image className='rounded-lg object-cover' src={imageUrl} alt='Miniatura' fill sizes='20vw' />
+                </CarouselItem>
+              ))}
             </CarouselContent>
           </Carousel>
         </div>
@@ -238,7 +236,7 @@ function AppAppStoreDetailPage() {
                 </ul>
               </div>
               <div className='grid gap-y-4'>
-                <p className='text-xl font-bold'>25 reseñas</p>
+                <p className='text-xl font-bold'>{product.reviews} reseñas</p>
                 <p className='flex items-center gap-x-3 text-base font-medium'>
                   <span className='flex flex-wrap items-center'>
                     <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
@@ -247,7 +245,7 @@ function AppAppStoreDetailPage() {
                     <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
                     <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
                   </span>
-                  3.5
+                  {product.rating}
                 </p>
                 <Separator />
                 <ul className='grid gap-y-4'>
@@ -354,7 +352,7 @@ function AppAppStoreDetailPage() {
           <p className='text-base font-bold'>
             Con la compra de esta app tiene un 50% OFF en la compra del cursos: Gestión de inventarios con AppSheet
           </p>
-          <SalesProductCard />
+          <SalesProductCard product={product} />
         </article>
       </aside>
       <section className='col-span-full mt-8 flex flex-col gap-y-6'>
@@ -365,7 +363,9 @@ function AppAppStoreDetailPage() {
             inmediato.
           </p>
         </header>
-        <RecommendedProductsList />
+        {recommendedProducts && recommendedProducts?.length > 0 && (
+          <RecommendedProductsList products={recommendedProducts} />
+        )}
         <Button className='mx-auto w-full max-w-64' variant='outline'>
           Ver más
         </Button>

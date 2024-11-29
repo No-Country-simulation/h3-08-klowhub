@@ -1,23 +1,18 @@
+import { Product } from '@/models'
 import { SalesProductCard } from '../card/sales-product-card'
 
-function CoursesList() {
+interface CoursesListProps {
+  products: Product[]
+}
+
+function CoursesList({ products }: CoursesListProps) {
   return (
     <ul className='grid gap-6 sm:grid-cols-2 lg:grid-cols-1'>
-      <li>
-        <SalesProductCard variant='courses-list' />
-      </li>
-      <li>
-        <SalesProductCard variant='courses-list' />
-      </li>
-      <li>
-        <SalesProductCard variant='courses-list' />
-      </li>
-      <li>
-        <SalesProductCard variant='courses-list' />
-      </li>
-      <li>
-        <SalesProductCard variant='courses-list' />
-      </li>
+      {products.map((product) => (
+        <li key={product.id}>
+          <SalesProductCard product={product} variant='courses-list' />
+        </li>
+      ))}
     </ul>
   )
 }

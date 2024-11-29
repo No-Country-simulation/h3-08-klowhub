@@ -1,12 +1,24 @@
+'use client'
 import { Button } from '@/components/ui/button'
+import { Product } from '@/models'
+import useSWR from 'swr'
 import { CourseProgressCard } from '../../components/card/course-progress-card'
 import { ExpertPersonList } from '../../components/list/expert-person-list'
 import { RecommendedCoursesList } from '../../components/list/recommended-courses-list'
 import { RecommendedProductsList } from '../../components/list/recommended-products-list'
+import { RecommendedCoursesListSkeleton } from '../../components/skeleton/recommended-courses-list-skeleton'
+import { RecommendedProductsListSkeleton } from '../../components/skeleton/recommended-products-list-skeleton'
 
 function AppPage() {
+  const { data: recommendedCourses, isLoading: isLoadingRecommendedCourses } = useSWR<Product[]>(
+    '/api/products?type=course&limit=3'
+  )
+  const { data: recommendedApps, isLoading: isLoadingRecommendedApps } = useSWR<Product[]>(
+    '/api/products?type=app&limit=4'
+  )
+
   return (
-    <main className='mx-auto grid max-w-screen-2xl gap-y-16 px-5 py-2 lg:px-10 lg:py-8'>
+    <main className='mx-auto grid w-full max-w-screen-2xl gap-y-16 px-5 py-8 lg:px-10 lg:py-8'>
       <ul className='relative grid items-center gap-x-6 bg-banner before:absolute before:inset-0 before:size-full before:bg-black/50 xsm:grid-cols-2 lg:grid-cols-4'>
         <li className='z-10 p-7 text-center text-xl font-bold'>Aprende en KlowHub</li>
         <li className='z-10 p-7 text-center text-xl font-bold'>Encuentra aplicaciones</li>
@@ -30,7 +42,10 @@ function AppPage() {
             tus conocimientos en proyectos reales.
           </p>
         </header>
-        <RecommendedCoursesList />
+        {isLoadingRecommendedCourses && <RecommendedCoursesListSkeleton quantity={3} />}
+        {recommendedCourses && recommendedCourses?.length > 0 && (
+          <RecommendedCoursesList products={recommendedCourses} />
+        )}
         <Button className='mx-auto w-full max-w-64' variant='outline'>
           Ver más
         </Button>
@@ -43,7 +58,8 @@ function AppPage() {
             inmediato.
           </p>
         </header>
-        <RecommendedProductsList />
+        {isLoadingRecommendedApps && <RecommendedProductsListSkeleton quantity={4} />}
+        {recommendedApps && recommendedApps?.length > 0 && <RecommendedProductsList products={recommendedApps} />}
         <Button className='mx-auto w-full max-w-64' variant='outline'>
           Ver más
         </Button>

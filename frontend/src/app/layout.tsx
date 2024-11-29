@@ -1,8 +1,8 @@
-import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { RootProvider } from './provider'
 
 const inter = Inter({
   display: 'swap',
@@ -24,8 +24,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={cn('flex min-h-screen flex-col antialiased', inter.variable)}>
-        {children}
-        <Toaster closeButton richColors position='top-right' />
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   )
