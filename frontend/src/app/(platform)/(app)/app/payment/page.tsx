@@ -13,7 +13,7 @@ import Link from 'next/link'
 
 function AppPaymentPage() {
   return (
-    <main className='mx-auto grid w-full max-w-screen-2xl gap-y-16 px-5 py-2 lg:px-10 lg:py-8'>
+    <main className='mx-auto grid w-full max-w-screen-2xl gap-y-16 px-5 py-8 lg:px-10 lg:py-8'>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
