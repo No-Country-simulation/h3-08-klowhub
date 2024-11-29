@@ -16,6 +16,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import SelectContentOptComp, { SelectOptIface } from '../components/SelectContentOptComp'
 import { Textarea } from '@/components/ui/textarea'
 import ImportFileComp from '../components/ImportFileComp'
+import { TabsTriggerF02Comp } from '../components/TabsTriggerF02Comp'
 
 
 function EditarPerfilMentorPage() {
@@ -31,9 +32,9 @@ function EditarPerfilMentorPage() {
       <h4 className='font-bold'>Conviértete en mentor: Comparte tu experiencia</h4>
       <Tabs id='tabs-comp' defaultValue="f02-info" className="w-full">
         <TabsList className='bg-transparent'>
-          <TabsTrigger className='f02-tabs-style data-[state="active"]:text-primary-b-300 data-[state="active"]:bg-transparent data-[state="active"]:border-primary-b-300' value="f02-info">Información General</TabsTrigger>
-          <TabsTrigger className='f02-tabs-style data-[state="active"]:text-primary-b-300 data-[state="active"]:bg-transparent data-[state="active"]:border-primary-b-300' value="f02-exp">Experiencia</TabsTrigger>
-          <TabsTrigger className='f02-tabs-style data-[state="active"]:text-primary-b-300 data-[state="active"]:bg-transparent data-[state="active"]:border-primary-b-300' value="f02-edu">Educación</TabsTrigger>
+          <TabsTriggerF02Comp className='f02-tabs-style' value="f02-info">Información General</TabsTriggerF02Comp>
+          <TabsTriggerF02Comp className='f02-tabs-style' value="f02-exp">Experiencia</TabsTriggerF02Comp>
+          <TabsTriggerF02Comp className='f02-tabs-style' value="f02-edu">Educación</TabsTriggerF02Comp>
         </TabsList>
         <TabsContent value="f02-info">
           <div className='flex flex-col'>
