@@ -14,7 +14,7 @@ function MyApplicationsList() {
     <ul className='grid gap-6 sm:grid-cols-2 xl:grid-cols-4'>
       {applications.map((product) => (
         <li key={product.id}>
-          <SalesProductCard product={product} />
+          <SalesProductCard product={product} variant='my-products' />
         </li>
       ))}
     </ul>

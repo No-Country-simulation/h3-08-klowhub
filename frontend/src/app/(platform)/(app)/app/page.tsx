@@ -2,10 +2,10 @@
 import { Button } from '@/components/ui/button'
 import { Product } from '@/models'
 import useSWR from 'swr'
-import { CourseProgressCard } from '../../components/card/course-progress-card'
 import { ExpertPersonList } from '../../components/list/expert-person-list'
 import { RecommendedCoursesList } from '../../components/list/recommended-courses-list'
 import { RecommendedProductsList } from '../../components/list/recommended-products-list'
+import { CourseProgressSection } from '../../components/section/course-progress-section'
 import { RecommendedCoursesListSkeleton } from '../../components/skeleton/recommended-courses-list-skeleton'
 import { RecommendedProductsListSkeleton } from '../../components/skeleton/recommended-products-list-skeleton'
 
@@ -25,15 +25,7 @@ function AppPage() {
         <li className='z-10 p-7 text-center text-xl font-bold'>Publica proyectos</li>
         <li className='z-10 p-7 text-center text-xl font-bold'>Consultas técnicas</li>
       </ul>
-      <section className='flex flex-col gap-y-6'>
-        <header className='grid gap-y-1.5'>
-          <h1 className='text-base font-bold'>Continuá tu aprendizaje</h1>
-          <p className='text-sm'>
-            Retomá donde lo dejaste. Volvé a ver tu último video y seguí aprendiendo sin perder el ritmo.
-          </p>
-        </header>
-        <CourseProgressCard />
-      </section>
+      <CourseProgressSection />
       <section className='flex flex-col gap-y-6'>
         <header className='grid gap-y-1.5'>
           <h2 className='text-base font-bold'>Cursos recomendados</h2>

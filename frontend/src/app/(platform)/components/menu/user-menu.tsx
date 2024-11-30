@@ -4,6 +4,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Routes } from '@/utils'
 import { createClient } from '@/utils/supabase/client'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 import { toast } from 'sonner'
 
@@ -38,9 +39,18 @@ function UserMenu() {
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end'>
-        <DropdownMenuItem disabled={isSignOut}>Mí perfil</DropdownMenuItem>
-        <DropdownMenuItem disabled={isSignOut}>Subscripción</DropdownMenuItem>
-        <DropdownMenuItem disabled={isSignOut}>Ajustes</DropdownMenuItem>
+        <DropdownMenuItem className='cursor-pointer' disabled={isSignOut} asChild>
+          <Link href={Routes.AppMyProfile}>Mi perfil</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem className='cursor-pointer' disabled={isSignOut} asChild>
+          <Link href={Routes.AppMyCourses}>Mis cursos</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem className='cursor-pointer' disabled={isSignOut} asChild>
+          <Link href={Routes.AppMyApplications}>Mis aplicaciones</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem className='cursor-pointer' disabled={isSignOut} asChild>
+          <Link href={Routes.AppMyProfileSettings}>Ajustes</Link>
+        </DropdownMenuItem>
         <DropdownMenuItem onClick={handleSignOut} onSelect={(ev) => ev.preventDefault()} disabled={isSignOut}>
           Cerrar sesión
         </DropdownMenuItem>
