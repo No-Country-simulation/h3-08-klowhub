@@ -1,6 +1,8 @@
 'use client'
 import { CardProductsList } from '@/app/(platform)/components/list/card-products-list'
+import { RecommendedCoursesList } from '@/app/(platform)/components/list/recommended-courses-list'
 import { RecommendedProductsList } from '@/app/(platform)/components/list/recommended-products-list'
+import { RecommendedCoursesListSkeleton } from '@/app/(platform)/components/skeleton/recommended-courses-list-skeleton'
 import { RecommendedProductsListSkeleton } from '@/app/(platform)/components/skeleton/recommended-products-list-skeleton'
 import {
   Breadcrumb,
@@ -19,8 +21,12 @@ import Link from 'next/link'
 import useSWR from 'swr'
 
 function AppCartPage() {
-  const { data: recommendedProducts, isLoading: isLoadingRecommendedProducts } =
-    useSWR<Product[]>('/api/products?limit=4')
+  const { data: recommendedApps, isLoading: isLoadingRecommendedApps } = useSWR<Product[]>(
+    '/api/products?type=app&limit=4'
+  )
+  const { data: recommendedCourses, isLoading: isLoadingRecommendedCourses } = useSWR<Product[]>(
+    '/api/products?type=course&limit=3'
+  )
 
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-8 lg:px-10 lg:py-8'>
@@ -121,18 +127,32 @@ function AppCartPage() {
       </div>
       <section className='flex flex-col gap-y-6'>
         <header className='grid gap-y-1.5'>
-          <h3 className='text-base font-bold'>Lista de recomendaciones</h3>
+          <h3 className='text-base font-bold'>Aplicaciones recomendadas</h3>
           <p className='text-sm'>
-            Explorá soluciones listas para usar. Encontrá la app, curso o lección perfecta para tu proyecto y empezá a
-            trabajar de inmediato.
+            Explorá soluciones listas para usar. Encontrá la app perfecta para tu proyecto y empezá a trabajar de
+            inmediato.
           </p>
         </header>
-        {isLoadingRecommendedProducts && <RecommendedProductsListSkeleton quantity={4} />}
-        {recommendedProducts && recommendedProducts?.length > 0 && (
-          <RecommendedProductsList products={recommendedProducts} />
+        {isLoadingRecommendedApps && <RecommendedProductsListSkeleton quantity={4} />}
+        {recommendedApps && recommendedApps?.length > 0 && <RecommendedProductsList products={recommendedApps} />}
+        <Button className='mx-auto w-full max-w-64' variant='outline' asChild>
+          <Link href={Routes.AppAppStore}>Ver más</Link>
+        </Button>
+      </section>
+      <section className='flex flex-col gap-y-6'>
+        <header className='grid gap-y-1.5'>
+          <h3 className='text-base font-bold'>Cursos recomendados</h3>
+          <p className='text-sm'>
+            Descubre los cursos más destacados y lleva tus habilidades al siguiente nivel. Aprende de expertos y aplica
+            tus conocimientos en proyectos reales.
+          </p>
+        </header>
+        {isLoadingRecommendedCourses && <RecommendedCoursesListSkeleton quantity={3} />}
+        {recommendedCourses && recommendedCourses?.length > 0 && (
+          <RecommendedCoursesList products={recommendedCourses} />
         )}
-        <Button className='mx-auto w-full max-w-64' variant='outline'>
-          Ver más
+        <Button className='mx-auto w-full max-w-64' variant='outline' asChild>
+          <Link href={Routes.AppCourses}>Ver más</Link>
         </Button>
       </section>
     </main>
