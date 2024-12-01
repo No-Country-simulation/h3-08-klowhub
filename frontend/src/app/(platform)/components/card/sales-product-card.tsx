@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 interface SalesProductCardProps {
   product: Product
-  variant?: 'courses-list' | 'my-applications-list' | 'default'
+  variant?: 'courses-list' | 'my-products' | 'default'
 }
 
 function SalesProductCard({ product, variant = 'default' }: SalesProductCardProps) {
@@ -72,9 +72,9 @@ function SalesProductCard({ product, variant = 'default' }: SalesProductCardProp
           </span>
           {product.reviews}
         </p>
-        {variant !== 'my-applications-list' && <p className='text-xl font-bold text-white'>${product.price}</p>}
+        {variant !== 'my-products' && <p className='text-xl font-bold text-white'>${product.price}</p>}
         <div className={cn('grid items-center gap-x-4', variant === 'courses-list' && 'lg:flex')}>
-          {variant !== 'my-applications-list' && (
+          {variant !== 'my-products' && (
             <Button>
               <ShoppingCartIcon /> Añadir al carrito
             </Button>
