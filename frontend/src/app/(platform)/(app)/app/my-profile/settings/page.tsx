@@ -1,14 +1,11 @@
 import React from 'react'
 import BreadCrumbComp, { BreadcrumbItemIface } from '../components/BreadCrumbComp'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import Image from 'next/image'
+import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs"
 import LateralComp from '../components/LateralComp'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import {
   Select,
-  SelectContent,
-  SelectItem,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
@@ -20,12 +17,12 @@ import { TabsTriggerF02Comp } from '../components/TabsTriggerF02Comp'
 
 
 function EditarPerfilMentorPage() {
-  let blist:BreadcrumbItemIface[] = [{url:"/",text:"Home"},{url:"/",text:"Perfil de mentor"}]
+  const blist:BreadcrumbItemIface[] = [{url:"/",text:"Home"},{url:"/",text:"Perfil de mentor"}]
   /* PENDIENTE: especificar opciones */
-  let areaList:SelectOptIface[] = [{value:"A1", text:"Area 1"},{value:"A2", text:"Area 2"},]
-  let idiomasList:SelectOptIface[] = [{value:"en", text:"Inglés"},{value:"es", text:"Español"},]
-  let sectoresList:SelectOptIface[] = [{value:"S1", text:"Sector 1"},{value:"S2", text:"Sector 2"},]
-  let herramientasList:SelectOptIface[] = [{value:"php", text:"php"},{value:"js", text:"JavaScript"},]
+  const areaList:SelectOptIface[] = [{value:"A1", text:"Area 1"},{value:"A2", text:"Area 2"},]
+  const idiomasList:SelectOptIface[] = [{value:"en", text:"Inglés"},{value:"es", text:"Español"},]
+  const sectoresList:SelectOptIface[] = [{value:"S1", text:"Sector 1"},{value:"S2", text:"Sector 2"},]
+  const herramientasList:SelectOptIface[] = [{value:"php", text:"php"},{value:"js", text:"JavaScript"},]
   return (
     <div className='flex flex-col p-12 gap-4'>
       <BreadCrumbComp list={blist} />
@@ -87,7 +84,7 @@ function EditarPerfilMentorPage() {
                   </div>
                 </div>
                 {/* Idiomas y área especializada */}
-                <div className="flex md:flex-row sm:flex-col gap-12">
+                <div className="flex md:flex-row max-sm:flex-col gap-12">
                   <div className="f02-input-div max-w-[25rem]">
                     <Label htmlFor="idiomas">¿En qué idiomas ofreces las mentorias?</Label>
                     <Select name='idiomas'>
@@ -159,7 +156,7 @@ function EditarPerfilMentorPage() {
               <LateralComp />
             </div>
             <a href='/' className='bg-[#702486] p-3 px-24 rounded-md w-fit mt-6 ml-auto'>Continuar</a>
-          </div>      
+          </div>
         </TabsContent>
         <TabsContent value="f02-edu">
           <div className='flex flex-col'>

@@ -3,7 +3,7 @@ import BreadCrumbComp, { BreadcrumbItemIface } from './components/BreadCrumbComp
 import Image from 'next/image'
 
 function TutorProfilePage() {
-  let blist:BreadcrumbItemIface[] = [{url:"/",text:"Home"},{url:"/",text:"Perfil de mentor"}]
+  const blist:BreadcrumbItemIface[] = [{url:"/",text:"Home"},{url:"/",text:"Perfil de mentor"}]
   // Datos utilizados en la vista, #PENDIENTE que el backend provea api
   const udata = {
     img_usu: '/assets/temporal/f02-avatar06.png',
@@ -41,7 +41,7 @@ function TutorProfilePage() {
                 {udata.tipo_usu}
                 <span className={(udata.est_pro_usu?"":"hidden")+'text-xs rounded-lg p-2 px-3 ml-2 bg-gradient-to-r from-primary-500 via-[#514B8F] via-[#556096] to-[#58759D]'}>PRO</span>
               </div>
-              <div className='flex flex-row text-white font-bold text-sm gap-4'>
+              <div className='flex max-sm:flex-col min-md:flex-row text-white font-bold text-sm gap-4'>
                 <div> <span className='text-primary-200 text-xl'>{udata.nro_cursos_usu}</span> Cursos publicados </div>
                 <div> <span className='text-primary-200 text-xl'>{udata.nro_apli_usu}</span> Aplicaciones creadas </div>
                 <div> <span className='text-primary-200 text-xl'>{udata.nro_subs_usu}</span> Subscriptores </div>
