@@ -15,11 +15,11 @@ function VendPlanPage() {
     <div className='w-full flex flex-col gap-4'>
       <TopHeadComp />
       <div className='f02-card text-xs p-3 flex flex-col gap-4'>
-        <p className="font-bold mb-2">¡Bienvenido a la Comunidad de Vendedores!</p>
+        <p className='font-bold mb-2'>¡Bienvenido a la Comunidad de Vendedores!</p>
         <p>Elige el plan que mejor se adapte a tus necesidades y comienza a monetizar tus creaciones. Desde el plan gratuito hasta las opciones premium, cada uno ofrece herramientas diseñadas para maximizar tu éxito como creador.</p>
-        <p className="font-bold">Detalles del plan seleccionado</p>
+        <p className='font-bold'>Detalles del plan seleccionado</p>
         <p>A continuación, encontrarás una descripción detallada de las características y beneficios del plan que has elegido.</p>
-        <div className="f02-card-02 flex flex-col gap-4 p-4">
+        <div className='f02-card-02 flex flex-col gap-4 p-4'>
           {/* Selector Facturación Mensual */}
           <div className='flex flex-row gap-2 items-center justify-center'>
             <span className='font-normal'>Facturación mensual</span>
@@ -29,8 +29,8 @@ function VendPlanPage() {
           <Separator className='' />
           {/* Tarjetas con planes disponibles */}
           <div className='flex md:flex-row max-sm:flex-col gap-2 items-center justify-center'>
-            <div className="f05-plan-card">
-              <Image 
+            <div className='f05-plan-card'>
+              <Image
                 src='/assets/temporal/f05-basic-img.png'
                 alt='basic'
                 width={1000}
@@ -46,11 +46,11 @@ function VendPlanPage() {
               </ul>
               <p className='text-xs'>Comisiones: PayPal 20%, Stripe 15%, Cripto 12%.</p>
             </div>
-            <div className="f05-plan-card-princ">
-              <div className="ml-auto p-2 rounded-md bg-[#F3E3FB]">
+            <div className='f05-plan-card-princ'>
+              <div className='ml-auto p-2 rounded-md bg-[#F3E3FB]'>
                 <p className='text-primary-b-400 font-bold'>Más popular</p>
               </div>
-              <Image 
+              <Image
                 src='/assets/temporal/f05-professional-img.png'
                 alt='basic'
                 width={1000}
@@ -66,8 +66,8 @@ function VendPlanPage() {
               </ul>
               <p className='text-xs'>Comisiones: PayPal 20%, Stripe 15%, Cripto 12%.</p>
             </div>
-            <div className="f05-plan-card">
-              <Image 
+            <div className='f05-plan-card'>
+              <Image
                 src='/assets/temporal/f05-expert-img.png'
                 alt='basic'
                 width={1000}
@@ -85,7 +85,7 @@ function VendPlanPage() {
             </div>
           </div>
           {/* Tabla comparativa Planes */}
-          <div className="w-full">
+          <div className='w-full'>
             <Table className='border-collapse w-full md:table-fixed sm:table-auto'>
               <TableHeader className='f05-table-border'>
                 <TableRow className='f05-table-border'>

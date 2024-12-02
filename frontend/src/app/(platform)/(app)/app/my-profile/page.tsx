@@ -3,7 +3,7 @@ import BreadCrumbComp, { BreadcrumbItemIface } from './components/BreadCrumbComp
 import Image from 'next/image'
 
 function TutorProfilePage() {
-  const blist:BreadcrumbItemIface[] = [{url:"/",text:"Home"},{url:"/",text:"Perfil de mentor"}]
+  const blist: BreadcrumbItemIface[] = [{ url: '/', text: 'Home' }, { url: '/', text: 'Perfil de mentor' }]
   // Datos utilizados en la vista, #PENDIENTE que el backend provea api
   const udata = {
     img_usu: '/assets/temporal/f02-avatar06.png',
@@ -12,11 +12,11 @@ function TutorProfilePage() {
     est_pro_usu: false,
     nro_cursos_usu: 2,
     nro_apli_usu: 3,
-    nro_subs_usu: 3,
+    nro_subs_usu: 3
   }
   // Datos listos para cuando se tengan las vistas requeridas
   const refdata = {
-    url_edt_foto_perfil: "/",
+    url_edt_foto_perfil: '/'
   }
   return (
     <div className='flex flex-col p-12 gap-4'>
@@ -33,13 +33,13 @@ function TutorProfilePage() {
               height={175}
             />
             <a href={refdata.url_edt_foto_perfil} className='text-primary-400 text-xs'>Editar Foto de perfil</a>
-            <p className="font-bold text-lg">{udata.nom_usu}</p>
+            <p className='font-bold text-lg'>{udata.nom_usu}</p>
           </div>
           <div className='w-[66%] flex-col gap-8 max-sm:w-full'>
             <div className='flex flex-col gap-4'>
               <div className='text-secondary-b-100 font-bold text-sm'>
                 {udata.tipo_usu}
-                <span className={(udata.est_pro_usu?"":"hidden")+'text-xs rounded-lg p-2 px-3 ml-2 bg-gradient-to-r from-primary-500 via-[#514B8F] via-[#556096] to-[#58759D]'}>PRO</span>
+                <span className={(udata.est_pro_usu ? '' : 'hidden') + 'text-xs rounded-lg p-2 px-3 ml-2 bg-gradient-to-r from-primary-500 via-[#514B8F] via-[#556096] to-[#58759D]'}>PRO</span>
               </div>
               <div className='flex max-sm:flex-col min-md:flex-row text-white font-bold text-sm gap-4'>
                 <div> <span className='text-primary-200 text-xl'>{udata.nro_cursos_usu}</span> Cursos publicados </div>
@@ -73,8 +73,8 @@ function TutorProfilePage() {
       <div className='flex flex-col items-center justify-center gap-8'>
         <p className='text-slate-200 text-xs w-[60%] text-center'>¿Tenés alguna pregunta? No dudes en escribirnos a klowhub@soporte.com o visitar nuestro centro de ayuda. ¡Estamos aquí para asistirte!</p>
         <div className='flex flex-row gap-4'>
-          <a href="" className='text-blue-400'>Centro de ayuda</a>
-          <a href="" className='text-blue-400'>Soporte</a>
+          <a href='' className='text-blue-400'>Centro de ayuda</a>
+          <a href='' className='text-blue-400'>Soporte</a>
         </div>
       </div>
     </div>

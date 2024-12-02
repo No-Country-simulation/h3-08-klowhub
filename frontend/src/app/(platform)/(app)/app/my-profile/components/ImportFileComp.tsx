@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 
-function ImportFileComp({desc}:{desc:string}) {
+function ImportFileComp({ desc }: { desc: string }) {
   return (
     <div className='f02-dotted-space'>
-      <Image 
-        src='/assets/temporal/f02-cloud.svg' 
+      <Image
+        src='/assets/temporal/f02-cloud.svg'
         alt='cloud'
         width={50}
         height={50}
