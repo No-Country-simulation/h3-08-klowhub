@@ -17,15 +17,7 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import { Separator } from '@/components/ui/separator'
 import { Product } from '@/models'
 import { Routes } from '@/utils'
-import {
-  CheckIcon,
-  CirclePlayIcon,
-  ClockIcon,
-  FileIcon,
-  MessageSquareIcon,
-  ShoppingCartIcon,
-  StarIcon
-} from 'lucide-react'
+import { CheckIcon, ClockIcon, ShoppingCartIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -83,7 +75,7 @@ function AppAppStoreDetailPage({ params }: AppAppStoreDetailPageProps) {
               <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
               <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
             </span>
-            ({app.reviews})
+            ({app.reviews.length})
           </p>
         </header>
         <div className='relative aspect-video max-h-96'>
@@ -237,7 +229,7 @@ function AppAppStoreDetailPage({ params }: AppAppStoreDetailPageProps) {
                 </ul>
               </div>
               <div className='grid gap-y-4'>
-                <p className='text-xl font-bold'>{app.reviews} reseñas</p>
+                <p className='text-xl font-bold'>{app.reviews.length} reseñas</p>
                 <p className='flex items-center gap-x-3 text-base font-medium'>
                   <span className='flex flex-wrap items-center'>
                     <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
@@ -287,43 +279,6 @@ function AppAppStoreDetailPage({ params }: AppAppStoreDetailPageProps) {
       </section>
       <aside className='flex flex-col gap-y-6'>
         <UserPreviewCard variant='app' />
-        <article className='grid gap-y-6 rounded-lg bg-white/10 p-3'>
-          <header className='flex items-center gap-x-3 pl-3'>
-            <div className='relative size-12'>
-              <Image
-                className='rounded-full object-cover'
-                src='/assets/expert-person.jpeg'
-                alt='Miniatura'
-                fill
-                sizes='10vw'
-              />
-            </div>
-            <div className='grid gap-y-1.5'>
-              <p className='flex items-center gap-x-3 text-base font-bold'>
-                Diego Martínez <span className='rounded-lg bg-subscription px-2.5 py-0.5 text-xs font-medium'>PRO</span>
-              </p>
-              <p className='text-xs font-medium text-[#D8C5C5]'>Instructor y desarollador</p>
-            </div>
-          </header>
-          <Separator />
-          <footer className='flex flex-col gap-y-3 pl-3'>
-            <p className='flex items-center gap-x-3 text-sm'>
-              <StarIcon className='text-[#B95ED4]' size={20} /> Calificación del creador: 5
-            </p>
-            <p className='flex items-center gap-x-3 text-sm'>
-              <MessageSquareIcon className='text-[#B95ED4]' size={20} /> 4.3 (52 Reseñas)
-            </p>
-            <p className='flex items-center gap-x-3 text-sm'>
-              <FileIcon className='text-[#B95ED4]' size={20} /> 60 Aplicaciones vendidas
-            </p>
-            <p className='flex items-center gap-x-3 text-sm'>
-              <CirclePlayIcon className='text-[#B95ED4]' size={20} /> Instructor verificado
-            </p>
-            <Button className='ml-auto' variant='ghost'>
-              Visitar perfil
-            </Button>
-          </footer>
-        </article>
         <Button className='mx-auto w-full max-w-60 bg-white/10 lg:mx-0 lg:max-w-none'>
           <Image src='/assets/appsheet-icon.png' alt='Appsheet logo' width={25} height={22} />
           AppSheet

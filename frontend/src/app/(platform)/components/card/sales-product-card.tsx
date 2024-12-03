@@ -48,7 +48,7 @@ function SalesProductCard({ product, variant = 'default' }: SalesProductCardProp
           {product.name} <MoreVerticalIcon className='shrink-0' />
         </h2>
         <p className='line-clamp-2 text-sm text-white'>{product.description}</p>
-        <Button className='w-fit bg-white/10'>
+        <Button className='w-fit bg-white/10' type='button'>
           <Image src='/assets/appsheet-icon.png' alt='Appsheet logo' width={25} height={22} />
           AppSheet
         </Button>
@@ -70,7 +70,7 @@ function SalesProductCard({ product, variant = 'default' }: SalesProductCardProp
             <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
             <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
           </span>
-          {product.reviews}
+          {product.reviews.length}
         </p>
         {variant !== 'my-products' && <p className='text-xl font-bold text-white'>${product.price}</p>}
         <div className={cn('grid items-center gap-x-4', variant === 'courses-list' && 'lg:flex')}>
