@@ -1,4 +1,3 @@
-import { MyApplicationsList } from '@/app/(platform)/components/list/my-applications-list'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,10 +6,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator
 } from '@/components/ui/breadcrumb'
-import { Button } from '@/components/ui/button'
 import { Routes } from '@/utils'
-import Link from 'next/link'
-import { LatestSalesSection } from '../../components/section/latest-sales-section'
+import { NewApplicationForm } from '../../../components/form/new-application-form'
 
 function AppMyApplicationsPage() {
   return (
@@ -22,26 +19,23 @@ function AppMyApplicationsPage() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Mis aplicaciones</BreadcrumbPage>
+            <BreadcrumbLink href={Routes.DashboardMyApplications}>Mis aplicaciones</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Nueva aplicación</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <h1 className='flex flex-wrap items-center gap-2 text-base font-bold'>
-        Mis aplicaciones
-        <Button className='ml-auto' asChild>
-          <Link href={Routes.DashboardMyApplicationsNew}>Crear aplicación</Link>
-        </Button>
-      </h1>
-      <LatestSalesSection />
       <section className='flex flex-col gap-y-6'>
         <header className='grid gap-y-1.5'>
-          <h3 className='text-base font-bold'>Aplicaciones publicadas</h3>
+          <h1 className='text-base font-bold'>Presenta tu App : Conéctala con el mundo</h1>
           <p className='text-sm'>
-            Lista de todas las aplicaciones publicadas en KlowHub. Puedes editar o eliminar las aplicaciones que hayas
-            creado.
+            Crea una aplicación en KlowHub y conéctala con el mundo. Aprende a utilizar las herramientas de KlowHub para
+            crear aplicaciones y conectar con los usuarios.
           </p>
         </header>
-        <MyApplicationsList />
+        <NewApplicationForm />
       </section>
     </main>
   )

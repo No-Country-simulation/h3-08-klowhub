@@ -54,7 +54,7 @@ async function Header() {
           {session.user && (
             <>
               <UserNavigationSwitch className='hidden xl:flex' />
-              <UserMenu />
+              <UserMenu user={session.user} />
             </>
           )}
         </div>

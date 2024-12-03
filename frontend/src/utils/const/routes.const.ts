@@ -20,26 +20,13 @@ export enum Routes {
   Dashboard = '/dashboard',
   DashboardMyCourses = '/dashboard/my-courses',
   DashboardMyApplications = '/dashboard/my-applications',
+  DashboardMyApplicationsNew = '/dashboard/my-applications/new',
   DashboardProfits = '/dashboard/profits',
   PrivacyPolicy = '/privacy-policy',
   TermsAndConditions = '/terms-and-conditions',
   HelpCenter = '/help-center',
   Support = '/support'
 }
-
-export const PROTECTED_ROUTES = [
-  Routes.App,
-  Routes.AppCourses,
-  Routes.AppAppStore,
-  Routes.AppProjects,
-  Routes.AppConsultations,
-  Routes.AppAboutAppSheet,
-  Routes.AppMyProfile,
-  Routes.AppMyApplications,
-  Routes.AppCart,
-  Routes.AppPayment,
-  Routes.Dashboard
-]
 
 export const HEADER_ROUTES = [
   { label: 'Dashboard', href: Routes.Dashboard },
