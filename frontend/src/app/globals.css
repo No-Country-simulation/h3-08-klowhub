@@ -31,3 +31,61 @@ body {
     max-height: var(--radix-dropdown-menu-content-available-height);
   }
 }
+
+/* Clases Específicas (Para evitar repetir estilos) */
+/* F02 - Perfil mentor*/
+/* F02 - Card, para las tarjetas de este flujo */
+.f02-card{
+  @apply bg-[#1F2937] rounded-md ;
+}
+/* F02 - Card 02, para la tarjeta lateral editar perfil mentor */
+.f02-card-02{
+  @apply bg-[#353e4b] rounded-md ;
+}
+/* F02 - input div, para los divs de los inputs */
+.f02-input-div{
+  @apply grid w-full items-center gap-8;
+}
+/* F02 - radio item, para los items de radio buttons */
+.f02-radio-item{
+  @apply flex items-center space-x-2;
+}
+/* F02 - form inputs div, para los contenedores de los inputs */
+.f02-form-inputs-div{
+  @apply flex flex-col gap-12 max-md:w-full;
+}
+/* F02 - form inputs div, para los contenedores de los inputs */
+.f02-tabs-style{
+  @apply border-b-2 rounded-none;
+}
+/* General - shaded div, para mostrar los bordes de un div */
+.gen-shaded-div{
+  @apply border-2 border-white;
+}
+/* F02 - dotted space, para los inputs tipo file */
+.f02-dotted-space{
+  @apply border-2 border-primary-b-300 border-dashed rounded 
+    w-[22rem] h-[16rem]
+    flex flex-col gap-4 items-center justify-center p-4
+    bg-[#353e4b];
+}
+/* F05 - plan card, para los planes */
+.f05-plan-card{
+  @apply rounded-md bg-[#ffffff10] p-2 sm:w-full md:w-[30%] flex flex-col gap-3 pb-8;
+}
+/* F05 - plan card princ, para los el plan principal */
+.f05-plan-card-princ{
+  @apply rounded-md bg-[#ffffff10] p-2 max-sm:w-full md:w-[35%] flex flex-col gap-5 pb-8 border-2 border-white;
+}
+/* F05 - head 2, para headers de la tabla al centro */
+.f05-table-head-2{
+  @apply flex flex-col items-center justify-center;
+}
+/* F05 - tab btn style, para los botones de seleccionar plan */
+.f05-table-btn-style{
+  @apply bg-transparent text-primary-b-200 hover:text-white;
+}
+/* F05 - tab border, para los botones de seleccionar plan */
+.f05-table-border{
+  @apply bg-transparent border-2 border-primary-b-200 text-center text-wrap;
+}

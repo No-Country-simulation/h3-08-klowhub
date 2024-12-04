@@ -25,7 +25,7 @@ export enum Routes {
   PrivacyPolicy = '/privacy-policy',
   TermsAndConditions = '/terms-and-conditions',
   HelpCenter = '/help-center',
-  Support = '/support'
+  Support = '/support',
 }
 
 export const HEADER_ROUTES = [
