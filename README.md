@@ -41,14 +41,23 @@ Administradores:
 - Control de información y usos indebidos, mediante un sistema de monitoreo de interacciones y un historial de alertas y acciones tomadas.
 
 🛠️ Tecnologías Utilizadas:
+
 Herramientas de Gestión y Diseño:
+
 Frontend:
+
 Backend: 
+
 Trello: Herramienta de gestión de proyectos basada en tableros.
+
 Figma: Herramienta de diseño de interfaz de usuario y prototipado colaborativo basada en la nube.
+
 Herramientas de QA:
+
 FreeMind: Plataforma de para la elaboración del mapa mental de la aplicación.
+
 Testmonitor o Jira: Herramienta de gestión de pruebas de software que facilita la planificación, ejecución y seguimiento de pruebas, así como la colaboración entre equipos de desarrollo y QA.
+
 Miro: Herramienta de elaboración que facilita la elaboración de un tablero, donde se establecen y organizan las tareas y sub-tareas a realizar durante la elaboración del proyecto según su orden de prioridades.
 
 
