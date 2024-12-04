@@ -47,16 +47,16 @@ Administradores:
 
   . Trello: Herramienta de gestión de proyectos basada en tableros.
 
-  . Miro: Herramienta de elaboración que facilita la elaboración de un tablero, donde se establecen y organizan las tareas y sub-tareas a realizar durante la elaboración del proyecto según su orden de prioridades.
+  . Miro: Herramienta que facilita la elaboración de un tablero, donde se establecen y organizan las tareas y sub-tareas a realizar durante la elaboración del proyecto según su orden de prioridades.
 
 
 
 - Frontend:
-
+  . Completar
 
 
 - Backend: 
-
+  . Completar
 
 
 - UX/UI:
@@ -99,6 +99,7 @@ Backend
 
 🐞 Instalación y ejecución del proyecto: 
 
+Completar
 
 
 🐞 Evidencia Cliente
@@ -120,11 +121,11 @@ https://drive.google.com/drive/folders/1mr4iO0QwyUC-SYAwud3CA-C3LYXGAWgo?usp=dri
 
 Historias de Usuario y Criterios de Aceptación:
 
-
+Completar
 
 Casos de Prueba:
 
-
+Completar
 
 
 
