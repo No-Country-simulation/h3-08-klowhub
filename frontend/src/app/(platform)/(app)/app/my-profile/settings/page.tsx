@@ -14,6 +14,18 @@ import SelectContentOptComp, { SelectOptIface } from '../components/SelectConten
 import { Textarea } from '@/components/ui/textarea'
 import ImportFileComp from '../components/ImportFileComp'
 import { TabsTriggerF02Comp } from '../components/TabsTriggerF02Comp'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import Image from 'next/image'
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 function EditarPerfilMentorPage() {
   const blist: BreadcrumbItemIface[] = [{ url: '/', text: 'Home' }, { url: '/', text: 'Perfil de mentor' }]
@@ -190,7 +202,25 @@ function EditarPerfilMentorPage() {
               {/* Componente lateral */}
               <LateralComp />
             </div>
-            <a href='/' className='bg-[#702486] p-3 px-24 rounded-md w-fit mt-6 ml-auto'>Continuar</a>
+            <Dialog>
+              <DialogTrigger>
+                <Button className='bg-[#702486] p-3 px-24 rounded-md w-fit mt-6 ml-auto'>Continuar</Button>
+              </DialogTrigger>
+              <DialogContent className='text-white bg-[#1F2937] border-transparent p-12'>
+                <div className="flex flex-col items-center justify-center gap-8 ">
+                  <h3 className='font-bold text-md text-center'>¡Perfil creado exitosamente!</h3>
+                  <p className="text-center max-w-96 text-xs">Tu experiencia y conocimiento están a un paso de guiar a nuevos talentos. Nuestro equipo revisará tu perfil y te notificaremos tan pronto esté aprobado. ¡Gracias por ser parte de esta comunidad!</p>
+                  <Image
+                    src='/assets/temporal/f03-check.png'
+                    alt='cloud'
+                    className='w-24 h-24'
+                    width={200}
+                    height={200}
+                  />
+                  <Link href={'/'} className='bg-[#702486] p-3 px-24 rounded-md w-fit mt-6'>Ir al dashboard</Link>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </TabsContent>
       </Tabs>
