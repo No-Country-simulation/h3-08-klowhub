@@ -204,7 +204,9 @@ function EditarPerfilMentorPage() {
             </div>
             <Dialog>
               <DialogTrigger>
-                <Button className='bg-[#702486] p-3 px-24 rounded-md w-fit mt-6 ml-auto'>Continuar</Button>
+                <div className='flex flex-row justify-end'>
+                  <Button className='bg-[#702486] p-3 px-24 rounded-md w-fit mt-6'>Continuar</Button>
+                </div>
               </DialogTrigger>
               <DialogContent className='text-white bg-[#1F2937] border-transparent p-12'>
                 <div className="flex flex-col items-center justify-center gap-8 ">
