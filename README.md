@@ -101,16 +101,22 @@ https://knowhub.vercel.app/auth/register
 
 
 🐞 Evidencia Cliente
+
 Requerimientos y Objetivos del proyecto:
+
 https://klowhub.notion.site/Requerimiento-para-Hackathon-MVP-No-Country-103a1282656880399595cd585936817a
+
 https://drive.google.com/drive/folders/1nOj6Fy4peGOwKWOWUTWInD2DlgJSn3a-?usp=drive_link
+
 https://miro.com/app/board/uXjVLBd9mBg=/
 
 
 
 
 🐞 Evidencia Tester QA
+
 https://drive.google.com/drive/folders/1mr4iO0QwyUC-SYAwud3CA-C3LYXGAWgo?usp=drive_link
+
 Historias de Usuario y Criterios de Aceptación:
 
 
@@ -124,7 +130,9 @@ Casos de Prueba:
 🎨 Evidencia UX/UI
 
 Diseño en Figma
+
 https://www.figma.com/design/MsyB0jfdKAU2dOIoIB9rW2/AppSheetHub?node-id=0-1&node-type=canvas&t=MwJ9oAfMhPCpeSri-0
 
 Flujo Plataforma KlowHub
+
 https://www.figma.com/board/pC714J1fs4SJpusPuYaiMj/Flujo-Plataforma-KlowHub?node-id=0-1&node-type=canvas&t=gcFvs8ImVAupx9P0-0
