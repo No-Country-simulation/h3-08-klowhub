@@ -94,7 +94,7 @@ Backend	                              Pedro Nuñez                          http
 
 
 
-🐞 Instalación y ejecución del proyecto:
+🐞 Instalación y ejecución del proyecto: Abrir el siguiente enlace, registrarse con nombre completo, correo electrónico y contraseña, con un mínimo de 8 caracteres sin condiciones especiales.
 
 https://knowhub.vercel.app/auth/register
 
