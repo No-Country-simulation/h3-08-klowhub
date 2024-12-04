@@ -6,10 +6,13 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { useRevokeObjectURL } from '@/hooks'
+import { useRevokeObjectURL, useUser } from '@/hooks'
 import { Product, ProductType } from '@/models'
+import { createApplication, uploadProductImage } from '@/service'
 import {
   ACCEPT_IMAGE_TYPES,
+  applicationSchema,
+  ApplicationSchema,
   MAX_PRODUCT_IMAGE_SIZE,
   MAX_PRODUCT_IMAGES,
   PLATFORM_DICTIONARY,
@@ -18,19 +21,20 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Loader2Icon, XIcon } from 'lucide-react'
 import Image from 'next/image'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { ControllerRenderProps, useForm, useFormContext } from 'react-hook-form'
 import { toast } from 'sonner'
 import useSWR from 'swr'
-import { applicationSchema, ApplicationSchema } from '../../utils/application.schema'
 
 function NewApplicationForm() {
+  const user = useUser().user
   const [thumbnailFile, setThumbnailFile] = useState<File | null>(null)
   const [imagesFile, setImagesFile] = useState<File[] | null>(null)
 
   const form = useForm<ApplicationSchema>({
     resolver: zodResolver(applicationSchema),
     defaultValues: {
+      seller_id: undefined,
       type: ProductType.App,
       name: '',
       description: '',
@@ -46,7 +50,6 @@ function NewApplicationForm() {
       purchase_information: '',
       thumbnail_url: '',
       images_url: [],
-      user_id: '1',
       combine_product: undefined,
       combined_product_id: '',
       combined_product_discount: 0
@@ -58,29 +61,50 @@ function NewApplicationForm() {
 
   useRevokeObjectURL([thumbnailURL, ...imagesURL])
 
+  useEffect(() => {
+    if (user) {
+      form.setValue('seller_id', user.id)
+    }
+  }, [form, user])
+
   const onSubmit = async (data: ApplicationSchema) => {
     try {
+      if (!user) return toast.error('¡Debes iniciar sesión para crear una aplicación!')
+
       let thumbnailURL = ''
       let imagesURL: string[] = []
 
       if (thumbnailFile) {
-        const thumbnailFileURL = 'asd'
+        const { error, data: thumbnailFileURL } = await uploadProductImage(thumbnailFile, user.id)
+        if (error || !thumbnailFileURL) return toast.error(error)
+
         thumbnailURL = thumbnailFileURL
-        console.log('subiendo imagen')
       }
+
       if (imagesFile && imagesFile.length > 0) {
         const imagesFileURL = []
+
         for (const imageFile of imagesFile) {
-          const imageFileURL = 'asd'
+          const { error, data: imageFileURL } = await uploadProductImage(imageFile, user.id)
+          if (error || !imageFileURL) return toast.error(error)
+
           imagesFileURL.push(imageFileURL)
-          console.log('subiendo imagen', imageFile.name)
         }
         imagesURL = imagesFileURL
       }
 
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      console.log(data, thumbnailURL, imagesURL)
+      const { error } = await createApplication({
+        ...data,
+        thumbnail_url: thumbnailURL,
+        images_url: imagesURL
+      })
+
+      if (error) return toast.error(error)
+
       toast.success('¡Se ha creado la aplicación exitosamente!')
+      form.reset()
+      setThumbnailFile(null)
+      setImagesFile(null)
     } catch (error) {
       toast.error('¡Algo salió mal, inténtalo de nuevo!')
     }
@@ -371,7 +395,7 @@ function MediaResourcesContent({ updateThumbnailFile, updateImagesFile }: MediaR
             <FormControl>
               <RadioGroup
                 onValueChange={(value) => field.onChange(value)}
-                defaultValue={field.value}
+                value={field.value}
                 className='flex flex-col gap-y-3'
               >
                 {PLATFORM_LIST.map((platform) => (
@@ -547,8 +571,8 @@ function MediaResourcesContent({ updateThumbnailFile, updateImagesFile }: MediaR
 }
 
 function PromotionsContent() {
-  const myApplications = useSWR<Product[]>('/api/products?type=app&limite=2').data
-  const myCourses = useSWR<Product[]>('/api/products?type=course&limite=2').data
+  const myApplications = useSWR<Product[]>('/api/products?type=app&limit=2').data
+  const myCourses = useSWR<Product[]>('/api/products?type=course&limit=2').data
   const form = useFormContext<ApplicationSchema>()
   const isCombineProduct = form.watch('combine_product')
 
@@ -569,16 +593,9 @@ function PromotionsContent() {
             <FormLabel>¿Te gustaría combinar tu producto con otro?</FormLabel>
             <FormControl>
               <RadioGroup
-                onValueChange={(value) => {
-                  field.onChange(value === 'true')
-
-                  if (value === 'false') {
-                    form.setValue('combined_product_id', '')
-                    form.setValue('combined_product_discount', 0)
-                  }
-                }}
-                defaultValue={field.value !== undefined ? String(field.value) : undefined}
+                onValueChange={(value) => field.onChange(value === 'true')}
                 className='flex flex-col gap-y-3'
+                value={field.value !== undefined ? String(field.value) : undefined}
               >
                 <FormItem className='flex items-center gap-x-2 space-y-0'>
                   <FormControl>
@@ -618,7 +635,6 @@ function PromotionsContent() {
                     <FormControl>
                       <RadioGroup
                         onValueChange={(value) => field.onChange(value)}
-                        defaultValue={field.value}
                         value={field.value}
                         className='grid gap-x-4 md:grid-cols-2'
                       >
@@ -648,7 +664,7 @@ function PromotionsContent() {
                     <FormControl>
                       <RadioGroup
                         onValueChange={(value) => field.onChange(value)}
-                        defaultValue={field.value}
+                        value={field.value}
                         className='grid gap-x-4 md:grid-cols-2'
                       >
                         {myCourses?.map((product) => (
