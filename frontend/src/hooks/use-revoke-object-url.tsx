@@ -1,13 +1,22 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
-function useRevokeObjectURL(urls: Array<string | undefined>) {
+function useRevokeObjectURL(urls: string[]) {
+  const urlsRef = useRef<string[]>([])
+
   useEffect(() => {
-    return () => {
-      urls.forEach((url) => {
-        if (url) URL.revokeObjectURL(url)
-      })
-    }
+    const previousURLs = urlsRef.current
+
+    const urlsToRevoke = previousURLs.filter((url) => !urls.includes(url))
+
+    urlsToRevoke.forEach((url) => {
+      if (url) {
+        URL.revokeObjectURL(url)
+        console.log('revoking url', url)
+      }
+    })
+
+    urlsRef.current = urls
   }, [urls])
 }
 

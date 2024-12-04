@@ -3,6 +3,7 @@ import { MAX_PRODUCT_IMAGES } from '@/utils'
 import { z } from 'zod'
 
 export const productSchema = z.object({
+  seller_id: z.string().min(1, 'El identificador del vendedor es obligatorio'),
   type: z.nativeEnum(ProductType),
   name: z
     .string()
@@ -44,7 +45,6 @@ export const applicationSchema = productSchema
       .array(z.string())
       .min(1, 'Debe ingresar al menos un lenguaje')
       .max(5, 'No puede ingresar más de 5 lenguajes'),
-    user_id: z.string(),
     platform: z.nativeEnum(PlatformType, {
       required_error: 'Debe seleccionar una plataforma'
     }),
