@@ -44,11 +44,18 @@ Administradores:
 
 Herramientas de Gestión y Diseño:
 
+Trello: Herramienta de gestión de proyectos basada en tableros.
+
+Miro: Herramienta de elaboración que facilita la elaboración de un tablero, donde se establecen y organizan las tareas y sub-tareas a realizar durante la elaboración del proyecto según su orden de prioridades.
+
+
 Frontend:
+
 
 Backend: 
 
-Trello: Herramienta de gestión de proyectos basada en tableros.
+
+UX/UI:
 
 Figma: Herramienta de diseño de interfaz de usuario y prototipado colaborativo basada en la nube.
 
@@ -58,7 +65,7 @@ FreeMind: Plataforma de para la elaboración del mapa mental de la aplicación.
 
 Testmonitor o Jira: Herramienta de gestión de pruebas de software que facilita la planificación, ejecución y seguimiento de pruebas, así como la colaboración entre equipos de desarrollo y QA.
 
-Miro: Herramienta de elaboración que facilita la elaboración de un tablero, donde se establecen y organizan las tareas y sub-tareas a realizar durante la elaboración del proyecto según su orden de prioridades.
+Google Sheets: Herramienta de hoja de cálculo de Google para documentación y registro de Historias de Usuario y Casos de Prueba sobre las funcionalidades de la plataforma.
 
 
 💪🏻Equipo de trabajo
