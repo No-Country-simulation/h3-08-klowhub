@@ -42,24 +42,29 @@ Administradores:
 
 🛠️ Tecnologías Utilizadas:
 
-Herramientas de Gestión y Diseño:
+
+- Herramientas de Gestión y Diseño:
 
 Trello: Herramienta de gestión de proyectos basada en tableros.
 
 Miro: Herramienta de elaboración que facilita la elaboración de un tablero, donde se establecen y organizan las tareas y sub-tareas a realizar durante la elaboración del proyecto según su orden de prioridades.
 
 
-Frontend:
+
+- Frontend:
 
 
-Backend: 
+
+- Backend: 
 
 
-UX/UI:
+
+- UX/UI:
 
 Figma: Herramienta de diseño de interfaz de usuario y prototipado colaborativo basada en la nube.
 
-Herramientas de QA:
+
+- Herramientas de QA:
 
 FreeMind: Plataforma de para la elaboración del mapa mental de la aplicación.
 
