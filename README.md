@@ -49,6 +49,7 @@ Figma: Herramienta de diseño de interfaz de usuario y prototipado colaborativo 
 Herramientas de QA:
 FreeMind: Plataforma de para la elaboración del mapa mental de la aplicación.
 Testmonitor o Jira: Herramienta de gestión de pruebas de software que facilita la planificación, ejecución y seguimiento de pruebas, así como la colaboración entre equipos de desarrollo y QA.
+Miro: Herramienta de elaboración que facilita la elaboración de un tablero, donde se establecen y organizan las tareas y sub-tareas a realizar durante la elaboración del proyecto según su orden de prioridades.
 
 
 💪🏻Equipo de trabajo
@@ -72,10 +73,17 @@ Backend	                              Pedro Nuñez                          http
 
 
 
+🐞 Instalación y ejecución del proyecto:
+https://knowhub.vercel.app/auth/register
+
+
+
+
 🐞 Evidencia Cliente
 Requerimientos y Objetivos del proyecto:
 https://klowhub.notion.site/Requerimiento-para-Hackathon-MVP-No-Country-103a1282656880399595cd585936817a
 https://drive.google.com/drive/folders/1nOj6Fy4peGOwKWOWUTWInD2DlgJSn3a-?usp=drive_link
+https://miro.com/app/board/uXjVLBd9mBg=/
 
 
 
