@@ -73,7 +73,7 @@ function AppCourseDetailPage({ params }: AppCourseDetailPageProps) {
               <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
               <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
             </span>
-            ({course.reviews})
+            ({course.reviews.length})
             <span className='flex items-center gap-x-2 text-sm text-[#A1C2FA]'>
               <VideoIcon size={20} /> 18 vídeos
             </span>
@@ -282,7 +282,7 @@ function AppCourseDetailPage({ params }: AppCourseDetailPageProps) {
                 </ul>
               </div>
               <div className='grid gap-y-4'>
-                <p className='text-xl font-bold'>{course.reviews} reseñas</p>
+                <p className='text-xl font-bold'>{course.reviews.length} reseñas</p>
                 <p className='flex items-center gap-x-3 text-base font-medium'>
                   <span className='flex flex-wrap items-center'>
                     <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />

@@ -35,28 +35,16 @@ function LatestSalesSection() {
       <div className='grid gap-x-6 gap-y-12 lg:grid-cols-[1fr_18.25rem]'>
         <Tabs defaultValue='latest-movements'>
           <TabsList className='flex flex-wrap items-center rounded-none bg-transparent p-0'>
-            <TabsTrigger
-              className='rounded-none border-b-2 border-white bg-transparent px-3 py-2 text-sm font-medium data-[state=active]:border-[#B95ED4] data-[state=active]:bg-transparent data-[state=active]:text-[#B95ED4]'
-              value='latest-movements'
-            >
+            <TabsTrigger variant='primary' value='latest-movements'>
               Últimos movimientos
             </TabsTrigger>
-            <TabsTrigger
-              className='rounded-none border-b-2 border-white bg-transparent px-3 py-2 text-sm font-medium data-[state=active]:border-[#B95ED4] data-[state=active]:bg-transparent data-[state=active]:text-[#B95ED4]'
-              value='current-month'
-            >
+            <TabsTrigger variant='primary' value='current-month'>
               Este mes
             </TabsTrigger>
-            <TabsTrigger
-              className='rounded-none border-b-2 border-white bg-transparent px-3 py-2 text-sm font-medium data-[state=active]:border-[#B95ED4] data-[state=active]:bg-transparent data-[state=active]:text-[#B95ED4]'
-              value='three-months'
-            >
+            <TabsTrigger variant='primary' value='three-months'>
               3 meses
             </TabsTrigger>
-            <TabsTrigger
-              className='rounded-none border-b-2 border-white bg-transparent px-3 py-2 text-sm font-medium data-[state=active]:border-[#B95ED4] data-[state=active]:bg-transparent data-[state=active]:text-[#B95ED4]'
-              value='current-year'
-            >
+            <TabsTrigger variant='primary' value='current-year'>
               Este año
             </TabsTrigger>
             <div className='ml-auto mt-4 flex flex-wrap items-center justify-end gap-x-3 gap-y-2 sm:mt-0'>
