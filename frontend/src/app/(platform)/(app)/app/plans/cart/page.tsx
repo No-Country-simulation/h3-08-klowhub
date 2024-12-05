@@ -91,7 +91,7 @@ function AppPlansCartPage() {
       </section>
       <div className='my-8 flex flex-col items-center justify-center gap-y-6'>
         <p className='text-center text-xs font-medium text-[#95979D]'>
-          ¿Tenés alguna pregunta? No dudes en escribirnos a klowhub@soporte.com o visitar nuestro centro de ayuda.
+          ¿Tenés alguna pregunta? No dudes en escribirnos a knowhub@soporte.com o visitar nuestro centro de ayuda.
           ¡Estamos aquí para asistirte!
         </p>
         <div className='flex items-center justify-center gap-x-5 text-center text-xs'>

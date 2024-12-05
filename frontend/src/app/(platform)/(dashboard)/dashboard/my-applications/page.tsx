@@ -37,7 +37,7 @@ function AppMyApplicationsPage() {
         <header className='grid gap-y-1.5'>
           <h3 className='text-base font-bold'>Aplicaciones publicadas</h3>
           <p className='text-sm'>
-            Lista de todas las aplicaciones publicadas en KlowHub. Puedes editar o eliminar las aplicaciones que hayas
+            Lista de todas las aplicaciones publicadas en Knowhub. Puedes editar o eliminar las aplicaciones que hayas
             creado.
           </p>
         </header>

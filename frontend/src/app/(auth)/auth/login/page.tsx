@@ -10,7 +10,7 @@ function AuthLoginPage() {
         <div className='m-auto flex max-w-lg flex-col gap-y-6 lg:max-w-sm'>
           <h2 className='mb-3 text-center text-3xl text-white lg:hidden'>Knowhub</h2>
           <p className='text-xs text-white lg:text-base'>
-            Bienvenido de nuevo. Inicia sesión para continuar creando y aprendiendo en KlowHub.
+            Bienvenido de nuevo. Inicia sesión para continuar creando y aprendiendo en Knowhub.
           </p>
           <SignInForm />
         </div>

@@ -12,7 +12,7 @@ function TopHeadComp() {
         // objectFit='cover'
         className='absolute -z-10 w-[98%] bg-cover max-sm:max-h-fit md:max-h-[12rem]'
       />
-      <h2 className='text-3xl font-bold'>KlowHub</h2>
+      <h2 className='text-3xl font-bold'>Knowhub</h2>
       <h6 className='text-xs font-light'>Descubre, Aprende y Crea</h6>
     </div>
   )
