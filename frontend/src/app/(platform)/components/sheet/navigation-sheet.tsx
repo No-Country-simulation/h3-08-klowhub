@@ -9,7 +9,9 @@ import {
   SheetTrigger
 } from '@/components/ui/sheet'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { HEADER_ROUTES, Routes } from '@/utils'
+import { useUserMode } from '@/hooks'
+import { UserRole } from '@/models'
+import { EXPLORER_HEADER_ROUTES, Routes, SELLER_HEADER_ROUTES } from '@/utils'
 import { MenuIcon } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -17,6 +19,8 @@ import { UserNavigationSwitch } from '../switch/user-navigation-switch'
 
 function NavigationSheet() {
   const pathname = usePathname()
+  const { userMode } = useUserMode()
+  const routesByUserMode = userMode === UserRole.Explorer ? EXPLORER_HEADER_ROUTES : SELLER_HEADER_ROUTES
 
   return (
     <Sheet>
@@ -30,8 +34,8 @@ function NavigationSheet() {
         </SheetHeader>
         <nav>
           <ul className='flex flex-col gap-y-4'>
-            {HEADER_ROUTES.map(({ label, href }) => (
-              <li key={label}>
+            {routesByUserMode.map(({ label, href }) => (
+              <li key={href}>
                 <SheetClose asChild>
                   <Link className='text-sm font-semibold text-primary-b-200' href={href}>
                     {label}

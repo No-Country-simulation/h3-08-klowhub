@@ -7,20 +7,24 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
+import { Skeleton } from '@/components/ui/skeleton'
+import { useUser, useUserMode } from '@/hooks'
+import { UserRole } from '@/models'
 import { Routes } from '@/utils'
 import { createClient } from '@/utils/supabase/client'
-import { User } from '@supabase/supabase-js'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { toast } from 'sonner'
 
-interface UserMenuProps {
-  user: User
-}
+function UserMenu() {
+  const { userMode } = useUserMode()
+  const { user, isLoadingUser } = useUser()
 
-function UserMenu({ user }: UserMenuProps) {
   const [isSignOut, setIsSignOut] = useState(false)
+
+  if (isLoadingUser) return <Skeleton className='size-10 rounded-full' />
+  if (!user) return null
 
   const handleSignOut = async () => {
     try {
@@ -43,7 +47,7 @@ function UserMenu({ user }: UserMenuProps) {
       <DropdownMenuTrigger className='relative size-10 shrink-0'>
         <Image
           className='rounded-full object-cover'
-          src={user.user_metadata.avatar_url ?? '/assets/user-placeholder.jpg'}
+          src={user.avatar_url ?? '/assets/user-placeholder.jpg'}
           alt='Avatar del usuario'
           fill
           sizes='5vw'
@@ -51,18 +55,22 @@ function UserMenu({ user }: UserMenuProps) {
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end'>
         <div className='max-w-60 px-2 py-1.5 text-white'>
-          <p className='truncate text-sm font-bold'>{user.user_metadata.name}</p>
-          <p className='truncate text-xs'>{user.user_metadata.email}</p>
+          <p className='truncate text-sm font-bold'>{user.name}</p>
+          <p className='truncate text-xs'>{user.email}</p>
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem className='cursor-pointer' disabled={isSignOut} asChild>
           <Link href={Routes.AppMyProfile}>Mi perfil</Link>
         </DropdownMenuItem>
         <DropdownMenuItem className='cursor-pointer' disabled={isSignOut} asChild>
-          <Link href={Routes.AppMyCourses}>Mis cursos</Link>
+          <Link href={userMode === UserRole.Explorer ? Routes.AppMyCourses : Routes.DashboardMyCourses}>
+            Mis cursos
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className='cursor-pointer' disabled={isSignOut} asChild>
-          <Link href={Routes.AppMyApplications}>Mis aplicaciones</Link>
+          <Link href={userMode === UserRole.Explorer ? Routes.AppMyApplications : Routes.DashboardMyApplications}>
+            Mis aplicaciones
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className='cursor-pointer' disabled={isSignOut} asChild>
           <Link href={Routes.AppMyProfileSettings}>Ajustes</Link>
