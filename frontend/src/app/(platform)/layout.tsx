@@ -1,4 +1,4 @@
-import { UserModeProvider, UserProvider } from '@/providers'
+import { CartProvider, UserModeProvider, UserProvider } from '@/providers'
 import { Header } from './components/header'
 
 interface PlatformLayoutPageProps {
@@ -9,8 +9,10 @@ function PlatformLayout({ children }: PlatformLayoutPageProps) {
   return (
     <UserProvider>
       <UserModeProvider>
-        <Header />
-        {children}
+        <CartProvider>
+          <Header />
+          {children}
+        </CartProvider>
       </UserModeProvider>
     </UserProvider>
   )

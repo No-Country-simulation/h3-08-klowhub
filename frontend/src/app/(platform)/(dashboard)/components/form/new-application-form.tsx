@@ -1,5 +1,5 @@
 'use client'
-import { SalesProductCard } from '@/app/(platform)/components/card/sales-product-card'
+import { MyProductCard } from '@/app/(platform)/components/card/my-product-card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
@@ -644,7 +644,7 @@ function PromotionsContent() {
                               <RadioGroupItem className='peer sr-only' value={product.id} />
                             </FormControl>
                             <FormLabel className='grid h-full rounded-lg border-[3px] border-transparent peer-data-[state=checked]:border-[#B95ED4]'>
-                              <SalesProductCard product={product} variant='my-products' />
+                              <MyProductCard product={product} />
                             </FormLabel>
                           </FormItem>
                         ))}
@@ -673,7 +673,7 @@ function PromotionsContent() {
                               <RadioGroupItem className='peer sr-only' value={product.id} />
                             </FormControl>
                             <FormLabel className='grid h-full rounded-lg border-[3px] border-transparent peer-data-[state=checked]:border-[#B95ED4]'>
-                              <SalesProductCard product={product} variant='my-products' />
+                              <MyProductCard product={product} />
                             </FormLabel>
                           </FormItem>
                         ))}

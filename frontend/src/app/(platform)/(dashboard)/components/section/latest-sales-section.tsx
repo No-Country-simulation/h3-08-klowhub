@@ -28,7 +28,7 @@ function LatestSalesSection() {
       <header className='grid gap-y-1.5'>
         <h2 className='text-base font-bold'>Últimas ventas</h2>
         <p className='text-sm'>
-          Lista de las últimas ventas realizadas en KlowHub. Puedes ver el estado de cada venta y ver los detalles de la
+          Lista de las últimas ventas realizadas en Knowhub. Puedes ver el estado de cada venta y ver los detalles de la
           transacción.
         </p>
       </header>

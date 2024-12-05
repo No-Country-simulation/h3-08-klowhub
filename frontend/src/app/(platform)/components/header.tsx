@@ -1,7 +1,7 @@
 'use client'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { useUserMode } from '@/hooks'
+import { useCart, useUserMode } from '@/hooks'
 import { UserRole } from '@/models'
 import { EXPLORER_HEADER_ROUTES, Routes, SELLER_HEADER_ROUTES } from '@/utils'
 import { MailIcon, ShoppingCartIcon } from 'lucide-react'
@@ -14,6 +14,7 @@ import { PageNavigationSwitch } from './switch/page-navigation-switch'
 import { UserNavigationSwitch } from './switch/user-navigation-switch'
 
 function Header() {
+  const { cart } = useCart()
   const { userMode } = useUserMode()
   const routesByUserMode = userMode === UserRole.Explorer ? EXPLORER_HEADER_ROUTES : SELLER_HEADER_ROUTES
 
@@ -40,9 +41,11 @@ function Header() {
             <Button className='relative' variant='ghost' size='icon' asChild>
               <Link href={Routes.AppCart}>
                 <ShoppingCartIcon size={20} />
-                <Badge variant='cart' size='cart'>
-                  1
-                </Badge>
+                {cart.length > 0 && (
+                  <Badge variant='cart' size='cart'>
+                    {cart.length}
+                  </Badge>
+                )}
               </Link>
             </Button>
             <NotificationsMenu />

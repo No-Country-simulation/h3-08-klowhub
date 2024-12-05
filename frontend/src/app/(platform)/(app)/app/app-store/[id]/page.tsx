@@ -1,6 +1,4 @@
 'use client'
-import { SalesProductCard } from '@/app/(platform)/components/card/sales-product-card'
-import { UserPreviewCard } from '@/app/(platform)/components/card/user-preview-card'
 import { RecommendedProductsList } from '@/app/(platform)/components/list/recommended-products-list'
 import { AppStoreDetailPageSkeleton } from '@/app/(platform)/components/skeleton/appstore-detail-page-skeleton'
 import { Badge } from '@/components/ui/badge'
@@ -15,16 +13,15 @@ import {
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { Separator } from '@/components/ui/separator'
+import { useProduct } from '@/hooks/swr'
 import { Product } from '@/models'
 import { Routes } from '@/utils'
-import { CheckIcon, ClockIcon, ShoppingCartIcon } from 'lucide-react'
+import { CheckIcon, ClockIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import useSWR from 'swr'
-
-const description =
-  'Acceso completo a la aplicación: Descargá y utilizá la app en todos tus dispositivos sin restricciones.\n\nActualizaciones gratuitas: Disfrutá de mejoras y nuevas funcionalidades sin costo adicional.\n\nSoporte técnico dedicado: Asistencia personalizada para resolver cualquier duda o inconveniente que tengas.\n\nGuías y tutoriales: Materiales de apoyo que te ayudarán a aprovechar al máximo todas las características de la app.'
+import { AppDetailAside } from './components/app-detail-aside'
 
 interface AppAppStoreDetailPageProps {
   params: { id: string }
@@ -32,7 +29,7 @@ interface AppAppStoreDetailPageProps {
 
 function AppAppStoreDetailPage({ params }: AppAppStoreDetailPageProps) {
   const [isExpanded, setIsExpanded] = useState(false)
-  const { data: app, isLoading, error } = useSWR<Product>(`/api/product/${params.id}`)
+  const { product: app, isLoadingProduct: isLoading, errorProduct: error } = useProduct(params.id)
   const { data: recommendedApps } = useSWR<Product[]>('/api/products?type=app&limit=4')
 
   // TODO: ADD UI FOR NO RESULTS
@@ -277,31 +274,7 @@ function AppAppStoreDetailPage({ params }: AppAppStoreDetailPageProps) {
           )}
         </div>
       </section>
-      <aside className='flex flex-col gap-y-6'>
-        <UserPreviewCard variant='app' />
-        <Button className='mx-auto w-full max-w-60 bg-white/10 lg:mx-0 lg:max-w-none'>
-          <Image src='/assets/appsheet-icon.png' alt='Appsheet logo' width={25} height={22} />
-          AppSheet
-        </Button>
-        <article className='grid gap-y-4 rounded-lg bg-white/10 p-6'>
-          <p className='text-center text-base font-bold'>¿Qué recibirás?</p>
-          <p className='text-sm font-bold text-[#B95ED4]'>La compra incluye</p>
-          <p className='text-sm font-bold'>App para gestionar tus proyectos</p>
-          <p className='whitespace-pre-line text-sm'>{description}</p>
-        </article>
-        <div className='mx-auto grid w-full max-w-64 gap-y-3'>
-          <Button>Comprar app</Button>
-          <Button variant='outline'>
-            <ShoppingCartIcon /> Añadir al carrito
-          </Button>
-        </div>
-        <article className='grid gap-y-6 rounded-lg border-2 border-[#B95ED4] p-6'>
-          <p className='text-base font-bold'>
-            Con la compra de esta app tiene un 50% OFF en la compra del cursos: Gestión de inventarios con AppSheet
-          </p>
-          <SalesProductCard product={app} />
-        </article>
-      </aside>
+      <AppDetailAside />
       <section className='col-span-full mt-8 flex flex-col gap-y-6'>
         <header className='grid gap-y-1.5'>
           <h3 className='text-base font-bold'>Aplicaciones recomendadas</h3>

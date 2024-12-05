@@ -1,8 +1,5 @@
 'use client'
-import { SalesProductCard } from '@/app/(platform)/components/card/sales-product-card'
-import { UserPreviewCard } from '@/app/(platform)/components/card/user-preview-card'
 import { RecommendedCoursesList } from '@/app/(platform)/components/list/recommended-courses-list'
-import { CourseProgrammeSection } from '@/app/(platform)/components/section/course-programme-section'
 import { AppStoreDetailPageSkeleton } from '@/app/(platform)/components/skeleton/appstore-detail-page-skeleton'
 import { Badge } from '@/components/ui/badge'
 import {
@@ -16,13 +13,15 @@ import {
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { Separator } from '@/components/ui/separator'
+import { useProduct } from '@/hooks/swr'
 import { Product } from '@/models'
 import { Routes } from '@/utils'
-import { CheckIcon, ClockIcon, ShoppingCartIcon, VideoIcon } from 'lucide-react'
+import { CheckIcon, ClockIcon, VideoIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import useSWR from 'swr'
+import { CourseDetailAside } from './components/course-detail-aside'
 
 interface AppCourseDetailPageProps {
   params: { id: string }
@@ -30,12 +29,12 @@ interface AppCourseDetailPageProps {
 
 function AppCourseDetailPage({ params }: AppCourseDetailPageProps) {
   const [isExpanded, setIsExpanded] = useState(false)
-  const { data: course, isLoading, error } = useSWR<Product>(`/api/product/${params.id}`)
+  const { product: course, isLoadingProduct: isLoadingCourse, errorProduct: errorCourse } = useProduct(params.id)
   const { data: recommendedCourses } = useSWR<Product[]>('/api/products?type=course&limit=3')
 
   // TODO: ADD UI FOR NO RESULTS
-  if (isLoading) return <AppStoreDetailPageSkeleton />
-  if (error) return <div>{error}</div>
+  if (isLoadingCourse) return <AppStoreDetailPageSkeleton />
+  if (errorCourse) return <div>{errorCourse}</div>
   if (!course) return <div>No se encontró la aplicación</div>
 
   const toggleExpanded = () => setIsExpanded((state) => !state)
@@ -330,26 +329,7 @@ function AppCourseDetailPage({ params }: AppCourseDetailPageProps) {
           )}
         </div>
       </section>
-      <aside className='flex flex-col gap-y-6'>
-        <UserPreviewCard variant='course' />
-        <Button className='mx-auto w-full max-w-60 bg-white/10 lg:mx-0 lg:max-w-none'>
-          <Image src='/assets/appsheet-icon.png' alt='Appsheet logo' width={25} height={22} />
-          AppSheet
-        </Button>
-        <CourseProgrammeSection />
-        <div className='mx-auto grid w-full max-w-64 gap-y-3'>
-          <Button>Comprar curso</Button>
-          <Button variant='outline'>
-            <ShoppingCartIcon /> Añadir al carrito
-          </Button>
-        </div>
-        <article className='grid gap-y-6 rounded-lg border-2 border-[#B95ED4] p-6'>
-          <p className='text-base font-bold'>
-            Con la compra de este curso tiene un 50% OFF en la compra del curso: Gestión de inventarios con AppSheet
-          </p>
-          <SalesProductCard product={course} />
-        </article>
-      </aside>
+      <CourseDetailAside />
       <section className='col-span-full mt-8 flex flex-col gap-y-6'>
         <header className='grid gap-y-1.5'>
           <h3 className='text-base font-bold'>Cursos similares</h3>

@@ -36,7 +36,7 @@ function Footer() {
           ))}
         </ul>
         <div className='h-[0.0625rem] w-full bg-gray-500' />
-        <p className='text-center text-xs text-white'>© KlowHub.</p>
+        <p className='text-center text-xs text-white'>© Knowhub.</p>
       </div>
     </footer>
   )

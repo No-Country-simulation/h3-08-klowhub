@@ -1,7 +1,7 @@
 'use client'
 import { Product } from '@/models'
 import useSWR from 'swr'
-import { SalesProductCard } from '../card/sales-product-card'
+import { MyProductCard } from '../card/my-product-card'
 import { RecommendedCoursesListSkeleton } from '../skeleton/recommended-courses-list-skeleton'
 
 function MyCoursesList() {
@@ -14,7 +14,7 @@ function MyCoursesList() {
     <ul className='grid gap-6 sm:grid-cols-2 xl:grid-cols-3'>
       {myCourses.map((product) => (
         <li key={product.id}>
-          <SalesProductCard product={product} variant='my-products' />
+          <MyProductCard product={product} />
         </li>
       ))}
     </ul>

@@ -1,52 +1,26 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { useCart } from '@/hooks'
-import { cn } from '@/lib/utils'
-import { Product, ProductCart, ProductType } from '@/models'
-import { MIN_PRODUCT_QUANTITY, PRODUCT_TYPE_DICTIONARY, Routes } from '@/utils'
-import { HeartIcon, MoreVerticalIcon, ShoppingCartIcon } from 'lucide-react'
+import { Product, ProductType } from '@/models'
+import { PRODUCT_TYPE_DICTIONARY, Routes } from '@/utils'
+import { HeartIcon, MoreVerticalIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { toast } from 'sonner'
 
-interface SalesProductCardProps {
+interface MyProductCardProps {
   product: Product
-  variant?: 'courses-list'
 }
 
-function SalesProductCard({ product, variant }: SalesProductCardProps) {
-  const router = useRouter()
-  const { isProductInCart, addProductToCart } = useCart()
-
+function MyProductCard({ product }: MyProductCardProps) {
   const href: Record<string, string> = {
     [ProductType.App]: Routes.AppAppStore + '/' + product.id,
     [ProductType.Course]: Routes.AppCourses + '/' + product.id
   }
 
-  const handleAddProductToCart = () => {
-    if (isProductInCart(product)) return router.push(Routes.AppCart)
-
-    const productToAdd: ProductCart = { ...product, quantity: MIN_PRODUCT_QUANTITY }
-    addProductToCart(productToAdd)
-    toast.success('¡Se ha añadido el producto al carrito!')
-  }
-
   return (
-    <article
-      className={cn(
-        'grid h-full items-center rounded-lg bg-[#1F2937]',
-        variant === 'courses-list' && 'lg:grid-cols-[400px_1fr]'
-      )}
-    >
-      <div
-        className={cn(
-          'relative aspect-square h-48 w-full',
-          variant === 'courses-list' && 'lg:aspect-none lg:h-[25rem]'
-        )}
-      >
+    <article className='grid h-full items-center rounded-lg bg-[#1F2937]'>
+      <div className='relative aspect-square h-48 w-full'>
         <Image
-          className={cn('rounded-t-lg object-cover', variant === 'courses-list' && 'lg:rounded-l-lg lg:rounded-r-none')}
+          className='rounded-t-lg object-cover'
           src={product.thumbnail_url || '/assets/product-placeholder.png'}
           alt='Curso en progreso'
           fill
@@ -86,11 +60,7 @@ function SalesProductCard({ product, variant }: SalesProductCardProps) {
           </span>
           {product.reviews.length}
         </p>
-        <p className='text-xl font-bold text-white'>${product.price}</p>
-        <div className={cn('grid items-center gap-x-4', variant === 'courses-list' && 'lg:flex')}>
-          <Button onClick={handleAddProductToCart}>
-            <ShoppingCartIcon /> {isProductInCart(product) ? 'Ver en carrito' : 'Añadir al carrito'}
-          </Button>
+        <div className='grid items-center gap-x-4'>
           <Button variant='ghost' asChild>
             <Link href={href[product.type]}>Ver detalles</Link>
           </Button>
@@ -100,4 +70,4 @@ function SalesProductCard({ product, variant }: SalesProductCardProps) {
   )
 }
 
-export { SalesProductCard }
+export { MyProductCard }
