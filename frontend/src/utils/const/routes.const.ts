@@ -17,6 +17,8 @@ export enum Routes {
   AppMyCourses = '/app/my-courses',
   AppCart = '/app/cart',
   AppPayment = '/app/payment',
+  AppPlans = '/app/plans',
+  AppPlansPayment = '/app/plans/payment',
   Dashboard = '/dashboard',
   DashboardMyCourses = '/dashboard/my-courses',
   DashboardMyApplications = '/dashboard/my-applications',

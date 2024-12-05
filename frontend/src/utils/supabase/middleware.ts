@@ -49,7 +49,7 @@ export const updateSession = async (request: NextRequest) => {
       .eq('role', UserRole.Seller)
       .single()
 
-    if (error) return NextResponse.redirect(new URL(Routes.App, request.url))
+    if (error) return NextResponse.redirect(new URL(Routes.AppPlans, request.url))
   }
 
   return response
