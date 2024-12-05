@@ -7,12 +7,12 @@ interface PlatformLayoutPageProps {
 
 function PlatformLayout({ children }: PlatformLayoutPageProps) {
   return (
-    <UserModeProvider>
-      <UserProvider>
+    <UserProvider>
+      <UserModeProvider>
         <Header />
         {children}
-      </UserProvider>
-    </UserModeProvider>
+      </UserModeProvider>
+    </UserProvider>
   )
 }
 

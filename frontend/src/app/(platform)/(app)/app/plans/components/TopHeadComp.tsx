@@ -1,9 +1,8 @@
 import Image from 'next/image'
-import React from 'react'
 
 function TopHeadComp() {
   return (
-    <div className='mt-4 p-6 flex flex-col items-center justify-center md:h-[10rem] max-sm:h-[4rem] w-full md:gap-2 max-sm:gap-0 rounded-md'>
+    <div className='mt-4 flex w-full flex-col items-center justify-center rounded-md p-6 max-sm:h-[4rem] max-sm:gap-0 md:h-[10rem] md:gap-2'>
       <Image
         src='/assets/temporal/f05-tophead-bg-1.png'
         alt='top background'
@@ -11,7 +10,7 @@ function TopHeadComp() {
         height={600}
         // layout='fill'
         // objectFit='cover'
-        className='absolute -z-10 md:max-h-[12rem] max-sm:max-h-fit w-[98%] bg-cover'
+        className='absolute -z-10 w-[98%] bg-cover max-sm:max-h-fit md:max-h-[12rem]'
       />
       <h2 className='text-3xl font-bold'>KlowHub</h2>
       <h6 className='text-xs font-light'>Descubre, Aprende y Crea</h6>
