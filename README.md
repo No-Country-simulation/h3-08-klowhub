@@ -47,16 +47,16 @@ Administradores:
 
   . Trello: Herramienta de gestión de proyectos basada en tableros.
 
-  . Miro: Herramienta de elaboración que facilita la elaboración de un tablero, donde se establecen y organizan las tareas y sub-tareas a realizar durante la elaboración del proyecto según su orden de prioridades.
+  . Miro: Herramienta que facilita la elaboración de un tablero, donde se establecen y organizan las tareas y sub-tareas a realizar durante la elaboración del proyecto según su orden de prioridades.
 
 
 
 - Frontend:
-
+  . Completar
 
 
 - Backend: 
-
+  . Completar
 
 
 - UX/UI:
@@ -87,18 +87,19 @@ UX/UI Designer
 Frontend	                            David Mamani                         https://www.linkedin.com/in/davidmedev/ https://github.com/davidmedev222 ![image](https://github.com/user-attachments/assets/caf63f5d-fd95-4256-ab78-0ec2e1e17809)
 
 
-Backend	                              Pedro Nuñez                          https://github.com/PANCnnss https://www.linkedin.com/in/pedro-alejandro-núñez-castañeda-67969117a/ ![image](https://github.com/user-attachments/assets/c0086afd-c1f2-4940-adaf-3e9de704b057)
+Frontend                              Pedro Nuñez                          https://github.com/PANCnnss https://www.linkedin.com/in/pedro-alejandro-núñez-castañeda-67969117a/ ![image](https://github.com/user-attachments/assets/c0086afd-c1f2-4940-adaf-3e9de704b057)
+
+
+Backend
 
 
 
 
 
 
-🐞 Instalación y ejecución del proyecto: Abrir el siguiente enlace, registrarse con nombre completo, correo electrónico y contraseña (con un mínimo de 8 caracteres sin condiciones especiales).
+🐞 Instalación y ejecución del proyecto: 
 
-https://knowhub.vercel.app/auth/register
-
-
+Completar
 
 
 🐞 Evidencia Cliente
@@ -120,11 +121,11 @@ https://drive.google.com/drive/folders/1mr4iO0QwyUC-SYAwud3CA-C3LYXGAWgo?usp=dri
 
 Historias de Usuario y Criterios de Aceptación:
 
-
+Completar
 
 Casos de Prueba:
 
-
+Completar
 
 
 
@@ -137,3 +138,8 @@ https://www.figma.com/design/MsyB0jfdKAU2dOIoIB9rW2/AppSheetHub?node-id=0-1&node
 Flujo Plataforma KlowHub
 
 https://www.figma.com/board/pC714J1fs4SJpusPuYaiMj/Flujo-Plataforma-KlowHub?node-id=0-1&node-type=canvas&t=gcFvs8ImVAupx9P0-0
+
+🐞Enlaces relevantes:
+
+https://knowhub.vercel.app/auth/register
+
