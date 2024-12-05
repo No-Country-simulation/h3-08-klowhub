@@ -25,15 +25,22 @@ export enum Routes {
   PrivacyPolicy = '/privacy-policy',
   TermsAndConditions = '/terms-and-conditions',
   HelpCenter = '/help-center',
-  Support = '/support',
+  Support = '/support'
 }
 
-export const HEADER_ROUTES = [
-  { label: 'Dashboard', href: Routes.Dashboard },
+export const EXPLORER_HEADER_ROUTES = [
   { label: 'Cursos y lecciones', href: Routes.AppCourses },
   { label: 'AppStore', href: Routes.AppAppStore },
   { label: 'Proyectos', href: Routes.AppProjects },
   { label: 'Consultoría', href: Routes.AppConsultations },
+  { label: 'Sobre Appsheet', href: Routes.AppAboutAppSheet }
+]
+
+export const SELLER_HEADER_ROUTES = [
+  { label: 'Dashboard', href: Routes.Dashboard },
+  { label: 'Ganancias', href: Routes.DashboardProfits },
+  { label: 'Mis aplicaciones', href: Routes.DashboardMyApplications },
+  { label: 'Mis cursos', href: Routes.DashboardMyCourses },
   { label: 'Sobre Appsheet', href: Routes.AppAboutAppSheet }
 ]
 

@@ -1,5 +1,6 @@
 export * from './const/error-messages.const'
 export * from './const/product.const'
 export * from './const/routes.const'
+export * from './const/user.const'
 export * from './function/global.function'
 export * from './schema/product.schema'

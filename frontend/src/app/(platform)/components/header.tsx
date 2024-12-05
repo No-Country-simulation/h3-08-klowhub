@@ -1,7 +1,9 @@
+'use client'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { HEADER_ROUTES, Routes } from '@/utils'
-import { createClient } from '@/utils/supabase/server'
+import { useUserMode } from '@/hooks'
+import { UserRole } from '@/models'
+import { EXPLORER_HEADER_ROUTES, Routes, SELLER_HEADER_ROUTES } from '@/utils'
 import { MailIcon, ShoppingCartIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,9 +13,9 @@ import { NavigationSheet } from './sheet/navigation-sheet'
 import { PageNavigationSwitch } from './switch/page-navigation-switch'
 import { UserNavigationSwitch } from './switch/user-navigation-switch'
 
-async function Header() {
-  const supabase = await createClient()
-  const { data: session } = await supabase.auth.getUser()
+function Header() {
+  const { userMode } = useUserMode()
+  const routesByUserMode = userMode === UserRole.Explorer ? EXPLORER_HEADER_ROUTES : SELLER_HEADER_ROUTES
 
   return (
     <header className='bg-primary-800'>
@@ -24,8 +26,8 @@ async function Header() {
         <PageNavigationSwitch />
         <nav className='hidden xl:block'>
           <ul className='items-center gap-x-6 lg:flex'>
-            {HEADER_ROUTES.map(({ label, href }) => (
-              <li key={label}>
+            {routesByUserMode.map(({ label, href }) => (
+              <li key={href}>
                 <Link className='line-clamp-1 text-sm font-semibold text-primary-b-200' href={href}>
                   {label}
                 </Link>
@@ -51,12 +53,8 @@ async function Header() {
               </Badge>
             </Button>
           </div>
-          {session.user && (
-            <>
-              <UserNavigationSwitch className='hidden xl:flex' />
-              <UserMenu user={session.user} />
-            </>
-          )}
+          <UserNavigationSwitch className='hidden xl:flex' />
+          <UserMenu />
         </div>
         <NavigationSheet />
       </div>

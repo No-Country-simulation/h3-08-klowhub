@@ -4,18 +4,20 @@ import { createClient } from '@/utils/supabase/client'
 import { createContext, useEffect, useState } from 'react'
 import useSWR from 'swr'
 
-export const UserContext = createContext<{
+export interface UserContextState {
   user: User | undefined
   isLoadingUser: boolean
   errorUser: string | undefined
-} | null>(null)
+}
+
+export const UserContext = createContext<UserContextState | null>(null)
 
 interface UserProviderProps {
   children: React.ReactNode
 }
 
 function UserProvider({ children }: UserProviderProps) {
-  const [userId, setUserId] = useState<string | undefined>(undefined)
+  const [userId, setUserId] = useState<string | undefined | null>(null)
   const { data, isLoading, error } = useSWR<User, string>(userId ? `/api/user/${userId}` : null)
 
   useEffect(() => {
@@ -30,7 +32,11 @@ function UserProvider({ children }: UserProviderProps) {
       .catch((error) => console.error('Error getting user ID:', error))
   }, [])
 
-  const values = { user: data, isLoadingUser: isLoading, errorUser: error }
+  const values = {
+    user: data,
+    isLoadingUser: userId === null || isLoading,
+    errorUser: error
+  }
 
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>
 }
