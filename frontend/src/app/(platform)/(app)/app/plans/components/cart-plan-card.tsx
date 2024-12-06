@@ -1,4 +1,6 @@
+'use client'
 import { Button } from '@/components/ui/button'
+import { useCartPlan } from '@/hooks'
 import { cn } from '@/lib/utils'
 import { CheckIcon } from 'lucide-react'
 import Image from 'next/image'
@@ -8,6 +10,9 @@ interface CartPlanCardProps {
 }
 
 function CartPlanCard({ variant }: CartPlanCardProps) {
+  const { cartPlan, removePlan } = useCartPlan()
+  if (!cartPlan) return null
+
   return (
     <article
       className={cn(
@@ -16,10 +21,12 @@ function CartPlanCard({ variant }: CartPlanCardProps) {
       )}
     >
       <div className='relative aspect-square max-h-60 w-full'>
-        <Image className='rounded-lg object-cover' src='/assets/product-detail.png' alt='Miniatura producto' fill />
+        <Image className='rounded-lg object-cover' src={cartPlan.plan.thumbnail_url} alt={cartPlan.plan.name} fill />
       </div>
       <header className='grid items-center gap-y-3'>
-        <p className='text-base font-bold'>Profesional $9,99</p>
+        <p className='text-base font-bold'>
+          {cartPlan.plan.name} ${cartPlan.plan.price}
+        </p>
         <p className='flex items-center gap-x-3 text-sm'>
           <CheckIcon className='shrink-0 text-[#B95ED4]' size={20} /> Acceso limitado a funciones básicas.
         </p>
@@ -35,7 +42,7 @@ function CartPlanCard({ variant }: CartPlanCardProps) {
         </p>
         <p className='mt-1.5 text-sm'>Comisiones: PayPal 20%, Stripe 15%, Cripto 12%.</p>
         {variant !== 'purchase-summary' && (
-          <Button className='ml-auto' variant='ghost'>
+          <Button onClick={removePlan} className='ml-auto' variant='ghost'>
             Eliminar
           </Button>
         )}

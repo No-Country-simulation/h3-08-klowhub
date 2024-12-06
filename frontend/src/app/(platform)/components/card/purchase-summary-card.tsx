@@ -3,6 +3,7 @@ import { useCart } from '@/hooks'
 import { CartProductCard } from './cart-product-card'
 
 function PurchaseSummaryCard() {
+  // TODO: REMOVE AFTER INTEGRATION WITH CART AND PAYMENT
   const { cart, calculateTotal } = useCart()
 
   return (
