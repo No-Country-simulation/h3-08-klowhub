@@ -22,7 +22,6 @@ interface CartProviderProps {
 
 function CartProvider({ children }: CartProviderProps) {
   const [cart, setCart] = useState<ProductCart[]>([])
-  console.log(cart)
 
   const addProductToCart = (product: ProductCart) => {
     setCart((prevCart) => [...prevCart, product])

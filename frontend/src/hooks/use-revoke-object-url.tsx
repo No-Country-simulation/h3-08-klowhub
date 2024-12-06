@@ -12,7 +12,6 @@ function useRevokeObjectURL(urls: string[]) {
     urlsToRevoke.forEach((url) => {
       if (url) {
         URL.revokeObjectURL(url)
-        console.log('revoking url', url)
       }
     })
 

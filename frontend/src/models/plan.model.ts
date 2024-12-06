@@ -9,6 +9,7 @@ export interface Plan {
   type: PlanType
   name: string
   price: number
+  thumbnail_url: string
   created_at: string
   updated_at: string
 }

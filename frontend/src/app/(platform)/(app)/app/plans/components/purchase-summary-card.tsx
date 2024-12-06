@@ -1,6 +1,8 @@
 import { CartPlanCard } from './cart-plan-card'
 
 function PurchaseSummaryCard() {
+  // TODO: REMOVE AFTER INTEGRATION WITH CART AND PAYMENT
+
   return (
     <div className='grid gap-x-12 lg:grid-cols-[1fr_25rem]'>
       <CartPlanCard variant='purchase-summary' />
