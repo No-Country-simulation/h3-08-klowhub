@@ -1,5 +1,5 @@
 import { CartProvider, UserModeProvider, UserProvider } from '@/providers'
-import { Header } from './components/header'
+import { Header } from '../../components/header/header'
 
 interface PlatformLayoutPageProps {
   children: React.ReactNode
