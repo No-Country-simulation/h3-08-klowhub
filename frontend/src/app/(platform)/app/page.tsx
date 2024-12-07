@@ -1,5 +1,5 @@
 'use client'
-import { ExpertPersonList } from '@/components/list/expert-person-list'
+import { ExpertPersonsList } from '@/components/list/expert-persons-list'
 import { RecommendedCoursesList } from '@/components/list/recommended-courses-list'
 import { RecommendedProductsList } from '@/components/list/recommended-products-list'
 import { CourseProgressSection } from '@/components/section/course-progress-section'
@@ -65,7 +65,7 @@ function AppPage() {
         </p>
       </section>
       <section className='flex flex-col gap-y-6'>
-        <ExpertPersonList />
+        <ExpertPersonsList />
         <Button className='mx-auto w-full max-w-64' variant='outline' asChild>
           <Link href={Routes.Consultations}>Ver más</Link>
         </Button>
