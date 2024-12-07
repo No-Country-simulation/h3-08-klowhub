@@ -1,11 +1,13 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { Product } from '@/models'
+import { Routes } from '@/utils'
+import Link from 'next/link'
 import useSWR from 'swr'
-import { CourseProgressCard } from '../../components/card/course-progress-card'
 import { ExpertPersonList } from '../../components/list/expert-person-list'
 import { RecommendedCoursesList } from '../../components/list/recommended-courses-list'
 import { RecommendedProductsList } from '../../components/list/recommended-products-list'
+import { CourseProgressSection } from '../../components/section/course-progress-section'
 import { RecommendedCoursesListSkeleton } from '../../components/skeleton/recommended-courses-list-skeleton'
 import { RecommendedProductsListSkeleton } from '../../components/skeleton/recommended-products-list-skeleton'
 
@@ -20,20 +22,12 @@ function AppPage() {
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-16 px-5 py-8 lg:px-10 lg:py-8'>
       <ul className='relative grid items-center gap-x-6 bg-banner before:absolute before:inset-0 before:size-full before:bg-black/50 xsm:grid-cols-2 lg:grid-cols-4'>
-        <li className='z-10 p-7 text-center text-xl font-bold'>Aprende en KlowHub</li>
+        <li className='z-10 p-7 text-center text-xl font-bold'>Aprende en Knowhub</li>
         <li className='z-10 p-7 text-center text-xl font-bold'>Encuentra aplicaciones</li>
         <li className='z-10 p-7 text-center text-xl font-bold'>Publica proyectos</li>
         <li className='z-10 p-7 text-center text-xl font-bold'>Consultas técnicas</li>
       </ul>
-      <section className='flex flex-col gap-y-6'>
-        <header className='grid gap-y-1.5'>
-          <h1 className='text-base font-bold'>Continuá tu aprendizaje</h1>
-          <p className='text-sm'>
-            Retomá donde lo dejaste. Volvé a ver tu último video y seguí aprendiendo sin perder el ritmo.
-          </p>
-        </header>
-        <CourseProgressCard />
-      </section>
+      <CourseProgressSection />
       <section className='flex flex-col gap-y-6'>
         <header className='grid gap-y-1.5'>
           <h2 className='text-base font-bold'>Cursos recomendados</h2>
@@ -46,8 +40,8 @@ function AppPage() {
         {recommendedCourses && recommendedCourses?.length > 0 && (
           <RecommendedCoursesList products={recommendedCourses} />
         )}
-        <Button className='mx-auto w-full max-w-64' variant='outline'>
-          Ver más
+        <Button className='mx-auto w-full max-w-64' variant='outline' asChild>
+          <Link href={Routes.AppCourses}>Ver más</Link>
         </Button>
       </section>
       <section className='flex flex-col gap-y-6'>
@@ -60,8 +54,8 @@ function AppPage() {
         </header>
         {isLoadingRecommendedApps && <RecommendedProductsListSkeleton quantity={4} />}
         {recommendedApps && recommendedApps?.length > 0 && <RecommendedProductsList products={recommendedApps} />}
-        <Button className='mx-auto w-full max-w-64' variant='outline'>
-          Ver más
+        <Button className='mx-auto w-full max-w-64' variant='outline' asChild>
+          <Link href={Routes.AppAppStore}>Ver más</Link>
         </Button>
       </section>
       <section className='relative flex flex-col gap-y-3 bg-banner px-7 py-14 before:absolute before:inset-0 before:size-full before:bg-black/50'>
@@ -72,8 +66,8 @@ function AppPage() {
       </section>
       <section className='flex flex-col gap-y-6'>
         <ExpertPersonList />
-        <Button className='mx-auto w-full max-w-64' variant='outline'>
-          Ver más
+        <Button className='mx-auto w-full max-w-64' variant='outline' asChild>
+          <Link href={Routes.AppConsultations}>Ver más</Link>
         </Button>
       </section>
     </main>

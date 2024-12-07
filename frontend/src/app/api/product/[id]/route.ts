@@ -4,7 +4,11 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   try {
     const supabase = await createClient()
-    const { data: product, error } = await supabase.from('products').select('*').eq('id', params.id).single()
+    const { data: product, error } = await supabase
+      .from('products')
+      .select('*, reviews(*)')
+      .eq('id', params.id)
+      .single()
 
     if (error) return NextResponse.json({ error: error.message, data: null }, { status: 500 })
 

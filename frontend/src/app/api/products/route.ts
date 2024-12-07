@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
     const { limit, type } = filtersSchema.parse(Object.fromEntries(request.nextUrl.searchParams))
 
     const supabase = await createClient()
-    let query = supabase.from('products').select('*')
+    let query = supabase.from('products').select('*, reviews(*)')
 
     if (type) query = query.eq('type', type)
     if (limit) query = query.limit(Number(limit))

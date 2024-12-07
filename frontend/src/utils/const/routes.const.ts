@@ -12,36 +12,38 @@ export enum Routes {
   AppConsultations = '/app/consultations',
   AppAboutAppSheet = '/app/app-sheet',
   AppMyProfile = '/app/my-profile',
+  AppMyProfileSettings = '/app/my-profile/settings',
   AppMyApplications = '/app/my-applications',
+  AppMyCourses = '/app/my-courses',
   AppCart = '/app/cart',
   AppPayment = '/app/payment',
+  AppPlans = '/app/plans',
+  AppPlansCart = '/app/plans/cart',
+  AppPlansPayment = '/app/plans/payment',
   Dashboard = '/dashboard',
+  DashboardMyCourses = '/dashboard/my-courses',
+  DashboardMyApplications = '/dashboard/my-applications',
+  DashboardMyApplicationsNew = '/dashboard/my-applications/new',
+  DashboardProfits = '/dashboard/profits',
   PrivacyPolicy = '/privacy-policy',
   TermsAndConditions = '/terms-and-conditions',
   HelpCenter = '/help-center',
   Support = '/support'
 }
 
-export const PROTECTED_ROUTES = [
-  Routes.App,
-  Routes.AppCourses,
-  Routes.AppAppStore,
-  Routes.AppProjects,
-  Routes.AppConsultations,
-  Routes.AppAboutAppSheet,
-  Routes.AppMyProfile,
-  Routes.AppMyApplications,
-  Routes.AppCart,
-  Routes.AppPayment,
-  Routes.Dashboard
-]
-
-export const HEADER_ROUTES = [
-  { label: 'Dashboard', href: Routes.Dashboard },
+export const EXPLORER_HEADER_ROUTES = [
   { label: 'Cursos y lecciones', href: Routes.AppCourses },
   { label: 'AppStore', href: Routes.AppAppStore },
   { label: 'Proyectos', href: Routes.AppProjects },
   { label: 'Consultoría', href: Routes.AppConsultations },
+  { label: 'Sobre Appsheet', href: Routes.AppAboutAppSheet }
+]
+
+export const SELLER_HEADER_ROUTES = [
+  { label: 'Dashboard', href: Routes.Dashboard },
+  { label: 'Ganancias', href: Routes.DashboardProfits },
+  { label: 'Mis aplicaciones', href: Routes.DashboardMyApplications },
+  { label: 'Mis cursos', href: Routes.DashboardMyCourses },
   { label: 'Sobre Appsheet', href: Routes.AppAboutAppSheet }
 ]
 

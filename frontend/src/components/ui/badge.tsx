@@ -13,9 +13,11 @@ const badgeVariants = cva(
           'border-transparent bg-neutral-100 text-neutral-900 hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80',
         destructive:
           'border-transparent bg-red-500 text-neutral-50 shadow hover:bg-red-500/80 dark:bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/80',
-        outline: 'text-neutral-950 dark:text-neutral-50',
+        outline: 'rounded-full border-[#812AAC] bg-transparent text-white',
         cart: 'absolute -right-2 -top-2 rounded-full bg-white text-black',
-        course: 'border-none bg-[#F3E3FBBF] px-1.5 py-1 text-sm font-semibold text-[#812AAC]'
+        course: 'border-none bg-[#F3E3FBBF] px-1.5 py-1 text-sm font-semibold text-[#812AAC]',
+        powerapp: 'rounded-full border-[#07B8C3] bg-[#07B8C3]/15 text-[#07B8C3]',
+        appsheet: 'rounded-full border-[#4DE853] bg-[#4DE853]/15 text-[#4DE853]'
       },
       size: {
         cart: 'size-5 shrink-0 justify-center p-0'

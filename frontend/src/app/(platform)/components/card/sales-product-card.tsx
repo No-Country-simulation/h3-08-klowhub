@@ -1,21 +1,35 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useCart } from '@/hooks'
 import { cn } from '@/lib/utils'
-import { Product, ProductType } from '@/models'
-import { PRODUCT_TYPE_DICTIONARY, Routes } from '@/utils'
+import { Product, ProductCart, ProductType } from '@/models'
+import { MIN_PRODUCT_QUANTITY, PRODUCT_TYPE_DICTIONARY, Routes } from '@/utils'
 import { HeartIcon, MoreVerticalIcon, ShoppingCartIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { toast } from 'sonner'
 
 interface SalesProductCardProps {
   product: Product
-  variant?: 'courses-list' | 'my-applications-list' | 'default'
+  variant?: 'courses-list'
 }
 
-function SalesProductCard({ product, variant = 'default' }: SalesProductCardProps) {
+function SalesProductCard({ product, variant }: SalesProductCardProps) {
+  const router = useRouter()
+  const { isProductInCart, addProductToCart } = useCart()
+
   const href: Record<string, string> = {
     [ProductType.App]: Routes.AppAppStore + '/' + product.id,
     [ProductType.Course]: Routes.AppCourses + '/' + product.id
+  }
+
+  const handleAddProductToCart = () => {
+    if (isProductInCart(product)) return router.push(Routes.AppCart)
+
+    const productToAdd: ProductCart = { ...product, quantity: MIN_PRODUCT_QUANTITY }
+    addProductToCart(productToAdd)
+    toast.success('¡Se ha añadido el producto al carrito!')
   }
 
   return (
@@ -48,7 +62,7 @@ function SalesProductCard({ product, variant = 'default' }: SalesProductCardProp
           {product.name} <MoreVerticalIcon className='shrink-0' />
         </h2>
         <p className='line-clamp-2 text-sm text-white'>{product.description}</p>
-        <Button className='w-fit bg-white/10'>
+        <Button className='w-fit bg-white/10' type='button'>
           <Image src='/assets/appsheet-icon.png' alt='Appsheet logo' width={25} height={22} />
           AppSheet
         </Button>
@@ -70,15 +84,13 @@ function SalesProductCard({ product, variant = 'default' }: SalesProductCardProp
             <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
             <Image src='/assets/star-icon.png' alt='Icono estrella' width={20} height={20} />
           </span>
-          {product.reviews}
+          {product.reviews.length}
         </p>
-        {variant !== 'my-applications-list' && <p className='text-xl font-bold text-white'>${product.price}</p>}
+        <p className='text-xl font-bold text-white'>${product.price}</p>
         <div className={cn('grid items-center gap-x-4', variant === 'courses-list' && 'lg:flex')}>
-          {variant !== 'my-applications-list' && (
-            <Button>
-              <ShoppingCartIcon /> Añadir al carrito
-            </Button>
-          )}
+          <Button onClick={handleAddProductToCart}>
+            <ShoppingCartIcon /> {isProductInCart(product) ? 'Ver en carrito' : 'Añadir al carrito'}
+          </Button>
           <Button variant='ghost' asChild>
             <Link href={href[product.type]}>Ver detalles</Link>
           </Button>
