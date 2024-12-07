@@ -12,7 +12,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import { SignUpSchema, signUpSchema } from '../utils/schema/auth.schema'
+import { SignUpSchema, signUpSchema } from '../utils/auth.schema'
 
 function SignUpForm() {
   const form = useForm<SignUpSchema>({
