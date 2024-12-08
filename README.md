@@ -188,6 +188,10 @@ Mapa Mental:
 
 https://drive.google.com/open?id=1WaZfnP4SFsEcISDqP310vKIebXeESBdX&usp=drive_copy
 
+Mapa Mental:
+
+Completar
+
 
 
 🎨 Evidencia UX/UI
