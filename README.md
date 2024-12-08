@@ -75,8 +75,6 @@ Administradores:
 
   . FreeMind: Plataforma de para la elaboración del mapa mental de la aplicación.
 
-  . Testmonitor o Jira: Herramienta de gestión de pruebas de software que facilita la planificación, ejecución y seguimiento de pruebas, así como la colaboración entre equipos de desarrollo y QA.
-
   . Google Sheets: Herramienta de hoja de cálculo de Google para documentación y registro de Historias de Usuario y Casos de Prueba sobre las funcionalidades de la plataforma.
 
 
