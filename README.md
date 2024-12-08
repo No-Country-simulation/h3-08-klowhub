@@ -106,9 +106,17 @@ Requerimientos y Objetivos del proyecto:
 
 https://klowhub.notion.site/Requerimiento-para-Hackathon-MVP-No-Country-103a1282656880399595cd585936817a
 
-https://drive.google.com/drive/folders/1nOj6Fy4peGOwKWOWUTWInD2DlgJSn3a-?usp=drive_link
+Tablero de Actividades por Prioridades:
 
 https://miro.com/app/board/uXjVLBd9mBg=/
+
+Regsistro de actividades por Sprint:
+
+https://trello.com/b/62FPX41l/kanban
+
+Drive de documentos y enlaces:
+
+https://drive.google.com/drive/u/0/folders/10Wc_SQK9sybJyA_JFVqvCsWiErnQCDjC
 
 
 
