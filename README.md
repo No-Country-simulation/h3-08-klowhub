@@ -119,9 +119,13 @@ https://drive.google.com/drive/folders/1mr4iO0QwyUC-SYAwud3CA-C3LYXGAWgo?usp=dri
 
 Historias de Usuario y Criterios de Aceptación:
 
-Completar
+https://drive.google.com/open?id=1BrwKPN7JPq-fUmv21lKrWgfrstm3Y5RT&usp=drive_copy
 
 Casos de Prueba:
+
+Completar
+
+Mapa Mental:
 
 Completar
 
