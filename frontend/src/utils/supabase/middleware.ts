@@ -1,7 +1,7 @@
 import { Database, UserRole } from '@/models'
+import { DASHBOARD_ROUTE_REGEX, PROTECTED_ROUTES, Routes } from '@/utils'
 import { createServerClient } from '@supabase/ssr'
 import { type NextRequest, NextResponse } from 'next/server'
-import { Routes } from '../const/routes.const'
 
 export const updateSession = async (request: NextRequest) => {
   let response = NextResponse.next({
@@ -31,15 +31,14 @@ export const updateSession = async (request: NextRequest) => {
 
   const user = await supabase.auth.getUser()
 
-  if (request.nextUrl.pathname.startsWith(Routes.App) && user.error) {
+  const isProtectedRoute = PROTECTED_ROUTES.some((route) => route.test(request.nextUrl.pathname))
+  const isDashboardRoute = DASHBOARD_ROUTE_REGEX.test(request.nextUrl.pathname)
+
+  if (isProtectedRoute && user.error) {
     return NextResponse.redirect(new URL(Routes.AuthLogin, request.url))
   }
 
-  if (request.nextUrl.pathname.startsWith(Routes.Dashboard) && user.error) {
-    return NextResponse.redirect(new URL(Routes.AuthLogin, request.url))
-  }
-
-  if (request.nextUrl.pathname.startsWith(Routes.Dashboard)) {
+  if (isDashboardRoute) {
     if (!user.data.user) return NextResponse.redirect(new URL(Routes.AuthLogin, request.url))
 
     const { error } = await supabase
@@ -49,7 +48,7 @@ export const updateSession = async (request: NextRequest) => {
       .eq('role', UserRole.Seller)
       .single()
 
-    if (error) return NextResponse.redirect(new URL(Routes.AppPlans, request.url))
+    if (error) return NextResponse.redirect(new URL(Routes.Plans, request.url))
   }
 
   return response
