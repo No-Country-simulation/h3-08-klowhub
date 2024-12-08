@@ -5,36 +5,57 @@ export enum Routes {
   AuthLogin = '/auth/login',
   AuthRegister = '/auth/register',
   AuthCallback = '/auth/callback',
-  App = '/app',
-  AppCourses = '/app/courses',
-  AppAppStore = '/app/app-store',
-  AppProjects = '/app/projects',
-  AppConsultations = '/app/consultations',
-  AppAboutAppSheet = '/app/app-sheet',
-  AppMyProfile = '/app/my-profile',
-  AppMyProfileSettings = '/app/my-profile/settings',
-  AppMyApplications = '/app/my-applications',
-  AppMyCourses = '/app/my-courses',
-  AppCart = '/app/cart',
-  AppPayment = '/app/payment',
-  Dashboard = '/dashboard',
-  DashboardMyCourses = '/dashboard/my-courses',
-  DashboardMyApplications = '/dashboard/my-applications',
-  DashboardMyApplicationsNew = '/dashboard/my-applications/new',
-  DashboardProfits = '/dashboard/profits',
+  Courses = '/courses',
+  Applications = '/applications',
+  Projects = '/projects',
+  Consultations = '/consultations',
+  AboutAppSheet = '/app-sheet',
   PrivacyPolicy = '/privacy-policy',
   TermsAndConditions = '/terms-and-conditions',
   HelpCenter = '/help-center',
   Support = '/support',
+  Cart = '/cart',
+  Payment = '/payment',
+  Plans = '/plans',
+  PlansCart = '/plans/cart',
+  PlansPayment = '/plans/payment',
+  App = '/app',
+  AppProfile = '/app/profile',
+  AppProfileSettings = '/app/profile/settings',
+  AppApplications = '/app/applications',
+  AppCourses = '/app/courses',
+  Dashboard = '/dashboard',
+  DashboardCourses = '/dashboard/courses',
+  DashboardApplications = '/dashboard/applications',
+  DashboardApplicationsNew = '/dashboard/applications/new',
+  DashboardProfits = '/dashboard/profits'
 }
 
-export const HEADER_ROUTES = [
+export const DASHBOARD_ROUTE_REGEX = /^\/dashboard(\/.*)?$/
+
+export const PROTECTED_ROUTES = [
+  /^\/app(\/.*)?$/,
+  DASHBOARD_ROUTE_REGEX,
+  /^\/cart(\/.*)?$/,
+  /^\/payment(\/.*)?$/,
+  /^\/plans\/cart(\/.*)?$/,
+  /^\/plans\/payment(\/.*)?$/
+]
+
+export const EXPLORER_HEADER_ROUTES = [
+  { label: 'Cursos y lecciones', href: Routes.Courses },
+  { label: 'AppStore', href: Routes.Applications },
+  { label: 'Proyectos', href: Routes.Projects },
+  { label: 'Consultoría', href: Routes.Consultations },
+  { label: 'Sobre Appsheet', href: Routes.AboutAppSheet }
+]
+
+export const SELLER_HEADER_ROUTES = [
   { label: 'Dashboard', href: Routes.Dashboard },
-  { label: 'Cursos y lecciones', href: Routes.AppCourses },
-  { label: 'AppStore', href: Routes.AppAppStore },
-  { label: 'Proyectos', href: Routes.AppProjects },
-  { label: 'Consultoría', href: Routes.AppConsultations },
-  { label: 'Sobre Appsheet', href: Routes.AppAboutAppSheet }
+  { label: 'Ganancias', href: Routes.DashboardProfits },
+  { label: 'Mis aplicaciones', href: Routes.DashboardApplications },
+  { label: 'Mis cursos', href: Routes.DashboardCourses },
+  { label: 'Sobre Appsheet', href: Routes.AboutAppSheet }
 ]
 
 export const FOOTER_ROUTES = {

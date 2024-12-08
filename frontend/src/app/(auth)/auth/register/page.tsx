@@ -10,7 +10,7 @@ function AuthRegisterPage() {
         <div className='m-auto flex max-w-lg flex-col gap-y-6 lg:max-w-sm'>
           <h2 className='mb-3 text-center text-3xl text-white lg:hidden'>Knowhub</h2>
           <p className='text-xs text-white lg:text-base'>
-            Explora, aprende, enseña y conecta. Crea tu cuenta en KlowHub y accede a un mundo de posibilidades.
+            Explora, aprende, enseña y conecta. Crea tu cuenta en Knowhub y accede a un mundo de posibilidades.
           </p>
           <SignUpForm />
         </div>

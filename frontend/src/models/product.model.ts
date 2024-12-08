@@ -6,6 +6,11 @@ export enum ProductType {
   App = 'app'
 }
 
+export enum PlatformType {
+  Appsheet = 'appsheet',
+  PowerApps = 'powerapps'
+}
+
 export interface ProductBase {
   id: string
   seller_id: string
@@ -21,7 +26,7 @@ export interface ProductBase {
   updated_at: string
 }
 
-export interface Application extends ProductBase {
+export interface ProductApplication extends ProductBase {
   type: ProductType.App
   about_application: string
   aditional_information: string
@@ -35,13 +40,12 @@ export interface Application extends ProductBase {
   combined_product_discount?: number
 }
 
-export interface Course extends ProductBase {
+export interface ProductCourse extends ProductBase {
   type: ProductType.Course
 }
 
-export type Product = Application | Course
+export type Product = ProductApplication | ProductCourse
 
-export enum PlatformType {
-  Appsheet = 'appsheet',
-  PowerApps = 'powerapps'
+export type ProductCart = Product & {
+  quantity: number
 }

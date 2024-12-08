@@ -1,5 +1,5 @@
-import { UserProvider } from '@/providers'
-import { Header } from './components/header'
+import { CartProvider, UserModeProvider, UserProvider } from '@/providers'
+import { Header } from '../../components/header/header'
 
 interface PlatformLayoutPageProps {
   children: React.ReactNode
@@ -8,8 +8,12 @@ interface PlatformLayoutPageProps {
 function PlatformLayout({ children }: PlatformLayoutPageProps) {
   return (
     <UserProvider>
-      <Header />
-      {children}
+      <UserModeProvider>
+        <CartProvider>
+          <Header />
+          {children}
+        </CartProvider>
+      </UserModeProvider>
     </UserProvider>
   )
 }

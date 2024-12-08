@@ -13,6 +13,7 @@ export const PLATFORM_DICTIONARY = {
   [PlatformType.PowerApps]: 'Power Apps'
 }
 
+export const MIN_PRODUCT_QUANTITY = 1
 export const MAX_PRODUCT_IMAGE_SIZE = 1024 * 1024 * 5
 export const MAX_PRODUCT_IMAGES = 5
 
