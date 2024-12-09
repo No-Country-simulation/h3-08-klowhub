@@ -1,6 +1,10 @@
 'use client'
 import { useEffect, useRef } from 'react'
 
+/**
+ * Hook to revoke object URLs.
+ * @param urls - The URLs to revoke.
+ */
 function useRevokeObjectURL(urls: string[]) {
   const urlsRef = useRef<string[]>([])
 

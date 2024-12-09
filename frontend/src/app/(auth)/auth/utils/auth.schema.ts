@@ -1,5 +1,8 @@
 import { z } from 'zod'
 
+/**
+ * Schema for sign in validation.
+ */
 export const signInSchema = z.object({
   email: z
     .string({
@@ -18,8 +21,14 @@ export const signInSchema = z.object({
   susbcribeNewsletter: z.boolean().optional()
 })
 
+/**
+ * Type representing the sign in schema.
+ */
 export type SignInSchema = z.infer<typeof signInSchema>
 
+/**
+ * Schema for sign up validation.
+ */
 export const signUpSchema = signInSchema.extend({
   fullname: z
     .string({
@@ -30,4 +39,7 @@ export const signUpSchema = signInSchema.extend({
     })
 })
 
+/**
+ * Type representing the sign up schema.
+ */
 export type SignUpSchema = z.infer<typeof signUpSchema>

@@ -11,7 +11,13 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 
 interface CartProductCardProps {
+  /**
+   * The variant of the card.
+   */
   variant?: 'purchase-summary'
+  /**
+   * The product to render.
+   */
   product: ProductCart
 }
 
@@ -19,6 +25,9 @@ function CartProductCard({ variant, product }: CartProductCardProps) {
   const router = useRouter()
   const { removeProductFromCart } = useCart()
 
+  /**
+   * Handles the removal of the product from the cart.
+   */
   const handleRemoveProductFromCart = () => {
     if (variant === 'purchase-summary') return router.push(Routes.App)
 

@@ -3,6 +3,11 @@ import { DASHBOARD_ROUTE_REGEX, PROTECTED_ROUTES, Routes } from '@/utils'
 import { createServerClient } from '@supabase/ssr'
 import { type NextRequest, NextResponse } from 'next/server'
 
+/**
+ * Updates the session and redirects to the specified route.
+ * @param request - The incoming request object.
+ * @returns The updated session.
+ */
 export const updateSession = async (request: NextRequest) => {
   let response = NextResponse.next({
     request: {

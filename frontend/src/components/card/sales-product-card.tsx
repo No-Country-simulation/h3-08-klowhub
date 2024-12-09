@@ -11,7 +11,13 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 
 interface SalesProductCardProps {
+  /**
+   * The product to render.
+   */
   product: Product
+  /**
+   * The variant of the card.
+   */
   variant?: 'courses-list'
 }
 
@@ -24,6 +30,9 @@ function SalesProductCard({ product, variant }: SalesProductCardProps) {
     [ProductType.Course]: Routes.Courses + '/' + product.id
   }
 
+  /**
+   * Handles the addition of the product to the cart.
+   */
   const handleAddProductToCart = () => {
     if (isProductInCart(product)) return router.push(Routes.Cart)
 

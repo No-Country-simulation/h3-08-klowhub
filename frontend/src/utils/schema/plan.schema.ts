@@ -1,6 +1,9 @@
 import { BillingCycle, PaymentMethod, SellerType } from '@/models'
 import { z } from 'zod'
 
+/**
+ * Schema for buying a plan.
+ */
 export const buyPlanSchema = z.object({
   plan_id: z.string({
     required_error: 'El plan es obligatorio'
@@ -28,4 +31,7 @@ export const buyPlanSchema = z.object({
   })
 })
 
+/**
+ * Type representing the buy plan schema.
+ */
 export type BuyPlanSchema = z.infer<typeof buyPlanSchema>

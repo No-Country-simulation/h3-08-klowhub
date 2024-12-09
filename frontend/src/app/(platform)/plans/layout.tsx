@@ -2,6 +2,9 @@
 import { CartPlanProvider } from '@/providers'
 
 interface PlanLayoutPageProps {
+  /**
+   * The children components to render.
+   */
   children: React.ReactNode
 }
 

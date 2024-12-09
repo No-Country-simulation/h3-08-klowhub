@@ -24,6 +24,9 @@ import useSWR from 'swr'
 import { CourseDetailAside } from './components/course-detail-aside'
 
 interface AppCourseDetailPageProps {
+  /**
+   * The parameters of the course detail page.
+   */
   params: { id: string }
 }
 
