@@ -6,6 +6,9 @@ import { Table } from '@tanstack/react-table'
 import { ChevronLeftIcon, ChevronRightIcon, ChevronsLeftIcon, ChevronsRightIcon } from 'lucide-react'
 
 interface DataTablePaginationProps<TData> {
+  /**
+   * The table to paginate.
+   */
   table: Table<TData>
 }
 

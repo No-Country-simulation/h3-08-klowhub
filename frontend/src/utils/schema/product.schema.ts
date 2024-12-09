@@ -2,6 +2,9 @@ import { PlatformType, ProductType } from '@/models'
 import { MAX_PRODUCT_IMAGES } from '@/utils'
 import { z } from 'zod'
 
+/**
+ * Schema for creating a product.
+ */
 export const productSchema = z.object({
   seller_id: z.string().min(1, 'El identificador del vendedor es obligatorio'),
   type: z.nativeEnum(ProductType),
@@ -25,6 +28,9 @@ export const productSchema = z.object({
     .max(MAX_PRODUCT_IMAGES, 'No puede subir más de 5 imágenes')
 })
 
+/**
+ * Type representing the product schema.
+ */
 export const applicationSchema = productSchema
   .extend({
     about_application: z.string(),
@@ -76,4 +82,7 @@ export const applicationSchema = productSchema
     }
   )
 
+/**
+ * Type representing the application schema.
+ */
 export type ApplicationSchema = z.infer<typeof applicationSchema>

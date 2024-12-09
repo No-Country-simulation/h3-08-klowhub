@@ -31,6 +31,9 @@ import { PlansSkeleton } from './plans-skeleton'
 const MIN_STEPS = 1
 const MAX_STEPS = 2
 
+/**
+ * Enum representing the steps to buy a plan.
+ */
 enum StepToBuyPlan {
   SelectPlan = 1,
   CompleteInformation = 2
@@ -63,6 +66,10 @@ function BuyPlanForm() {
     }
   }, [form, user])
 
+  /**
+   * Handles the form submission and buys the plan.
+   * @param values - The form values.
+   */
   const onSubmit = async (data: BuyPlanSchema) => {
     try {
       const foundPlan = plans?.find((plan) => plan.id === data.plan_id)
@@ -77,11 +84,17 @@ function BuyPlanForm() {
     }
   }
 
+  /**
+   * Handles the previous step of the form.
+   */
   const previousStep = async () => {
     if (steps <= MIN_STEPS) return
     setSteps((prevStep) => prevStep - MIN_STEPS)
   }
 
+  /**
+   * Handles the next step of the form.
+   */
   const nextStep = async () => {
     if (steps >= MAX_STEPS) return
     setSteps((prevStep) => prevStep + MIN_STEPS)
@@ -114,6 +127,9 @@ function BuyPlanForm() {
   )
 }
 
+/**
+ * Renders the select plan step of the form.
+ */
 function StepSelectPlan() {
   const { plans, isLoadingPlans } = usePlans()
   const form = useFormContext<BuyPlanSchema>()
@@ -228,6 +244,9 @@ function StepSelectPlan() {
   )
 }
 
+/**
+ * Renders the complete information step of the form.
+ */
 function StepCompleteInformation() {
   const form = useFormContext<BuyPlanSchema>()
 

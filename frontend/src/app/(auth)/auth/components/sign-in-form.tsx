@@ -25,6 +25,11 @@ function SignInForm() {
   })
   const { isSubmitting } = form.formState
 
+  /**
+   * Handles the form submission and redirects to the dashboard page.
+   * @param values - The form values
+   * @returns Redirects to the dashboard page
+   */
   const onSubmit = async (values: SignInSchema) => {
     try {
       const supabase = createClient()
@@ -44,6 +49,9 @@ function SignInForm() {
     await redirectTo(Routes.App)
   }
 
+  /**
+   * Handles the sign in with GitHub button click event.
+   */
   const handleSignInWithGithub = async () => {
     try {
       const supabase = createClient()
@@ -58,6 +66,9 @@ function SignInForm() {
     }
   }
 
+  /**
+   * Handles the sign in with Google button click event.
+   */
   const handleSignInWithGoogle = async () => {
     try {
       const supabase = createClient()

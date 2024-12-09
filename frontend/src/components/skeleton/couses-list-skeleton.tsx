@@ -1,6 +1,9 @@
 import { Skeleton } from '@/components/ui/skeleton'
 
 interface RecommendedProductsListProps {
+  /**
+   * The quantity of products to render.
+   */
   quantity: number
 }
 

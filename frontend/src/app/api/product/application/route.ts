@@ -3,6 +3,11 @@ import { createClient } from '@/utils/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 
+/**
+ * Handles the POST request to create an application.
+ * @param request - The incoming request object.
+ * @returns The created application.
+ */
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()

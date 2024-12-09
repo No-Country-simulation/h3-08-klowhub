@@ -24,6 +24,9 @@ import useSWR from 'swr'
 import { AppDetailAside } from './components/app-detail-aside'
 
 interface AppAppStoreDetailPageProps {
+  /**
+   * The params of the page.
+   */
   params: { id: string }
 }
 

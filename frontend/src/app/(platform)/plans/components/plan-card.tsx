@@ -2,6 +2,9 @@ import { Plan } from '@/models'
 import Image from 'next/image'
 
 interface PlanCardProps {
+  /**
+   * The plan to render.
+   */
   plan: Plan
 }
 

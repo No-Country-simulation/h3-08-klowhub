@@ -26,6 +26,10 @@ function UserMenu() {
   if (isLoadingUser) return <Skeleton className='size-10 rounded-full' />
   if (!user) return null
 
+  /**
+   * Handles the sign out button click event.
+   * @returns Redirects to the login page.
+   */
   const handleSignOut = async () => {
     try {
       setIsSignOut(true)

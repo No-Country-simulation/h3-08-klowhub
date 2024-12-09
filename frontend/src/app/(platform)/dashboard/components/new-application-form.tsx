@@ -67,6 +67,10 @@ function NewApplicationForm() {
     }
   }, [form, user])
 
+  /**
+   * Handles the form submission and creates the application.
+   * @param values - The form values.
+   */
   const onSubmit = async (data: ApplicationSchema) => {
     try {
       if (!user) return toast.error('¡Debes iniciar sesión para crear una aplicación!')
@@ -155,9 +159,17 @@ function NewApplicationForm() {
   )
 }
 
+/**
+ * Renders the general information tab of the form.
+ */
 function GeneralInformationContent() {
   const form = useFormContext<ApplicationSchema>()
 
+  /**
+   * Handles the addition of a tag to the form field.
+   * @param ev - The keyboard event.
+   * @param field - The form field.
+   */
   const handleAddTag = useCallback((ev: React.KeyboardEvent<HTMLInputElement>, field: ControllerRenderProps<any>) => {
     if (ev.key === 'Enter' && !ev.shiftKey) {
       ev.preventDefault()
@@ -377,10 +389,21 @@ function GeneralInformationContent() {
 }
 
 interface MediaResourcesContentProps {
+  /**
+   * The function to update the thumbnail file.
+   */
   updateThumbnailFile: (file: File) => void
+  /**
+   * The function to update the images file.
+   */
   updateImagesFile: (files: File[]) => void
 }
 
+/**
+ * Renders the media resources tab of the form.
+ * @param updateThumbnailFile - The function to update the thumbnail file.
+ * @param updateImagesFile - The function to update the images file.
+ */
 function MediaResourcesContent({ updateThumbnailFile, updateImagesFile }: MediaResourcesContentProps) {
   const form = useFormContext<ApplicationSchema>()
 
@@ -570,6 +593,9 @@ function MediaResourcesContent({ updateThumbnailFile, updateImagesFile }: MediaR
   )
 }
 
+/**
+ * Renders the promotions tab of the form.
+ */
 function PromotionsContent() {
   const myApplications = useSWR<Product[]>('/api/products?type=app&limit=2').data
   const myCourses = useSWR<Product[]>('/api/products?type=course&limit=2').data
