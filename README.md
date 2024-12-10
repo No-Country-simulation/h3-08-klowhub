@@ -149,10 +149,6 @@ Administradores:
 
 
 
-🐞 Instalación y ejecución del proyecto: 
-
-Completar
-
 
 🐞 Evidencia Cliente
 
