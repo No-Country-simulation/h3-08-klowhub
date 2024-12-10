@@ -59,11 +59,65 @@ Administradores:
 
 
 - Frontend:
-  . Completar
 
+  1. Next.js: Framework para React que facilita la construcción de aplicaciones web modernas.
 
-- Backend: 
-  . Completar
+  - Características destacadas: SSR y SSG: Mejora el rendimiento y el SEO al renderizar contenido en el servidor.
+  - App Router: Simplifica la gestión de layouts y mejora la organización de rutas complejas.
+  - Middleware: Permite redirecciones y validaciones dinámicas basadas en el estado del usuario.
+
+  2. TypeScript: Lenguaje de programación basado en JavaScript con tipado estático.
+
+  - Ventajas: Reduce errores al proporcionar un sistema de tipos robusto.
+  - Aumenta la claridad del código al definir explícitamente las estructuras de datos.
+
+  3. Tailwind CSS: Framework de utilidades CSS para construir interfaces rápidas y consistentes.
+
+  - Beneficios: Permite escribir estilos directamente en las clases HTML.
+  - Facilita la personalización mediante un sistema de configuración extensible.
+
+  4. ShadCN UI: Librería que combina Radix UI con Tailwind CSS para construir componentes accesibles y dinámicos.
+
+  - Mejora la consistencia del diseño y acelera la creación de interfaces reutilizables.
+
+  5. TanStack React Table: Biblioteca para gestionar y mostrar datos en tablas.
+
+  - Características: Soporte para paginación, ordenamiento y filtrado de datos.
+  - Altamente personalizable, ideal para manejar grandes volúmenes de información.
+
+  6. Recharts: Librería para crear gráficos interactivos.
+
+  - Ventajas: Flexible y fácil de integrar con datos dinámicos.
+  - Permite personalización avanzada para satisfacer necesidades específicas.
+
+  7. SWR (Stale-While-Revalidate): Biblioteca para gestionar datos del cliente.
+
+  - Características: Caché automático para mejorar el rendimiento.
+  - Deduplicación de solicitudes para evitar consultas repetitivas.
+  - Revalidación en segundo plano para mantener los datos frescos sin interrumpir al usuario.
+
+  8. Zod: Librería de validación basada en esquemas.
+
+  - Usos: Validación de datos en formularios junto con React Hook Form.
+  - Mejora la seguridad al garantizar que los datos cumplan con los requisitos especificados.
+
+  9. Sonner: Biblioteca para gestionar notificaciones.
+
+  - Beneficios: Permite mostrar mensajes interactivos y personalizables en tiempo real.
+  - Mejora la experiencia del usuario al proporcionar retroalimentación inmediata.
+
+  10. Supabase: Plataforma Backend-as-a-Service.
+
+  - Beneficios: Autenticación integrada y gestión de usuarios.
+  - Base de datos en tiempo real con soporte para suscripciones y cambios dinámicos.
+
+- Backend:
+
+  1. Supabase : Plataforma Backend-as-a-Service.
+
+  - Beneficios: Autenticación integrada y gestión de usuarios.
+  - Base de datos en tiempo real con soporte para suscripciones y cambios dinámicos.
+  - Almacenamiento de imagenes y archivos.
 
 
 - UX/UI:
