@@ -1,5 +1,5 @@
 'use client'
-import { DataTable } from '@/app/(platform)/components/table/data-table'
+import { DataTable } from '@/components/table/data-table'
 import { Button } from '@/components/ui/button'
 import { ColumnDef } from '@tanstack/react-table'
 import { CircleCheck, Dot } from 'lucide-react'
