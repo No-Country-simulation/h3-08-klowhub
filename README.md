@@ -1,4 +1,4 @@
-KlowHub 
+KlowHub
 Equipo-h3-08-klowhub
 ![image](https://github.com/user-attachments/assets/20d6330b-7338-4f8c-a94b-eec6476f4156)
 
@@ -21,7 +21,8 @@ El objetivo del proyecto es desarrollar una plataforma SaaS intuitiva y eficient
 🤝🏻 Beneficios para StakeHolders
 
 Clientes y usuarios desarrolladores y creadores:
-- Para  clientes, facilidad en búsqueda, selección y compra de cursos, lecciones, plantillas, aplicaciones, solicitud de servicios de asesoría técnica y soporte técnico especializado en el área de desarrollo No Code y Low Code.
+
+- Para clientes, facilidad en búsqueda, selección y compra de cursos, lecciones, plantillas, aplicaciones, solicitud de servicios de asesoría técnica y soporte técnico especializado en el área de desarrollo No Code y Low Code.
 - Disponibilidad de soporte multilingüe, ofreciendo contenido en varios idiomas, incluido el español; pudiendo los clientes aprender a usar herramientas No y Low Code en su idioma natal.
 - Acceso a participar en foros y espacios de discusión para colaborar en el intercambio de conocimientos entre desarrolladores y usuarios.
 - Opciones de solicitar servicio especializado en proyectos por parte de los usuarios, postulaciones por desarrolladores y gestión de proyectos en diferentes tecnologías para una experiencia más personalizada.
@@ -32,8 +33,9 @@ Clientes y usuarios desarrolladores y creadores:
 - Disponibilidad de un sistema de puntuación y ranking, que determina el posicionamiento de los productos en cada sección de la plataforma, incentivando a los creadores a mejorar continuamente.
 
 Administradores:
+
 - Herramienta central de gestión y control de la plataforma para monitorear, configurar y supervisar cada aspecto del sistema.
-- Visualización de estadísticas y  métricas, como: total de usuarios activos y registrados, nuevos usuarios por período de tiempo, ventas y transacciones recientes, contenido publicado y uso de la plataforma.
+- Visualización de estadísticas y métricas, como: total de usuarios activos y registrados, nuevos usuarios por período de tiempo, ventas y transacciones recientes, contenido publicado y uso de la plataforma.
 - Monitoreo de alertas y notificaciones, como: incidentes de seguridad, usos indebidos, consultas de soportes pendientes y publicaciones pendientes de aprobación de los productos que requieran revisión.
 - Disponibilidad de un panel de configuración rápida para acceso directo a configuraciones como: precios, comisiones, permisos y ajustes de contenido.
 - Capacidad para asignar roles específicos de Administrador, Usuario o Moderador, con permisos personalizados para cada función.
@@ -44,19 +46,16 @@ Administradores:
 - Control de Filtros y Criterios de Búsqueda, como: personalización y organización de filtros por su popularidad.
 - Control de precios y comisiones, en configuración de precios de productos y definición de comisiones.
 - Obtención de reportes personalizados y análisis de comportamientos y tendencias.
--  Configuración general y mantenimiento de la plataforma en cuanto a gestión de seguridad, configuración de notificaciones / mensajería e integración de servicios y API’s.
+- Configuración general y mantenimiento de la plataforma en cuanto a gestión de seguridad, configuración de notificaciones / mensajería e integración de servicios y API’s.
 - Control de información y usos indebidos, mediante un sistema de monitoreo de interacciones y un historial de alertas y acciones tomadas.
 
 🛠️ Tecnologías Utilizadas:
-
 
 - Herramientas de Gestión y Diseño:
 
   . Trello: Herramienta de gestión de proyectos basada en tableros.
 
   . Miro: Herramienta que facilita la elaboración de un tablero, donde se establecen y organizan las tareas y sub-tareas a realizar durante la elaboración del proyecto según su orden de prioridades.
-
-
 
 - Frontend:
 
@@ -119,11 +118,9 @@ Administradores:
   - Base de datos en tiempo real con soporte para suscripciones y cambios dinámicos.
   - Almacenamiento de imagenes y archivos.
 
-
 - UX/UI:
 
   . Figma: Herramienta de diseño de interfaz de usuario y prototipado colaborativo basada en la nube.
-
 
 - Herramientas de QA:
 
@@ -131,21 +128,13 @@ Administradores:
 
   . Google Sheets: Herramienta de hoja de cálculo de Google para documentación y registro de Historias de Usuario y Casos de Prueba sobre las funcionalidades de la plataforma.
 
-
 💪🏻Equipo de trabajo
 
-| Rol           | Nombre           | Foto                        | Perfil de LinkedIn            | Perfil de GitHub                |  
-|---------------|------------------|-----------------------------|-------------------------------|---------------------------------|   
-| Frontend      | David Mamani     | ![David](https://github.com/user-attachments/assets/caf63f5d-fd95-4256-ab78-0ec2e1e17809) | [LinkedIn David](https://www.linkedin.com/in/davidmedev/) | [GitHub David](https://github.com/davidmedev222)  |  
-| Frontend      | Pedro Nuñez      | <img src="https://github.com/user-attachments/assets/c0086afd-c1f2-4940-adaf-3e9de704b057" alt="Bordes redondeados de la imagen"  style="border-radius: 30px; width: 395px ;">      | [LinkedIn Pedro](https://www.linkedin.com/in/pedro-alejandro-núñez-castañeda-67969117a/) | [GitHub Pedro](https://github.com/PANCnnss)  |  
-| QA Tester     | Arnoldo Felce    | <img src="https://github.com/user-attachments/assets/189f0c8b-86d6-4664-954d-3d208fd556fe" alt="Bordes redondeados de la imagen"  style="border-radius: 30px; width: 395px ;">  | [LinkedIn Arnoldo](https://www.linkedin.com/in/arnoldo-felce-rondón) | [GitHub Arnoldo](https://github.com/afelce)    |
-
-
-
-
-
-
-
+| Rol       | Nombre        | Foto                                                                                                                                                                           | Perfil de LinkedIn                                                                       | Perfil de GitHub                                 |
+| --------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| Frontend  | David Mamani  | ![David](https://github.com/user-attachments/assets/caf63f5d-fd95-4256-ab78-0ec2e1e17809)                                                                                      | [LinkedIn David](https://www.linkedin.com/in/davidmedev/)                                | [GitHub David](https://github.com/davidmedev222) |
+| Frontend  | Pedro Nuñez   | <img src="https://github.com/user-attachments/assets/c0086afd-c1f2-4940-adaf-3e9de704b057" alt="Bordes redondeados de la imagen"  style="border-radius: 30px; width: 395px ;"> | [LinkedIn Pedro](https://www.linkedin.com/in/pedro-alejandro-núñez-castañeda-67969117a/) | [GitHub Pedro](https://github.com/PANCnnss)      |
+| QA Tester | Arnoldo Felce | <img src="https://github.com/user-attachments/assets/189f0c8b-86d6-4664-954d-3d208fd556fe" alt="Bordes redondeados de la imagen"  style="border-radius: 30px; width: 395px ;"> | [LinkedIn Arnoldo](https://www.linkedin.com/in/arnoldo-felce-rondón)                     | [GitHub Arnoldo](https://github.com/afelce)      |
 
 🐞 Evidencia Cliente
 
@@ -164,9 +153,6 @@ https://trello.com/b/62FPX41l/kanban
 Drive de documentos y enlaces:
 
 https://drive.google.com/drive/u/0/folders/10Wc_SQK9sybJyA_JFVqvCsWiErnQCDjC
-
-
-
 
 🐞 Evidencia Tester QA
 
@@ -188,12 +174,6 @@ Mapa Mental:
 
 https://drive.google.com/open?id=1WaZfnP4SFsEcISDqP310vKIebXeESBdX&usp=drive_copy
 
-Mapa Mental:
-
-https://drive.google.com/open?id=1WaZfnP4SFsEcISDqP310vKIebXeESBdX&usp=drive_copy
-
-
-
 🎨 Evidencia UX/UI
 
 Diseño en Figma
@@ -209,4 +189,3 @@ https://www.figma.com/board/pC714J1fs4SJpusPuYaiMj/Flujo-Plataforma-KlowHub?node
 https://knowhub.vercel.app/auth/register
 
 https://drive.google.com/drive/u/0/folders/10Wc_SQK9sybJyA_JFVqvCsWiErnQCDjC
-
