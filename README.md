@@ -135,12 +135,9 @@ Administradores:
 💪🏻Equipo de trabajo
 
 | Rol           | Nombre           | Foto                        | Perfil de LinkedIn            | Perfil de GitHub                |  
-|---------------|------------------|-----------------------------|-------------------------------|---------------------------------|  
-| PM            |                  |                             |                               |                                 |  
-| UX/UI         |                  |                             |                               |                                 |  
+|---------------|------------------|-----------------------------|-------------------------------|---------------------------------|   
 | Frontend      | David Mamani     | ![David](https://github.com/user-attachments/assets/caf63f5d-fd95-4256-ab78-0ec2e1e17809) | [LinkedIn David](https://www.linkedin.com/in/davidmedev/) | [GitHub David](https://github.com/davidmedev222)  |  
 | Frontend      | Pedro Nuñez      | <img src="https://github.com/user-attachments/assets/c0086afd-c1f2-4940-adaf-3e9de704b057" alt="Bordes redondeados de la imagen"  style="border-radius: 30px; width: 395px ;">      | [LinkedIn Pedro](https://www.linkedin.com/in/pedro-alejandro-núñez-castañeda-67969117a/) | [GitHub Pedro](https://github.com/PANCnnss)  |  
-| Backend       |                  |                             |                                    |                                 |  
 | QA Tester     | Arnoldo Felce    | <img src="https://github.com/user-attachments/assets/189f0c8b-86d6-4664-954d-3d208fd556fe" alt="Bordes redondeados de la imagen"  style="border-radius: 30px; width: 395px ;">  | [LinkedIn Arnoldo](https://www.linkedin.com/in/arnoldo-felce-rondón) | [GitHub Arnoldo](https://github.com/afelce)    |
 
 
