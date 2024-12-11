@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Guía de Instalación del Proyecto Next.js
 
-## Getting Started
+Esta guía describe los pasos necesarios para instalar y ejecutar el proyecto de Next.js desde el repositorio [No-Country-simulation/h3-08-klowhub](https://github.com/No-Country-simulation/h3-08-klowhub).
 
-First, run the development server:
+## Prerrequisitos
+
+Antes de comenzar, asegúrate de tener instalados los siguientes componentes:
+
+1. **Node.js**: Descarga e instala la versión LTS desde [Node.js](https://nodejs.org/).
+2. **Git**: Descarga e instala Git desde [Git](https://git-scm.com/).
+3. **Editor de texto**: (opcional, pero recomendado) Visual Studio Code o tu editor preferido.
+
+## Pasos de Instalación
+
+### 1. Clonar el Repositorio
+
+En una terminal, ejecuta el siguiente comando para clonar el repositorio:
+
+```bash
+git clone https://github.com/No-Country-simulation/h3-08-klowhub.git
+```
+
+Esto creará una carpeta llamada `h3-08-klowhub` con el código del proyecto.
+
+### 2. Navegar a la Carpeta del Frontend
+
+Cambia al directorio del frontend dentro del proyecto clonado:
+
+```bash
+cd h3-08-klowhub/frontend
+```
+
+### 3. Instalar Dependencias
+
+Ejecuta el siguiente comando para instalar las dependencias necesarias:
+
+```bash
+npm install
+```
+
+Esto descargará todos los paquetes requeridos especificados en el archivo `package.json`.
+
+### 4. Configurar Variables de Entorno
+
+Crea un archivo `.env.local` en la carpeta `frontend` y agrega las siguientes variables con los valores correspondientes de tu proyecto Supabase:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=tu_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_supabase_anon_key
+```
+
+Asegúrate de reemplazar `tu_supabase_url` y `tu_supabase_anon_key` con los valores reales de tu proyecto.
+
+### 5. Iniciar el Servidor de Desarrollo
+
+Una vez instaladas las dependencias y configuradas las variables de entorno, inicia el servidor de desarrollo con:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El servidor iniciará y estará disponible en la URL `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 6. Abrir el Proyecto en el Navegador
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abre tu navegador preferido y accede a la URL:
 
-## Learn More
+```
+http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Allí podrás visualizar el proyecto en ejecución.
