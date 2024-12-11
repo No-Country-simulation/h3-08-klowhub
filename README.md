@@ -178,7 +178,7 @@ https://drive.google.com/open?id=1BrwKPN7JPq-fUmv21lKrWgfrstm3Y5RT&usp=drive_cop
 
 Casos de Prueba:
 
-Completar
+https://drive.google.com/open?id=1ITYS8H64g8wI6ppUTAxz-Ool0AeoXsx4&usp=drive_copy
 
 Mapa Mental:
 
