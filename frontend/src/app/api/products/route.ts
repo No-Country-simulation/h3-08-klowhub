@@ -11,6 +11,11 @@ const filtersSchema = z.object({
     .optional()
 })
 
+/**
+ * Handles the GET request to fetch products.
+ * @param request - The incoming request object.
+ * @returns The products.
+ */
 export async function GET(request: NextRequest) {
   try {
     const { limit, type } = filtersSchema.parse(Object.fromEntries(request.nextUrl.searchParams))

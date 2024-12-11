@@ -2,8 +2,12 @@ import { Database } from '@/models'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
+/**
+ * Creates a Supabase client for server-side rendering.
+ * @returns The Supabase client for server-side rendering.
+ */
 export const createClient = async () => {
-  const cookieStore = await cookies()
+  const cookieStore = cookies()
 
   return createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL as string,

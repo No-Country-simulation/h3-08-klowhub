@@ -2,6 +2,9 @@ import { Product } from '@/models'
 import { SalesProductCard } from '../../components/card/sales-product-card'
 
 interface RecommendedCoursesListProps {
+  /**
+   * The products to render.
+   */
   products: Product[]
 }
 

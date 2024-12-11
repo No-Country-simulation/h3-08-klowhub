@@ -1,6 +1,12 @@
 import { createClient } from '@/utils/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 
+/**
+ * Handles the GET request to fetch a user.
+ * @param request - The incoming request object.
+ * @param params - The parameters of the request.
+ * @returns The user.
+ */
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   try {
     const supabase = await createClient()

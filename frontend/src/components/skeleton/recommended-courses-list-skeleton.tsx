@@ -1,6 +1,9 @@
 import { Skeleton } from '@/components/ui/skeleton'
 
 interface RecommendedCoursesListProps {
+  /**
+   * The quantity of courses to render.
+   */
   quantity: number
 }
 

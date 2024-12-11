@@ -22,6 +22,9 @@ function AppDetailAside() {
 
   if (!app) return null
 
+  /**
+   * Handles the buy app button click event.
+   */
   const handleBuyApp = () => {
     if (isProductInCart(app)) return router.push(Routes.Cart)
 
@@ -30,6 +33,9 @@ function AppDetailAside() {
     router.push(Routes.Cart)
   }
 
+  /**
+   * Handles the add app to cart button click event.
+   */
   const handleAddAppToCart = () => {
     if (isProductInCart(app)) return router.push(Routes.Cart)
 

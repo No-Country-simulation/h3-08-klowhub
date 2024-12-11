@@ -1,6 +1,9 @@
 import { ExpertPersonCard } from '../card/expert-person-card'
 
 interface ExpertPersonsListProps {
+  /**
+   * The quantity of expert persons to render.
+   */
   quantity?: number
 }
 

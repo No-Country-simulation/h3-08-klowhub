@@ -59,11 +59,65 @@ Administradores:
 
 
 - Frontend:
-  . Completar
 
+  1. Next.js: Framework para React que facilita la construcción de aplicaciones web modernas.
 
-- Backend: 
-  . Completar
+  - Características destacadas: SSR y SSG: Mejora el rendimiento y el SEO al renderizar contenido en el servidor.
+  - App Router: Simplifica la gestión de layouts y mejora la organización de rutas complejas.
+  - Middleware: Permite redirecciones y validaciones dinámicas basadas en el estado del usuario.
+
+  2. TypeScript: Lenguaje de programación basado en JavaScript con tipado estático.
+
+  - Ventajas: Reduce errores al proporcionar un sistema de tipos robusto.
+  - Aumenta la claridad del código al definir explícitamente las estructuras de datos.
+
+  3. Tailwind CSS: Framework de utilidades CSS para construir interfaces rápidas y consistentes.
+
+  - Beneficios: Permite escribir estilos directamente en las clases HTML.
+  - Facilita la personalización mediante un sistema de configuración extensible.
+
+  4. ShadCN UI: Librería que combina Radix UI con Tailwind CSS para construir componentes accesibles y dinámicos.
+
+  - Mejora la consistencia del diseño y acelera la creación de interfaces reutilizables.
+
+  5. TanStack React Table: Biblioteca para gestionar y mostrar datos en tablas.
+
+  - Características: Soporte para paginación, ordenamiento y filtrado de datos.
+  - Altamente personalizable, ideal para manejar grandes volúmenes de información.
+
+  6. Recharts: Librería para crear gráficos interactivos.
+
+  - Ventajas: Flexible y fácil de integrar con datos dinámicos.
+  - Permite personalización avanzada para satisfacer necesidades específicas.
+
+  7. SWR (Stale-While-Revalidate): Biblioteca para gestionar datos del cliente.
+
+  - Características: Caché automático para mejorar el rendimiento.
+  - Deduplicación de solicitudes para evitar consultas repetitivas.
+  - Revalidación en segundo plano para mantener los datos frescos sin interrumpir al usuario.
+
+  8. Zod: Librería de validación basada en esquemas.
+
+  - Usos: Validación de datos en formularios junto con React Hook Form.
+  - Mejora la seguridad al garantizar que los datos cumplan con los requisitos especificados.
+
+  9. Sonner: Biblioteca para gestionar notificaciones.
+
+  - Beneficios: Permite mostrar mensajes interactivos y personalizables en tiempo real.
+  - Mejora la experiencia del usuario al proporcionar retroalimentación inmediata.
+
+  10. Supabase: Plataforma Backend-as-a-Service.
+
+  - Beneficios: Autenticación integrada y gestión de usuarios.
+  - Base de datos en tiempo real con soporte para suscripciones y cambios dinámicos.
+
+- Backend:
+
+  1. Supabase : Plataforma Backend-as-a-Service.
+
+  - Beneficios: Autenticación integrada y gestión de usuarios.
+  - Base de datos en tiempo real con soporte para suscripciones y cambios dinámicos.
+  - Almacenamiento de imagenes y archivos.
 
 
 - UX/UI:
@@ -75,20 +129,15 @@ Administradores:
 
   . FreeMind: Plataforma de para la elaboración del mapa mental de la aplicación.
 
-  . Testmonitor o Jira: Herramienta de gestión de pruebas de software que facilita la planificación, ejecución y seguimiento de pruebas, así como la colaboración entre equipos de desarrollo y QA.
-
   . Google Sheets: Herramienta de hoja de cálculo de Google para documentación y registro de Historias de Usuario y Casos de Prueba sobre las funcionalidades de la plataforma.
 
 
 💪🏻Equipo de trabajo
 
 | Rol           | Nombre           | Foto                        | Perfil de LinkedIn            | Perfil de GitHub                |  
-|---------------|------------------|-----------------------------|-------------------------------|---------------------------------|  
-| PM            |                  |                             |                               |                                 |  
-| UX/UI         |                  |                             |                               |                                 |  
+|---------------|------------------|-----------------------------|-------------------------------|---------------------------------|   
 | Frontend      | David Mamani     | ![David](https://github.com/user-attachments/assets/caf63f5d-fd95-4256-ab78-0ec2e1e17809) | [LinkedIn David](https://www.linkedin.com/in/davidmedev/) | [GitHub David](https://github.com/davidmedev222)  |  
 | Frontend      | Pedro Nuñez      | <img src="https://github.com/user-attachments/assets/c0086afd-c1f2-4940-adaf-3e9de704b057" alt="Bordes redondeados de la imagen"  style="border-radius: 30px; width: 395px ;">      | [LinkedIn Pedro](https://www.linkedin.com/in/pedro-alejandro-núñez-castañeda-67969117a/) | [GitHub Pedro](https://github.com/PANCnnss)  |  
-| Backend       |                  |                             |                                    |                                 |  
 | QA Tester     | Arnoldo Felce    | <img src="https://github.com/user-attachments/assets/189f0c8b-86d6-4664-954d-3d208fd556fe" alt="Bordes redondeados de la imagen"  style="border-radius: 30px; width: 395px ;">  | [LinkedIn Arnoldo](https://www.linkedin.com/in/arnoldo-felce-rondón) | [GitHub Arnoldo](https://github.com/afelce)    |
 
 
@@ -97,10 +146,6 @@ Administradores:
 
 
 
-🐞 Instalación y ejecución del proyecto: 
-
-Completar
-
 
 🐞 Evidencia Cliente
 
@@ -108,9 +153,17 @@ Requerimientos y Objetivos del proyecto:
 
 https://klowhub.notion.site/Requerimiento-para-Hackathon-MVP-No-Country-103a1282656880399595cd585936817a
 
-https://drive.google.com/drive/folders/1nOj6Fy4peGOwKWOWUTWInD2DlgJSn3a-?usp=drive_link
+Tablero de Actividades por Prioridades:
 
 https://miro.com/app/board/uXjVLBd9mBg=/
+
+Regsistro de actividades por Sprint:
+
+https://trello.com/b/62FPX41l/kanban
+
+Drive de documentos y enlaces:
+
+https://drive.google.com/drive/u/0/folders/10Wc_SQK9sybJyA_JFVqvCsWiErnQCDjC
 
 
 
@@ -121,11 +174,19 @@ https://drive.google.com/drive/folders/1mr4iO0QwyUC-SYAwud3CA-C3LYXGAWgo?usp=dri
 
 Historias de Usuario y Criterios de Aceptación:
 
-Completar
+https://drive.google.com/open?id=1BrwKPN7JPq-fUmv21lKrWgfrstm3Y5RT&usp=drive_copy
 
 Casos de Prueba:
 
-Completar
+https://drive.google.com/open?id=1ITYS8H64g8wI6ppUTAxz-Ool0AeoXsx4&usp=drive_copy
+
+Mapa Mental:
+
+https://drive.google.com/open?id=1WaZfnP4SFsEcISDqP310vKIebXeESBdX&usp=drive_copy
+
+Mapa Mental:
+
+https://drive.google.com/open?id=1WaZfnP4SFsEcISDqP310vKIebXeESBdX&usp=drive_copy
 
 
 
@@ -142,4 +203,6 @@ https://www.figma.com/board/pC714J1fs4SJpusPuYaiMj/Flujo-Plataforma-KlowHub?node
 🐞Enlaces relevantes:
 
 https://knowhub.vercel.app/auth/register
+
+https://drive.google.com/drive/u/0/folders/10Wc_SQK9sybJyA_JFVqvCsWiErnQCDjC
 

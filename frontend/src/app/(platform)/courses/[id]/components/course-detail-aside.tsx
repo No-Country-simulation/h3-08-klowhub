@@ -20,6 +20,9 @@ function CourseDetailAside() {
 
   if (!course) return null
 
+  /**
+   * Handles the buy course button click event.
+   */
   const handleBuyCourse = () => {
     if (isProductInCart(course)) return router.push(Routes.Cart)
 
@@ -28,6 +31,9 @@ function CourseDetailAside() {
     router.push(Routes.Cart)
   }
 
+  /**
+   * Handles the add course to cart button click event.
+   */
   const handleAddCourseToCart = () => {
     if (isProductInCart(course)) return router.push(Routes.Cart)
 
