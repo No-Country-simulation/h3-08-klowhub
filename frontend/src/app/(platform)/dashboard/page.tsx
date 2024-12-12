@@ -147,7 +147,7 @@ function DashboardPage() {
   return (
     <main className='flex flex-col gap-8 px-4'>
       <TopHeadComp />
-      <GenTestresponsiveComp t={true} />
+      <GenTestresponsiveComp t={false} />
       <section className='relative rounded-md border-2 border-primary-b-500 bg-primary-100 text-primary-b-500 flex flex-col md:flex-row gap-4 p-6'>
         <X className='absolute right-4' />
         <Image
