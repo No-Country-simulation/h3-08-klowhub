@@ -10,7 +10,7 @@ export interface DashEventGroup {
   classNameChild: string
   events: DashEvent[]
 }
-function DashEventList({ eventsGroup }: { eventsGroup: DashEventGroup[] }) {
+function EventList({ eventsGroup }: { eventsGroup: DashEventGroup[] }) {
   return (
     <div className='w-full flex flex-col gap-4'>
       {eventsGroup.map((eg: DashEventGroup, i: number) => (
@@ -28,4 +28,4 @@ function DashEventList({ eventsGroup }: { eventsGroup: DashEventGroup[] }) {
   )
 }
 
-export default DashEventList
+export default EventList

@@ -12,7 +12,7 @@ export interface Consult {
   platform_type: 'powerapp' | 'appsheet'
   details_url: string
 }
-function DashConsultList({ consultList }: { consultList: Consult[] }) {
+function ConsultList({ consultList }: { consultList: Consult[] }) {
   return (
     <div className='flex flex-col gap-2'>
       {consultList.map((consult: Consult, i: number) => (
@@ -49,4 +49,4 @@ function DashConsultList({ consultList }: { consultList: Consult[] }) {
   )
 }
 
-export default DashConsultList
+export default ConsultList

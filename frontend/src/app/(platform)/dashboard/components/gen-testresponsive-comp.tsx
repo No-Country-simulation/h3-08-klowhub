@@ -1,8 +1,8 @@
 import React from 'react'
 
-function GenTestresponsiveComp() {
+function GenTestresponsiveComp({ t }: { t: boolean }) {
   return (
-    <div className='w-full'>
+    <div className={`w-full ${t ? '' : 'hidden'}`}>
       GenTestresponsiveComp (quitar en producción)
       <div className='block md:hidden'>SM</div>
       <div className='hidden sm:hidden md:block lg:hidden'>MD</div>

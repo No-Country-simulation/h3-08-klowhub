@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DashCard({ title, value }: { title: string, value: string }) {
+function Card({ title, value }: { title: string, value: string }) {
   return (
     <div className='f05-dash-card'>
       <h4 className=''>{title}</h4>
@@ -9,4 +9,4 @@ function DashCard({ title, value }: { title: string, value: string }) {
   )
 }
 
-export default DashCard
+export default Card

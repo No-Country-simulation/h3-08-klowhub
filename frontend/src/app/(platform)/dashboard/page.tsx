@@ -5,15 +5,16 @@ import SectionButton from './components/SectionButton'
 import { Tabs, TabsContent, TabsList } from '@/components/ui/tabs'
 import { TabsTriggerF02Comp } from '../app/profile/components/TabsTriggerF02Comp'
 import { Button } from '@/components/ui/button'
-import { DashboardSalesTable } from './components/dashboard-sales-table'
-import DashCard from './components/dash-card'
-import DashCalendar from './components/dash-calendar'
-import DashEventList, { DashEventGroup } from './components/dash-event-list'
-import DashOportunities, { DashOportunity } from './components/dash-oportunities'
-import DashChart, { DashChartData } from './components/dash-chart'
-import DashSearchInput from './components/dash-search-input'
-import DashConsultList, { Consult } from './components/dash-consult-list'
+import { DashboardSalesTable } from './components/sales-table'
+import Card from './components/card'
+import DashCalendar from './components/calendar'
+import EventList, { DashEventGroup } from './components/event-list'
+import DashOportunities, { DashOportunity } from './components/oportunities'
+import Chart, { DashChartData } from './components/chart'
+import SearchInput from './components/search-input'
+import ConsultList, { Consult } from './components/consult-list'
 import Link from 'next/link'
+import GenTestresponsiveComp from './components/gen-testresponsive-comp'
 
 function DashboardPage() {
   // Listado de eventos
@@ -198,10 +199,10 @@ function DashboardPage() {
             </TabsContent>
           </Tabs>
           <div className='flex flex-col w-full md:w-[30%] gap-2'>
-            <DashCard title='Ganancias totales del mes' value='$2850' />
-            <DashCard title='Cursos publicados' value='5' />
-            <DashCard title='Aplicaciones transferidas en el mes' value='11' />
-            <DashCard title='Horas de mentoria' value='27' />
+            <Card title='Ganancias totales del mes' value='$2850' />
+            <Card title='Cursos publicados' value='5' />
+            <Card title='Aplicaciones transferidas en el mes' value='11' />
+            <Card title='Horas de mentoria' value='27' />
             <Button variant='ghost'>Ver ganancias</Button>
           </div>
         </div>
@@ -211,7 +212,7 @@ function DashboardPage() {
           <DashCalendar fechas={fechas} />
         </div>
         <div className='w-full md:w-[30%] lg:w-[30%] f05-dash-card'>
-          <DashEventList eventsGroup={eventsGroups} />
+          <EventList eventsGroup={eventsGroups} />
         </div>
         <div className='w-full md:w-[30%] lg:w-[40%] f05-dash-card-start p-6'>
           <h3 className='font-bold flex flex-row gap-1'><CircleUserRound /> Martin Fernandez</h3>
@@ -241,7 +242,7 @@ function DashboardPage() {
             </TabsList>
             <TabsContent value='f05-dash-app'>
               <div className='flex flex-col'>
-                <DashChart className='max-h-[26rem] w-full f05-dash-card-start p-4' chartData={chartData} />
+                <Chart className='max-h-[26rem] w-full f05-dash-card-start p-4' chartData={chartData} />
               </div>
             </TabsContent>
           </Tabs>
@@ -253,9 +254,9 @@ function DashboardPage() {
         </div>
       </section>
       <section className='f02-card-02 p-6 flex flex-col gap-4'>
-        <div className='flex flex-row gap-4'>
+        <div className='flex flex-col md:flex-row gap-4'>
           {/* Buscador */}
-          <DashSearchInput />
+          <SearchInput />
           {/* Filtros */}
           <Button variant='filter' className=''>
             <ListFilter />Filtros
@@ -264,7 +265,8 @@ function DashboardPage() {
             <ListOrdered />Ordenar por
           </Button>
         </div>
-        <DashConsultList consultList={consultList} />
+        <ConsultList consultList={consultList} />
+        <GenTestresponsiveComp t={false} />
       </section>
     </main>
   )

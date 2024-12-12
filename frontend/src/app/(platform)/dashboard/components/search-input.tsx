@@ -2,9 +2,9 @@ import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
 import React from 'react'
 
-function DashSearchInput() {
+function SearchInput() {
   return (
-    <div className='text-black bg-white w-[40%] flex h-11 items-center rounded-md border pl-3 text-sm ring-offset-background'>
+    <div className='text-black bg-white w-full md:w-[40%] flex h-11 items-center rounded-md border pl-3 text-sm ring-offset-background'>
       <Search className='size-4' />
       <Input
         type='text' name='buscador' id='buscador'
@@ -15,4 +15,4 @@ function DashSearchInput() {
   )
 }
 
-export default DashSearchInput
+export default SearchInput

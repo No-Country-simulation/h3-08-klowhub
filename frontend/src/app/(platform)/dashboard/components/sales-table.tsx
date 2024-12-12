@@ -146,8 +146,8 @@ const mockData: Sale[] = [
   }
 ]
 
-function DashboardSalesTable() {
+function SalesTable() {
   return <DataTable columns={columns} data={mockData} />
 }
 
-export { DashboardSalesTable }
+export { SalesTable as DashboardSalesTable }

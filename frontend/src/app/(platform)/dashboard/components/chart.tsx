@@ -15,7 +15,7 @@ export interface DashChartData {
   $90k: number
 }
 
-function DashChart({ chartData, className }: { chartData: DashChartData[], className: string }) {
+function Chart({ chartData, className }: { chartData: DashChartData[], className: string }) {
   const chartConfig = {
     $88k: {
       label: '$88k',
@@ -51,4 +51,4 @@ function DashChart({ chartData, className }: { chartData: DashChartData[], class
   )
 }
 
-export default DashChart
+export default Chart
