@@ -15,7 +15,7 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
-  const bgActive = 'bg-[#FBF7FD10]'
+  const bgActive = 'bg-[#FFFFFF50]'
   const textActive = 'text-primary-b-100'
   return (
     <DayPicker

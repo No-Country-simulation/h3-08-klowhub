@@ -21,11 +21,11 @@ export interface DashOportunity {
   user: DashCustomer
   details_url: string
 }
-const DashOportunities = ({ oportunities }: { oportunities: DashOportunity[] }) => {
+const Oportunities = ({ oportunities }: { oportunities: DashOportunity[] }) => {
   return (
     <div className='flex flex-col md:flex-row gap-4 w-full'>
       {oportunities.map((o: DashOportunity, doid: number) => (
-        <div className='flex flex-col gap-4 p-6 f02-card-02 w-full md:w-1/2 lg:w-1/3' key={doid}>
+        <div className='flex flex-col gap-4 p-6 f05-card-dark w-full md:w-1/2 lg:w-1/3' key={doid}>
           <div className='flex flex-row justify-end gap-4'>
             <Link href={o.details_url}><LinkLucide /></Link>
             <Link href='/'><Heart /></Link>
@@ -39,7 +39,7 @@ const DashOportunities = ({ oportunities }: { oportunities: DashOportunity[] }) 
               <span className='gen-tag' key={oid}>{tag}</span>
             ))}
           </div>
-          <div className='w-fit rounded-lg flex flex-row gap-4 p-6 items-center justify-center bg-[#FFFFFF10]'>
+          <div className='w-fit rounded-lg flex flex-row gap-4 py-2 px-8 items-center justify-center bg-[#FFFFFF10]'>
             <Image
               src={`/assets/${o.platform_type}-icon.png`}
               className=''
@@ -74,4 +74,4 @@ const DashOportunities = ({ oportunities }: { oportunities: DashOportunity[] }) 
   )
 }
 
-export default DashOportunities
+export default Oportunities

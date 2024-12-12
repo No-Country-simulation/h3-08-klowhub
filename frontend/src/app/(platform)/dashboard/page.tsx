@@ -9,7 +9,7 @@ import { DashboardSalesTable } from './components/sales-table'
 import Card from './components/card'
 import DashCalendar from './components/calendar'
 import EventList, { DashEventGroup } from './components/event-list'
-import DashOportunities, { DashOportunity } from './components/oportunities'
+import Oportunities, { DashOportunity } from './components/oportunities'
 import Chart, { DashChartData } from './components/chart'
 import SearchInput from './components/search-input'
 import ConsultList, { Consult } from './components/consult-list'
@@ -147,7 +147,8 @@ function DashboardPage() {
   return (
     <main className='flex flex-col gap-8 px-4'>
       <TopHeadComp />
-      <section className='relative rounded-md border-2 border-secondary-b-500 bg-primary-100 text-secondary-b-500 flex flex-row gap-4 p-6'>
+      <GenTestresponsiveComp t={true} />
+      <section className='relative rounded-md border-2 border-primary-b-500 bg-primary-100 text-primary-b-500 flex flex-col md:flex-row gap-4 p-6'>
         <X className='absolute right-4' />
         <Image
           src='/assets/temporal/f05-bell-icon.png'
@@ -170,7 +171,7 @@ function DashboardPage() {
         <SectionButton link='' text='Mis aplicaciones' img='/assets/temporal/f05-sects-apps.png' />
         <SectionButton link='' text='Consultoria' img='/assets/temporal/f05-sects-consult.png' />
       </section>
-      <section className='f02-card-02 p-6 flex flex-col gap-4'>
+      <section className='f05-card-dark p-6 flex flex-col gap-4'>
         <h2 className='font-bold'>Mis proyectos</h2>
         <p>Revisa los detalles, realiza entregas y mantén la comunicación con el creador para asegurar el éxito de tu trabajo.</p>
         <div className='flex flex-col md:flex-row gap-4'>
@@ -183,11 +184,11 @@ function DashboardPage() {
                 <TabsTriggerF02Comp className='f02-tabs-style' value='f05-proy'>Proyectos</TabsTriggerF02Comp>
                 <TabsTriggerF02Comp className='f02-tabs-style' value='f05-ment'>Mentoría</TabsTriggerF02Comp>
               </div>
-              <div className='flex flex-row gap-4 lg:ml-auto'>
-                <Button variant='filter' className=''>
+              <div className='flex flex-col md:flex-row gap-4 lg:ml-auto'>
+                <Button variant='filter' className='px-2 md:px-4'>
                   <ListFilter />Filtros
                 </Button>
-                <Button variant='filter' className=''>
+                <Button variant='filter' className='px-2 md:px-4'>
                   <ListOrdered />Ordenar por
                 </Button>
               </div>
@@ -207,7 +208,7 @@ function DashboardPage() {
           </div>
         </div>
       </section>
-      <section className='f02-card-02 p-6 flex flex-col md:flex-row gap-4'>
+      <section className='f05-card-dark p-6 flex flex-col md:flex-row gap-4'>
         <div className='w-full md:w-[40%] lg:w-[30%] f05-dash-card items-start'>
           <DashCalendar fechas={fechas} />
         </div>
@@ -223,12 +224,12 @@ function DashboardPage() {
       <section className='f05-card-transparent-rows'>
         <h2 className='font-bold'>Oportunidades que se alinean con tu perfil</h2>
         <p>Explorá las postulaciones recomendadas especialmente para vos. Estas oportunidades están diseñadas para que encuentres el próximo paso en tu carrera de forma fácil y rápida. ¡No dejes pasar la chance de postularte a tu próximo desafío profesional!</p>
-        <DashOportunities oportunities={oportunities} />
+        <Oportunities oportunities={oportunities} />
         <div className='w-full flex flex-col items-center'>
-          <Button className='px-4' variant='filter'>Ver proyectos</Button>
+          <Button className='px-16' variant='filter'>Ver proyectos</Button>
         </div>
       </section>
-      <section className='f02-card-02 p-6 flex flex-col lg:flex-row gap-4'>
+      <section className='f05-card-dark p-6 flex flex-col lg:flex-row gap-4'>
         <div className='w-full lg:w-[70%]'>
           <div className='f05-dash-card-start p-2'>
             Chart de ventas ultimos 8 meses |
@@ -253,7 +254,7 @@ function DashboardPage() {
           <Button variant='default' className='w-fit'>Crear perfil</Button>
         </div>
       </section>
-      <section className='f02-card-02 p-6 flex flex-col gap-4'>
+      <section className='f05-card-dark p-6 flex flex-col gap-4'>
         <div className='flex flex-col md:flex-row gap-4'>
           {/* Buscador */}
           <SearchInput />

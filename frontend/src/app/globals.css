@@ -42,6 +42,10 @@ body {
 .f02-card-02{
   @apply bg-[#353e4b] rounded-md ;
 }
+/* F05 - Card Dark, para la tarjeta lateral editar perfil mentor */
+.f05-card-dark{
+  @apply bg-[#1F2937] rounded-md ;
+}
 /* F02 - input div, para los divs de los inputs */
 .f02-input-div{
   @apply grid w-full items-center gap-8;
@@ -115,7 +119,7 @@ body {
     font-bold;
 }
 .gen-event-pill-b-500{
-  @apply text-primary-b-500 border-[1px] border-primary-b-500 bg-[#E8C9F1];
+  @apply text-[#702486] border-[1px] border-[#702486] bg-[#E8C9F1];
 }
 .gen-event-pill-a-500{
   @apply text-primary-500 border-[1px] border-primary-500 bg-[#DFD1F3];
@@ -123,7 +127,7 @@ body {
 /*GEN - Tag style*/
 .gen-tag{
   @apply rounded-md bg-[#F3E3FB] 
-    text-primary-500  font-bold
+    text-[#812AAC] font-bold
     p-1;
 }
 /*GEN - PRO tag style*/
