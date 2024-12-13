@@ -14,7 +14,6 @@ import Chart, { DashChartData } from './components/chart'
 import SearchInput from './components/search-input'
 import ConsultList, { Consult } from './components/consult-list'
 import Link from 'next/link'
-import GenTestresponsiveComp from './components/gen-testresponsive-comp'
 
 function DashboardPage() {
   // Listado de eventos
@@ -145,9 +144,8 @@ function DashboardPage() {
     }
   ]
   return (
-    <main className='flex flex-col gap-8 px-4'>
+    <main className='flex flex-col gap-8 px-4 max-w-screen-2xl mx-auto'>
       <TopHeadComp />
-      <GenTestresponsiveComp t={false} />
       <section className='relative rounded-md border-2 border-primary-b-500 bg-primary-100 text-primary-b-500 flex flex-col md:flex-row gap-4 p-6'>
         <X className='absolute right-4' />
         <Image
@@ -267,7 +265,6 @@ function DashboardPage() {
           </Button>
         </div>
         <ConsultList consultList={consultList} />
-        <GenTestresponsiveComp t={false} />
       </section>
     </main>
   )

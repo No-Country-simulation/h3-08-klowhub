@@ -11,7 +11,7 @@ function TopHeadComp() {
         height={600}
         // layout='fill'
         // objectFit='cover'
-        className='absolute -z-10 md:max-h-[12rem] max-sm:max-h-fit w-[98%] bg-cover'
+        className='absolute -z-10 max-h-fit md:max-h-[12rem] w-[98%] bg-cover max-w-screen-2xl'
       />
       <h2 className='text-3xl font-bold'>KlowHub</h2>
       <h6 className='text-xs font-light'>Descubre, Aprende y Crea</h6>
