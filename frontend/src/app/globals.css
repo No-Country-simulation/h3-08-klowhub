@@ -99,7 +99,7 @@ body {
 }
 /* F05 - Dashboard Card Start */
 .f05-dash-card-start{
-  @apply flex flex-col gap-4 items-start justify-start bg-[#ffffff10] rounded-md;
+  @apply flex flex-col gap-8 items-start justify-start bg-[#ffffff10] rounded-md;
 }
 /* GEN - sale success */
 .gen-sale-type-success{

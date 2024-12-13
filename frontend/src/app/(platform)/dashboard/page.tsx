@@ -109,7 +109,7 @@ function DashboardPage() {
     new Date(2024, 11, 1),
     new Date(2024, 11, 2),
     new Date(2024, 11, 6),
-    new Date(2024, 11, 7),
+    new Date(2024, 11, 13),
     new Date(2024, 11, 22),
     new Date(2024, 11, 23),
     new Date(2024, 11, 29)
@@ -165,7 +165,7 @@ function DashboardPage() {
           </Link>
         </div>
       </section>
-      <section className='flex flex-col md:flex-row gap-4'>
+      <section className='hidden md:flex flex-col md:flex-row gap-4'>
         <SectionButton link='' text='Mis cursos' img='/assets/temporal/f05-sects-cursos.png' />
         <SectionButton link='' text='Mis proyectos' img='/assets/temporal/f05-sects-proys.png' />
         <SectionButton link='' text='Mis aplicaciones' img='/assets/temporal/f05-sects-apps.png' />
@@ -177,14 +177,14 @@ function DashboardPage() {
         <div className='flex flex-col md:flex-row gap-4'>
           <Tabs id='tabs-comp' defaultValue='f05-gen' className='w-full md:w-[70%]'>
             <TabsList className='bg-transparent w-full flex flex-col lg:flex-row items-start gap-2'>
-              <div className='w-full md:w-fit'>
+              <div className='hidden md:block w-full md:w-fit'>
                 <TabsTriggerF02Comp className='f02-tabs-style' value='f05-gen'>General</TabsTriggerF02Comp>
                 <TabsTriggerF02Comp className='f02-tabs-style' value='f05-apps'>Aplicaciones</TabsTriggerF02Comp>
                 <TabsTriggerF02Comp className='f02-tabs-style' value='f05-curs'>Cursos</TabsTriggerF02Comp>
                 <TabsTriggerF02Comp className='f02-tabs-style' value='f05-proy'>Proyectos</TabsTriggerF02Comp>
                 <TabsTriggerF02Comp className='f02-tabs-style' value='f05-ment'>Mentoría</TabsTriggerF02Comp>
               </div>
-              <div className='flex flex-col md:flex-row gap-4 lg:ml-auto'>
+              <div className='flex flex-col sm:flex-row gap-4 lg:ml-auto'>
                 <Button variant='filter' className='px-2 md:px-4'>
                   <ListFilter />Filtros
                 </Button>
@@ -199,7 +199,7 @@ function DashboardPage() {
               </div>
             </TabsContent>
           </Tabs>
-          <div className='flex flex-col w-full md:w-[30%] gap-2'>
+          <div className='hidden md:flex flex-col w-full md:w-[30%] gap-2'>
             <Card title='Ganancias totales del mes' value='$2850' />
             <Card title='Cursos publicados' value='5' />
             <Card title='Aplicaciones transferidas en el mes' value='11' />
@@ -209,13 +209,13 @@ function DashboardPage() {
         </div>
       </section>
       <section className='f05-card-dark p-6 flex flex-col md:flex-row gap-4'>
-        <div className='w-full md:w-[40%] lg:w-[30%] f05-dash-card items-start'>
+        <div className='hidden md:flex w-full md:w-[40%] lg:w-[30%] f05-dash-card items-start'>
           <DashCalendar fechas={fechas} />
         </div>
         <div className='w-full md:w-[30%] lg:w-[30%] f05-dash-card'>
           <EventList eventsGroup={eventsGroups} />
         </div>
-        <div className='w-full md:w-[30%] lg:w-[40%] f05-dash-card-start p-6'>
+        <div className='hidden md:flex w-full md:w-[30%] lg:w-[40%] f05-dash-card-start p-6'>
           <h3 className='font-bold flex flex-row gap-1'><CircleUserRound /> Martin Fernandez</h3>
           <h3 className='font-bold flex flex-row gap-1'><Clock4 /> 1 Hora</h3>
           <p>Hola, como estas? Me gustaria que en la reunion profundicemos sobre aplicaciones para automatizar procesos en mi negocio y tambien me gustaria ver cuales son las mejores opciones o casos parecidos en lo que hasyas trabajao. Posteriormetnte me gustaria emepzar a desarrollar algo para mi negocio</p>
