@@ -17,7 +17,6 @@ function Calendar({
 }: CalendarProps) {
   const bgActive = 'bg-[#FFFFFF10]'
   const textActive = 'text-primary-b-100'
-  console.log(buttonVariants({ variant: 'outline_calendar' }));
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
