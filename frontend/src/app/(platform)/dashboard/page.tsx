@@ -1,19 +1,19 @@
-import Image from 'next/image'
-import TopHeadComp from './components/TopHeadComp'
-import { CircleUserRound, Clock4, ListFilter, ListOrdered, X } from 'lucide-react'
-import SectionButton from './components/SectionButton'
-import { Tabs, TabsContent, TabsList } from '@/components/ui/tabs'
-import { TabsTriggerF02Comp } from '../app/profile/components/TabsTriggerF02Comp'
 import { Button } from '@/components/ui/button'
-import { DashboardSalesTable } from './components/sales-table'
-import Card from './components/card'
+import { Tabs, TabsContent, TabsList } from '@/components/ui/tabs'
+import { CircleUserRound, Clock4, ListFilter, ListOrdered, X } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { TabsTriggerF02Comp } from '../app/profile/components/TabsTriggerF02Comp'
 import DashCalendar from './components/calendar'
+import Card from './components/card'
+import Chart, { DashChartData } from './components/chart'
+import ConsultList, { Consult } from './components/consult-list'
 import EventList, { DashEventGroup } from './components/event-list'
 import Oportunities, { DashOportunity } from './components/oportunities'
-import Chart, { DashChartData } from './components/chart'
+import { DashboardSalesTable } from './components/sales-table'
 import SearchInput from './components/search-input'
-import ConsultList, { Consult } from './components/consult-list'
-import Link from 'next/link'
+import SectionButton from './components/SectionButton'
+import TopHeadComp from './components/TopHeadComp'
 
 function DashboardPage() {
   // Listado de eventos
@@ -144,50 +144,68 @@ function DashboardPage() {
     }
   ]
   return (
-    <main className='grid grow gap-8 px-4 max-w-screen-2xl mx-auto w-full'>
+    <main className='mx-auto grid w-full max-w-screen-2xl grow gap-8 px-4'>
       <TopHeadComp />
-      <section className='relative rounded-md border-2 border-primary-b-500 bg-primary-100 text-primary-b-500 flex flex-col md:flex-row gap-4 p-6'>
+      <section className='relative flex flex-col gap-4 rounded-md border-2 border-primary-b-500 bg-primary-100 p-6 text-primary-b-500 md:flex-row'>
         <X className='absolute right-4' />
         <Image
           src='/assets/temporal/f05-bell-icon.png'
           alt='top background'
           width={200}
           height={200}
-          className='w-8 h-8'
+          className='h-8 w-8'
         />
         <div className='flex flex-col gap-4'>
-          <h3 className='font-bold text-sm'>¡No olvides completar tu perfil de mentor!</h3>
-          <p className='text-sm'>Optimiza tus oportunidades completando tu perfil. Los usuarios confían más en los mentores con información completa y actualizada. ¡Dale el toque final y destacate!</p>
+          <h3 className='text-sm font-bold'>¡No olvides completar tu perfil de mentor!</h3>
+          <p className='text-sm'>
+            Optimiza tus oportunidades completando tu perfil. Los usuarios confían más en los mentores con información
+            completa y actualizada. ¡Dale el toque final y destacate!
+          </p>
           <Link href='/'>
-            <p className='font-bold text-xs'>Completar perfil</p>
+            <p className='text-xs font-bold'>Completar perfil</p>
           </Link>
         </div>
       </section>
-      <section className='hidden md:flex flex-col md:flex-row gap-4'>
+      <section className='hidden flex-col gap-4 md:flex md:flex-row'>
         <SectionButton link='' text='Mis cursos' img='/assets/temporal/f05-sects-cursos.png' />
         <SectionButton link='' text='Mis proyectos' img='/assets/temporal/f05-sects-proys.png' />
         <SectionButton link='' text='Mis aplicaciones' img='/assets/temporal/f05-sects-apps.png' />
         <SectionButton link='' text='Consultoria' img='/assets/temporal/f05-sects-consult.png' />
       </section>
-      <section className='f05-card-dark p-6 flex flex-col gap-4'>
+      <section className='f05-card-dark flex flex-col gap-4 p-6'>
         <h2 className='font-bold'>Mis proyectos</h2>
-        <p>Revisa los detalles, realiza entregas y mantén la comunicación con el creador para asegurar el éxito de tu trabajo.</p>
-        <div className='flex flex-col md:flex-row gap-4'>
+        <p>
+          Revisa los detalles, realiza entregas y mantén la comunicación con el creador para asegurar el éxito de tu
+          trabajo.
+        </p>
+        <div className='flex flex-col gap-4 md:flex-row'>
           <Tabs id='tabs-comp' defaultValue='f05-gen' className='w-full md:w-[70%]'>
-            <TabsList className='bg-transparent w-full flex flex-col lg:flex-row items-start gap-2'>
-              <div className='hidden md:block w-full md:w-fit'>
-                <TabsTriggerF02Comp className='f02-tabs-style' value='f05-gen'>General</TabsTriggerF02Comp>
-                <TabsTriggerF02Comp className='f02-tabs-style' value='f05-apps'>Aplicaciones</TabsTriggerF02Comp>
-                <TabsTriggerF02Comp className='f02-tabs-style' value='f05-curs'>Cursos</TabsTriggerF02Comp>
-                <TabsTriggerF02Comp className='f02-tabs-style' value='f05-proy'>Proyectos</TabsTriggerF02Comp>
-                <TabsTriggerF02Comp className='f02-tabs-style' value='f05-ment'>Mentoría</TabsTriggerF02Comp>
+            <TabsList className='flex w-full flex-col items-start gap-2 bg-transparent lg:flex-row'>
+              <div className='hidden w-full md:block md:w-fit'>
+                <TabsTriggerF02Comp className='f02-tabs-style' value='f05-gen'>
+                  General
+                </TabsTriggerF02Comp>
+                <TabsTriggerF02Comp className='f02-tabs-style' value='f05-apps'>
+                  Aplicaciones
+                </TabsTriggerF02Comp>
+                <TabsTriggerF02Comp className='f02-tabs-style' value='f05-curs'>
+                  Cursos
+                </TabsTriggerF02Comp>
+                <TabsTriggerF02Comp className='f02-tabs-style' value='f05-proy'>
+                  Proyectos
+                </TabsTriggerF02Comp>
+                <TabsTriggerF02Comp className='f02-tabs-style' value='f05-ment'>
+                  Mentoría
+                </TabsTriggerF02Comp>
               </div>
-              <div className='flex flex-col sm:flex-row gap-4 lg:ml-auto'>
+              <div className='flex flex-col gap-4 sm:flex-row lg:ml-auto'>
                 <Button variant='filter' className='px-2 md:px-4'>
-                  <ListFilter />Filtros
+                  <ListFilter />
+                  Filtros
                 </Button>
                 <Button variant='filter' className='px-2 md:px-4'>
-                  <ListOrdered />Ordenar por
+                  <ListOrdered />
+                  Ordenar por
                 </Button>
               </div>
             </TabsList>
@@ -197,7 +215,7 @@ function DashboardPage() {
               </div>
             </TabsContent>
           </Tabs>
-          <div className='hidden md:flex flex-col w-full md:w-[30%] gap-2'>
+          <div className='hidden w-full flex-col gap-2 md:flex md:w-[30%]'>
             <Card title='Ganancias totales del mes' value='$2850' />
             <Card title='Cursos publicados' value='5' />
             <Card title='Aplicaciones transferidas en el mes' value='11' />
@@ -206,62 +224,89 @@ function DashboardPage() {
           </div>
         </div>
       </section>
-      <section className='f05-card-dark p-6 flex flex-col md:flex-row gap-4'>
-        <div className='hidden md:flex w-full md:w-[40%] lg:w-[30%] f05-dash-card items-start'>
+      <section className='f05-card-dark flex flex-col gap-4 p-6 md:flex-row'>
+        <div className='f05-dash-card hidden w-full items-start md:flex md:w-[40%] lg:w-[30%]'>
           <DashCalendar fechas={fechas} />
         </div>
-        <div className='w-full md:w-[30%] lg:w-[30%] f05-dash-card'>
+        <div className='f05-dash-card w-full md:w-[30%] lg:w-[30%]'>
           <EventList eventsGroup={eventsGroups} />
         </div>
-        <div className='hidden md:flex w-full md:w-[30%] lg:w-[40%] f05-dash-card-start p-6'>
-          <h3 className='font-bold flex flex-row gap-1'><CircleUserRound /> Martin Fernandez</h3>
-          <h3 className='font-bold flex flex-row gap-1'><Clock4 /> 1 Hora</h3>
-          <p>Hola, como estas? Me gustaria que en la reunion profundicemos sobre aplicaciones para automatizar procesos en mi negocio y tambien me gustaria ver cuales son las mejores opciones o casos parecidos en lo que hasyas trabajao. Posteriormetnte me gustaria emepzar a desarrollar algo para mi negocio</p>
+        <div className='f05-dash-card-start hidden w-full p-6 md:flex md:w-[30%] lg:w-[40%]'>
+          <h3 className='flex flex-row gap-1 font-bold'>
+            <CircleUserRound /> Martin Fernandez
+          </h3>
+          <h3 className='flex flex-row gap-1 font-bold'>
+            <Clock4 /> 1 Hora
+          </h3>
+          <p>
+            Hola, como estas? Me gustaria que en la reunion profundicemos sobre aplicaciones para automatizar procesos
+            en mi negocio y tambien me gustaria ver cuales son las mejores opciones o casos parecidos en lo que hasyas
+            trabajao. Posteriormetnte me gustaria emepzar a desarrollar algo para mi negocio
+          </p>
         </div>
       </section>
       <section className='f05-card-transparent-rows'>
         <h2 className='font-bold'>Oportunidades que se alinean con tu perfil</h2>
-        <p>Explorá las postulaciones recomendadas especialmente para vos. Estas oportunidades están diseñadas para que encuentres el próximo paso en tu carrera de forma fácil y rápida. ¡No dejes pasar la chance de postularte a tu próximo desafío profesional!</p>
+        <p>
+          Explorá las postulaciones recomendadas especialmente para vos. Estas oportunidades están diseñadas para que
+          encuentres el próximo paso en tu carrera de forma fácil y rápida. ¡No dejes pasar la chance de postularte a tu
+          próximo desafío profesional!
+        </p>
         <Oportunities oportunities={oportunities} />
-        <div className='w-full flex flex-col items-center'>
-          <Button className='px-16' variant='filter'>Ver proyectos</Button>
+        <div className='flex w-full flex-col items-center'>
+          <Button className='px-16' variant='filter'>
+            Ver proyectos
+          </Button>
         </div>
       </section>
-      <section className='f05-card-dark p-6 flex flex-col lg:flex-row gap-4'>
+      <section className='f05-card-dark flex flex-col gap-4 p-6 lg:flex-row'>
         <div className='w-full lg:w-[70%]'>
-          <div className='f05-dash-card-start p-2'>
-            Chart de ventas ultimos 8 meses |
-          </div>
+          <div className='f05-dash-card-start p-2'>Chart de ventas ultimos 8 meses |</div>
           <Tabs id='tabs-comp' defaultValue='f05-dash-app'>
-            <TabsList className='bg-transparent w-full flex justify-start'>
-              <TabsTriggerF02Comp className='f02-tabs-style' value='f05-dash-app'>General</TabsTriggerF02Comp>
-              <TabsTriggerF02Comp className='f02-tabs-style' value='f05-curs'>Cursos</TabsTriggerF02Comp>
-              <TabsTriggerF02Comp className='f02-tabs-style' value='f05-proy'>Proyectos</TabsTriggerF02Comp>
-              <TabsTriggerF02Comp className='f02-tabs-style' value='f05-cons'>Consuloría</TabsTriggerF02Comp>
+            <TabsList className='flex w-full justify-start bg-transparent'>
+              <TabsTriggerF02Comp className='f02-tabs-style' value='f05-dash-app'>
+                General
+              </TabsTriggerF02Comp>
+              <TabsTriggerF02Comp className='f02-tabs-style' value='f05-curs'>
+                Cursos
+              </TabsTriggerF02Comp>
+              <TabsTriggerF02Comp className='f02-tabs-style' value='f05-proy'>
+                Proyectos
+              </TabsTriggerF02Comp>
+              <TabsTriggerF02Comp className='f02-tabs-style' value='f05-cons'>
+                Consuloría
+              </TabsTriggerF02Comp>
             </TabsList>
             <TabsContent value='f05-dash-app'>
               <div className='flex flex-col'>
-                <Chart className='max-h-[26rem] w-full f05-dash-card-start p-4' chartData={chartData} />
+                <Chart className='f05-dash-card-start max-h-[26rem] w-full p-4' chartData={chartData} />
               </div>
             </TabsContent>
           </Tabs>
         </div>
-        <div className='relative w-full lg:w-[30%] bg-cover bg-center bg-no-repeat bg-[image:url("/assets/temporal/f05-chart-card-bg.png")] flex flex-col gap-8 rounded-md justify-center p-6 font-bold'>
+        <div className='relative flex w-full flex-col justify-center gap-8 rounded-md bg-[image:url("/assets/temporal/f05-chart-card-bg.png")] bg-cover bg-center bg-no-repeat p-6 font-bold lg:w-[30%]'>
           <p>Crea tu perfil como mentor</p>
-          <p>¡Crea tu perfil como mentor y únete a nuestra comunidad de expertos! Comparte tu experienciay conecta con personas que buscan aprender. ¡Personaliza tu perfil y muestra al mundo lo que puedes aportar!</p>
-          <Button variant='default' className='w-fit'>Crear perfil</Button>
+          <p>
+            ¡Crea tu perfil como mentor y únete a nuestra comunidad de expertos! Comparte tu experienciay conecta con
+            personas que buscan aprender. ¡Personaliza tu perfil y muestra al mundo lo que puedes aportar!
+          </p>
+          <Button variant='default' className='w-fit'>
+            Crear perfil
+          </Button>
         </div>
       </section>
-      <section className='f05-card-dark p-6 flex flex-col gap-4'>
-        <div className='flex flex-col md:flex-row gap-4'>
+      <section className='f05-card-dark flex flex-col gap-4 p-6'>
+        <div className='flex flex-col gap-4 md:flex-row'>
           {/* Buscador */}
           <SearchInput />
           {/* Filtros */}
           <Button variant='filter' className=''>
-            <ListFilter />Filtros
+            <ListFilter />
+            Filtros
           </Button>
           <Button variant='filter' className=''>
-            <ListOrdered />Ordenar por
+            <ListOrdered />
+            Ordenar por
           </Button>
         </div>
         <ConsultList consultList={consultList} />

@@ -7,9 +7,9 @@ import {
   BreadcrumbSeparator
 } from '@/components/ui/breadcrumb'
 import { Routes } from '@/utils'
-import { NewApplicationForm } from '../../components/new-application-form'
+import { NewApplicationForm } from '../components/new-application-form'
 
-function AppMyApplicationsPage() {
+function DashboardApplicationsNewPage() {
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-9 lg:px-10 lg:py-8'>
       <Breadcrumb>
@@ -41,4 +41,4 @@ function AppMyApplicationsPage() {
   )
 }
 
-export default AppMyApplicationsPage
+export default DashboardApplicationsNewPage

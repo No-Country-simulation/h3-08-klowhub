@@ -1,4 +1,4 @@
-import { MyApplicationsList } from '@/components/list/my-applications-list'
+import { MyCoursesList } from '@/components/list/my-courses-list'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -12,7 +12,7 @@ import { Routes } from '@/utils'
 import Link from 'next/link'
 import { LatestSalesSection } from './components/latest-sales-section'
 
-function DashboardApplicationsPage() {
+function DashboardCoursesPage() {
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-9 lg:px-10 lg:py-8'>
       <Breadcrumb>
@@ -22,29 +22,28 @@ function DashboardApplicationsPage() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Mis aplicaciones</BreadcrumbPage>
+            <BreadcrumbPage>Mis cursos</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
       <h1 className='flex flex-wrap items-center gap-2 text-base font-bold'>
-        Mis aplicaciones
+        Mis cursos
         <Button className='ml-auto md:w-full md:max-w-60' asChild>
-          <Link href={Routes.DashboardApplicationsNew}>Crear aplicación</Link>
+          <Link href={Routes.DashboardCoursesNew}>Crear curso</Link>
         </Button>
       </h1>
       <LatestSalesSection />
       <section className='flex flex-col gap-y-6'>
         <header className='grid gap-y-1.5'>
-          <h3 className='text-base font-bold'>Aplicaciones publicadas</h3>
+          <h3 className='text-base font-bold'>Cursos publicados</h3>
           <p className='text-sm'>
-            Lista de todas las aplicaciones publicadas en Knowhub. Puedes editar o eliminar las aplicaciones que hayas
-            creado.
+            Lista de todos los cursos publicados en Knowhub. Puedes editar o eliminar los cursos que hayas creado.
           </p>
         </header>
-        <MyApplicationsList />
+        <MyCoursesList />
       </section>
     </main>
   )
 }
 
-export default DashboardApplicationsPage
+export default DashboardCoursesPage
