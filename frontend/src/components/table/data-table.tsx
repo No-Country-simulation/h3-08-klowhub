@@ -90,7 +90,7 @@ export function DataTable<TData, TValue>({ columns, data, onClickRow }: DataTabl
                       onDoubleClick={() => header.column.resetSize()}
                       onMouseDown={header.getResizeHandler()}
                       onTouchStart={header.getResizeHandler()}
-                      className='absolute right-0 top-0 z-50 h-full w-1.5 cursor-col-resize touch-none select-none bg-primary-700'
+                      className='absolute right-0 top-0 z-50 h-full w-1.5 cursor-col-resize touch-none select-none bg-transparent'
                     />
                   </TableHead>
                 )

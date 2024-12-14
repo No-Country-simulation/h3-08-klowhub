@@ -42,6 +42,10 @@ body {
 .f02-card-02{
   @apply bg-[#353e4b] rounded-md ;
 }
+/* F05 - Card Dark, para la tarjeta lateral editar perfil mentor */
+.f05-card-dark{
+  @apply bg-[#1F2937] rounded-md ;
+}
 /* F02 - input div, para los divs de los inputs */
 .f02-input-div{
   @apply grid w-full items-center gap-8;
@@ -88,4 +92,51 @@ body {
 /* F05 - tab border, para los botones de seleccionar plan */
 .f05-table-border{
   @apply bg-transparent border-2 border-primary-b-200 text-center text-wrap;
+}
+/* F05 - Dashboard Card */
+.f05-dash-card{
+  @apply flex flex-col gap-4 p-4 items-center justify-center bg-[#ffffff10] rounded-md;
+}
+/* F05 - Dashboard Card Start */
+.f05-dash-card-start{
+  @apply flex flex-col gap-8 items-start justify-start bg-[#ffffff10] rounded-md;
+}
+/* GEN - sale success */
+.gen-sale-type-success{
+  @apply flex flex-row items-center justify-center 
+    w-fit p-1 px-2 gap-2 border-[1px] rounded-3xl capitalize
+    border-[#4DE853] text-[#4DE853] bg-[#07C30E15];
+}
+.gen-sale-type-warning{
+  @apply flex flex-row items-center justify-center 
+    w-fit p-1 px-2 gap-2 border-[1px] rounded-3xl capitalize
+    border-[#C1D931] text-[#C1D931] bg-[#C1D93115];
+}
+/* GEN - Event pill */
+.gen-event-pill{
+  @apply flex flex-row md:flex-col lg:flex-row items-center justify-between
+    w-full p-3 px-4 rounded-md
+    font-bold;
+}
+.gen-event-pill-b-500{
+  @apply text-[#702486] border-[1px] border-[#702486] bg-[#E8C9F1];
+}
+.gen-event-pill-a-500{
+  @apply text-primary-500 border-[1px] border-primary-500 bg-[#DFD1F3];
+}
+/*GEN - Tag style*/
+.gen-tag{
+  @apply rounded-md bg-[#F3E3FB] 
+    text-[#812AAC] font-bold
+    p-1;
+}
+/*GEN - PRO tag style*/
+.gen_pro_tag{
+  @apply text-xs rounded-lg p-2 px-3 ml-2 bg-gradient-to-r from-primary-500 via-[#514B8F] via-[#556096] to-[#58759D];
+}
+
+/* F05 - Card rows, tarjeta sin fondo y en filas */
+.f05-card-transparent-rows{
+  @apply bg-transparent rounded-md
+    flex flex-col gap-4 p-4;
 }

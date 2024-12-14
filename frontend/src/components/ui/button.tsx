@@ -13,6 +13,7 @@ const buttonVariants = cva(
         destructive:
           'bg-red-500 text-neutral-50 shadow-sm hover:bg-red-500/90 dark:bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/90',
         outline: 'border border-[#D194E2] bg-transparent text-[#D194E2] hover:border-[#9D32BC] hover:text-[#9D32BC]',
+        outline_calendar: 'text-primary-b-100 hover:text-[#9D32BC]',
         secondary:
           'bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80',
         ghost: 'bg-transparent text-[#D194E2] hover:text-[#9D32BC]',
