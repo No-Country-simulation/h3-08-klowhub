@@ -29,6 +29,7 @@ export enum Routes {
   AppCourses = '/app/courses',
   Dashboard = '/dashboard',
   DashboardCourses = '/dashboard/courses',
+  DashboardCoursesNew = '/dashboard/courses/new',
   DashboardApplications = '/dashboard/applications',
   DashboardApplicationsNew = '/dashboard/applications/new',
   DashboardProfits = '/dashboard/profits'

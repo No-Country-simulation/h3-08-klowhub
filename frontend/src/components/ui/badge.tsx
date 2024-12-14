@@ -17,7 +17,8 @@ const badgeVariants = cva(
         cart: 'absolute -right-2 -top-2 rounded-full bg-white text-black',
         course: 'border-none bg-[#F3E3FBBF] px-1.5 py-1 text-sm font-semibold text-[#812AAC]',
         powerapp: 'rounded-full border-[#07B8C3] bg-[#07B8C3]/15 text-[#07B8C3]',
-        appsheet: 'rounded-full border-[#4DE853] bg-[#4DE853]/15 text-[#4DE853]'
+        appsheet: 'rounded-full border-[#4DE853] bg-[#4DE853]/15 text-[#4DE853]',
+        warning: 'rounded-full border-none bg-[#C1D931]/15 px-4 py-1.5 text-xs font-bold text-[#C1D931]'
       },
       size: {
         cart: 'size-5 shrink-0 justify-center p-0'
