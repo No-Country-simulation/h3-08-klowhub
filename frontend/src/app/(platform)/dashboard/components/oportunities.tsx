@@ -25,7 +25,7 @@ const Oportunities = ({ oportunities }: { oportunities: DashOportunity[] }) => {
   return (
     <div className='flex flex-col md:flex-row gap-4 w-full'>
       {oportunities.map((o: DashOportunity, doid: number) => (
-        <div className='flex flex-col gap-4 p-6 f05-card-dark w-full md:w-1/2 lg:w-1/3' key={doid}>
+        <div className='flex flex-col gap-0 p-1 lg:gap-4 lg:p-6 f05-card-dark w-full' key={doid}>
           <div className='flex flex-row justify-end gap-4'>
             <Link href={o.details_url}><LinkLucide /></Link>
             <Link href='/'><Heart /></Link>
