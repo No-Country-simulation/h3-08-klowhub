@@ -1,5 +1,6 @@
+import { FeatureCard } from '@/components/card/feature-card'
 import { Button } from '@/components/ui/button'
-import { caracteristics } from '@/mock/general.mock'
+import { features } from '@/mock/general.mock'
 import { Routes } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -23,7 +24,7 @@ function AboutAppSheetPage() {
       </section>
       <section className='grid items-center gap-8 md:grid-cols-2'>
         <header className='order-2 space-y-4 md:order-none'>
-          <h2 className='text-2xl font-bold md:text-4xl'>¿Qué es AppSheet?</h2>
+          <h2 className='text-2xl font-bold md:text-5xl'>¿Qué es AppSheet?</h2>
           <p className='text-sm'>
             AppSheet es una plataforma de desarrollo de aplicaciones no-code líder en la industria. Permite a usuarios
             sin experiencia en programación crear aplicaciones móviles y web sofisticadas utilizando interfaces
@@ -44,24 +45,16 @@ function AboutAppSheetPage() {
         </div>
       </section>
       <section className='grid gap-y-10 rounded-lg bg-white/10 px-5 py-10 md:py-20'>
-        <h3 className='text-center text-2xl font-bold md:text-4xl'>Características Principales de AppSheet</h3>
+        <h3 className='text-center text-2xl font-bold md:text-5xl'>Características Principales de AppSheet</h3>
         <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-          {caracteristics.map((caracteristic) => (
-            <article
-              key={caracteristic.name}
-              className='flex flex-col gap-y-2 rounded-lg border-2 border-[#B95ED4] p-6'
-            >
-              <p className='font-semibold underline decoration-[#B95ED4] underline-offset-4 md:text-lg'>
-                {caracteristic.name}
-              </p>
-              <p className='text-sm'>{caracteristic.description}</p>
-            </article>
+          {features.map((feature) => (
+            <FeatureCard key={feature.name} feature={feature} />
           ))}
         </div>
       </section>
       <section className='grid items-center gap-8 md:grid-cols-2'>
         <header className='order-2 space-y-4 md:order-none'>
-          <h3 className='text-2xl font-bold md:text-4xl'>El Impacto de AppSheet en las Empresas</h3>
+          <h3 className='text-2xl font-bold md:text-5xl'>El Impacto de AppSheet en las Empresas</h3>
           <p className='text-sm'>
             AppSheet ha transformado la forma en que las empresas abordan el desarrollo de aplicaciones y la
             automatización de procesos. Al permitir que los empleados creen sus propias soluciones, AppSheet fomenta la
