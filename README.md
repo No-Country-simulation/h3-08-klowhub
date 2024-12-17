@@ -166,6 +166,8 @@ Casos de Prueba:
 
 https://drive.google.com/open?id=1ITYS8H64g8wI6ppUTAxz-Ool0AeoXsx4&usp=drive_copy
 
+https://docs.google.com/spreadsheets/d/1Yf7mwl5polRZatk35wWsLrmt-X3arbQv/edit?usp=drive_link&ouid=114968252458563670851&rtpof=true&sd=true
+
 Mapa Mental:
 
 https://drive.google.com/open?id=1WaZfnP4SFsEcISDqP310vKIebXeESBdX&usp=drive_copy
