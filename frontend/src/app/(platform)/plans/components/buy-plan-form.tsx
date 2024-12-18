@@ -309,10 +309,10 @@ function StepCompleteInformation() {
         name='user_website_url'
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Añade un enlace a tu portafolio o sitio web (Opcional)</FormLabel>
+            <FormLabel>Añade un enlace a tu portafolio o sitio web</FormLabel>
             <FormDescription>
-              Si tienes un portafolio en línea, este es el lugar perfecto para destacarlo y mostrar tu trabajo a
-              posibles compradores.
+              Agrega un enlace a tu portafolio o sitio web para que los compradores puedan conocer tu trabajo y
+              destacarte.
             </FormDescription>
             <FormControl>
               <Input placeholder='https://...' {...field} />

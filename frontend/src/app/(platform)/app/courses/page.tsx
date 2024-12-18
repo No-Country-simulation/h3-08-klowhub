@@ -24,17 +24,9 @@ function AppMyCoursesPage() {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+      <CourseProgressSection />
       <section className='flex flex-col gap-y-6'>
         <h1 className='text-base font-bold'>Mis cursos</h1>
-        <CourseProgressSection />
-      </section>
-      <section className='flex flex-col gap-y-6'>
-        <header className='grid gap-y-1.5'>
-          <h3 className='text-base font-bold'>Cursos completados</h3>
-          <p className='text-sm'>
-            Observa tus progresos y obtén recomendaciones personalizadas para tus cursos. ¡Aprende de los mejores!
-          </p>
-        </header>
         <MyCoursesList />
       </section>
     </main>

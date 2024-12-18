@@ -42,11 +42,14 @@ Esto descargará todos los paquetes requeridos especificados en el archivo `pack
 
 ### 4. Configurar Variables de Entorno
 
-Crea un archivo `.env.local` en la carpeta `frontend` y agrega las siguientes variables con los valores correspondientes de tu proyecto Supabase:
+Crea un archivo `.env.local` en la carpeta `frontend` y agrega las siguientes variables con los valores correspondientes de tu proyecto Supabase y Stripe:
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=tu_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_supabase_anon_key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=tu_stripe_publishable_key
+STRIPE_SECRET_KEY=tu_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=tu_stripe_webhook_secret
 ```
 
 Asegúrate de reemplazar `tu_supabase_url` y `tu_supabase_anon_key` con los valores reales de tu proyecto.
