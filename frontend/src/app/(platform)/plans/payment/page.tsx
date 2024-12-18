@@ -11,7 +11,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { PurchaseSummaryCard } from '../components/purchase-summary-card'
 
-function AppPlansPaymentPage() {
+function PlansPaymentPage() {
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-16 px-5 py-8 lg:px-10 lg:py-8'>
       <Breadcrumb>
@@ -56,4 +56,4 @@ function AppPlansPaymentPage() {
   )
 }
 
-export default AppPlansPaymentPage
+export default PlansPaymentPage
