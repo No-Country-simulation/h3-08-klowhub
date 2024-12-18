@@ -1,4 +1,4 @@
-import { MyApplicationsList } from '@/components/list/my-applications-list'
+import { MyApplicationsPublishedList } from '@/components/list/my-applications-published-list'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -41,7 +41,7 @@ function DashboardApplicationsPage() {
             creado.
           </p>
         </header>
-        <MyApplicationsList />
+        <MyApplicationsPublishedList />
       </section>
     </main>
   )

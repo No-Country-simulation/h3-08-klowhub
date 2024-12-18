@@ -1,17 +1,19 @@
 'use client'
-import { useCart } from '@/hooks'
+import { Order } from '@/models'
+import { format } from 'date-fns'
 import { CartProductCard } from './cart-product-card'
 
-function PurchaseSummaryCard() {
-  // TODO: REMOVE AFTER INTEGRATION WITH CART AND PAYMENT
-  const { cart, calculateTotal } = useCart()
+interface PurchaseSummaryCardProps {
+  order: Order
+}
 
+function PurchaseSummaryCard({ order }: PurchaseSummaryCardProps) {
   return (
     <div className='grid gap-x-12 lg:grid-cols-[1fr_25rem]'>
       <ul className='grid gap-y-4'>
-        {cart.map((product) => (
-          <li key={product.id}>
-            <CartProductCard product={product} variant='purchase-summary' />
+        {order.items.map((item) => (
+          <li key={item.id}>
+            <CartProductCard product={item.product} variant='purchase-summary' />
           </li>
         ))}
       </ul>
@@ -19,22 +21,22 @@ function PurchaseSummaryCard() {
         <p className='text-base font-semibold'>Resumen de compra</p>
         <ul className='grid gap-y-2'>
           <li className='grid gap-x-2 text-sm font-medium sm:grid-cols-[8rem_1fr]'>
-            Aplicación <span>Gestión de inventarios con AppSheet</span>
+            Fecha de compra <span>{format(new Date(order.created_at), 'dd/MM/yyyy')}</span>
           </li>
           <li className='grid gap-x-2 text-sm font-medium sm:grid-cols-[8rem_1fr]'>
-            Fecha de compra <span>15 de agosto de 2024</span>
+            Precio <span>${order.subtotal}</span>
           </li>
           <li className='grid gap-x-2 text-sm font-medium sm:grid-cols-[8rem_1fr]'>
-            Precio <span>${calculateTotal()}</span>
+            Comisión <span>${order.fee}</span>
           </li>
           <li className='grid gap-x-2 text-sm font-medium sm:grid-cols-[8rem_1fr]'>
-            Cupón <span>Cupón HOTSALE20 (-20%)</span>
+            Descuento <span>${order.discount}</span>
           </li>
           <li className='grid gap-x-2 text-sm font-medium sm:grid-cols-[8rem_1fr]'>
-            Medio de pago <span>Paypal</span>
+            Medio de pago <span>Stripe</span>
           </li>
           <li className='grid gap-x-2 text-sm font-medium sm:grid-cols-[8rem_1fr]'>
-            TOTAL <span>$8</span>
+            TOTAL <span>${order.total}</span>
           </li>
         </ul>
       </article>
