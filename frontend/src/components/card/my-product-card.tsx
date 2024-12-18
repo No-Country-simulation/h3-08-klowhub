@@ -7,6 +7,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 interface MyProductCardProps {
+  /**
+   * The product to render.
+   */
   product: Product
 }
 

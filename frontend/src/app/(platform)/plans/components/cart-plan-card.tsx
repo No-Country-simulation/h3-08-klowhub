@@ -6,6 +6,9 @@ import { CheckIcon } from 'lucide-react'
 import Image from 'next/image'
 
 interface CartPlanCardProps {
+  /**
+   * The variant of the card.
+   */
   variant?: 'purchase-summary'
 }
 

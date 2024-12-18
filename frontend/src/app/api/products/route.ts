@@ -1,19 +1,16 @@
-import { ProductType } from '@/models'
+import { productFiltersSchema } from '@/utils'
 import { createClient } from '@/utils/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 
-const filtersSchema = z.object({
-  type: z.nativeEnum(ProductType).optional(),
-  limit: z
-    .string()
-    .refine((value) => !isNaN(Number(value)), { message: 'The limit must be a number' })
-    .optional()
-})
-
+/**
+ * Handles the GET request to fetch products.
+ * @param request - The incoming request object.
+ * @returns The products.
+ */
 export async function GET(request: NextRequest) {
   try {
-    const { limit, type } = filtersSchema.parse(Object.fromEntries(request.nextUrl.searchParams))
+    const { limit, type } = productFiltersSchema.parse(Object.fromEntries(request.nextUrl.searchParams))
 
     const supabase = await createClient()
     let query = supabase.from('products').select('*, reviews(*)')

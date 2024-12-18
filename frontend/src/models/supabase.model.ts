@@ -57,29 +57,7 @@ export interface Database {
           quantity?: number | null
           updated_at?: string | null
         }
-        Relationships: [
-          {
-            foreignKeyName: 'order_items_order_id_fkey'
-            columns: ['order_id']
-            isOneToOne: false
-            referencedRelation: 'orders'
-            referencedColumns: ['id']
-          },
-          {
-            foreignKeyName: 'order_items_plan_id_fkey'
-            columns: ['plan_id']
-            isOneToOne: false
-            referencedRelation: 'plans'
-            referencedColumns: ['id']
-          },
-          {
-            foreignKeyName: 'order_items_product_id_fkey'
-            columns: ['product_id']
-            isOneToOne: false
-            referencedRelation: 'products'
-            referencedColumns: ['id']
-          }
-        ]
+        Relationships: []
       }
       orders: {
         Row: {
@@ -87,6 +65,7 @@ export interface Database {
           discount: number | null
           fee: number | null
           id: string
+          payment_id: string | null
           status: Database['public']['Enums']['OrderStatus'] | null
           subtotal: number | null
           total: number | null
@@ -98,6 +77,7 @@ export interface Database {
           discount?: number | null
           fee?: number | null
           id?: string
+          payment_id?: string | null
           status?: Database['public']['Enums']['OrderStatus'] | null
           subtotal?: number | null
           total?: number | null
@@ -109,6 +89,7 @@ export interface Database {
           discount?: number | null
           fee?: number | null
           id?: string
+          payment_id?: string | null
           status?: Database['public']['Enums']['OrderStatus'] | null
           subtotal?: number | null
           total?: number | null
@@ -166,6 +147,7 @@ export interface Database {
           id: string
           name: string | null
           price: number | null
+          thumbnail_url: string | null
           type: Database['public']['Enums']['PlanType'] | null
           updated_at: string | null
         }
@@ -174,6 +156,7 @@ export interface Database {
           id?: string
           name?: string | null
           price?: number | null
+          thumbnail_url?: string | null
           type?: Database['public']['Enums']['PlanType'] | null
           updated_at?: string | null
         }
@@ -182,6 +165,7 @@ export interface Database {
           id?: string
           name?: string | null
           price?: number | null
+          thumbnail_url?: string | null
           type?: Database['public']['Enums']['PlanType'] | null
           updated_at?: string | null
         }
@@ -367,7 +351,7 @@ export interface Database {
           {
             foreignKeyName: 'user_plans_user_id_fkey1'
             columns: ['user_id']
-            isOneToOne: false
+            isOneToOne: true
             referencedRelation: 'users'
             referencedColumns: ['id']
           }

@@ -1,6 +1,11 @@
 import { createClient } from '@/utils/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 
+/**
+ * Handles the GET request to fetch plans.
+ * @param request - The incoming request object.
+ * @returns The plans.
+ */
 export async function GET(request: NextRequest) {
   try {
     const supabase = await createClient()

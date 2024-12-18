@@ -4,6 +4,9 @@ import { CirclePlayIcon, FileIcon, GraduationCapIcon, MessageSquareIcon, StarIco
 import Image from 'next/image'
 
 interface UserPreviewCardProps {
+  /**
+   * The variant of the card.
+   */
   variant?: 'course' | 'app'
 }
 

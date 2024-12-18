@@ -1,14 +1,21 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { useCart } from '@/hooks'
+import { useCart, useUser } from '@/hooks'
+import { createStripeSession } from '@/service'
 import { Routes } from '@/utils'
 import { StoreIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import { toast } from 'sonner'
 import { CardProductsList } from '../list/card-products-list'
 
 function PurchaseSummarySection() {
+  const [isBuying, setIsBuying] = useState(false)
+  const router = useRouter()
+  const user = useUser().user
   const { cart, calculateTotal } = useCart()
 
   if (!cart.length) {
@@ -22,6 +29,30 @@ function PurchaseSummarySection() {
         </Link>
       </header>
     )
+  }
+
+  const handleBuyWithStripe = async () => {
+    try {
+      if (!user) return toast.error('¡No se encontró tu perfil, inténtalo de nuevo!')
+
+      setIsBuying(true)
+
+      const { error, data } = await createStripeSession({
+        user_id: user.id,
+        subtotal: calculateTotal(),
+        fee: 0,
+        discount: 0,
+        total: calculateTotal(),
+        products: cart
+      })
+      if (error) return toast.error(error)
+
+      router.replace(data)
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : '¡Ocurrió un error al procesar el pago')
+    } finally {
+      setIsBuying(false)
+    }
   }
 
   return (
@@ -56,18 +87,18 @@ function PurchaseSummarySection() {
           <p className='text-sm font-semibold'>Selecciona un método de pago</p>
           <ul className='flex items-center justify-center gap-x-4'>
             <li>
-              <Link href={Routes.Payment}>
+              <Button onClick={handleBuyWithStripe} className='size-auto border-none p-0' disabled={isBuying}>
                 <Image
                   className='object-contain'
                   src='/assets/payment-stripe.png'
                   alt='Stripe logo'
                   width={111}
-                  height={69}
+                  height={79}
                 />
-              </Link>
+              </Button>
             </li>
             <li>
-              <Link href={Routes.Payment}>
+              <Button className='size-auto border-none p-0' disabled={isBuying}>
                 <Image
                   className='object-contain'
                   src='/assets/payment-paypal.png'
@@ -75,10 +106,10 @@ function PurchaseSummarySection() {
                   width={111}
                   height={69}
                 />
-              </Link>
+              </Button>
             </li>
             <li>
-              <Link href={Routes.Payment}>
+              <Button className='size-auto border-none p-0' disabled={isBuying}>
                 <Image
                   className='object-contain'
                   src='/assets/payment-etherium.png'
@@ -86,7 +117,7 @@ function PurchaseSummarySection() {
                   width={111}
                   height={69}
                 />
-              </Link>
+              </Button>
             </li>
           </ul>
         </footer>

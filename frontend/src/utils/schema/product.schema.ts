@@ -1,7 +1,10 @@
 import { PlatformType, ProductType } from '@/models'
-import { MAX_PRODUCT_IMAGES } from '@/utils'
+import { MAX_PRODUCT_IMAGES, MIN_PRODUCT_QUANTITY } from '@/utils'
 import { z } from 'zod'
 
+/**
+ * Schema for creating a product.
+ */
 export const productSchema = z.object({
   seller_id: z.string().min(1, 'El identificador del vendedor es obligatorio'),
   type: z.nativeEnum(ProductType),
@@ -25,6 +28,9 @@ export const productSchema = z.object({
     .max(MAX_PRODUCT_IMAGES, 'No puede subir más de 5 imágenes')
 })
 
+/**
+ * Type representing the product schema.
+ */
 export const applicationSchema = productSchema
   .extend({
     about_application: z.string(),
@@ -76,4 +82,65 @@ export const applicationSchema = productSchema
     }
   )
 
+/**
+ * Type representing the application schema.
+ */
 export type ApplicationSchema = z.infer<typeof applicationSchema>
+
+/**
+ * Schema for creating a products cart.
+ */
+export const cartSchema = z.object({
+  user_id: z.string({
+    required_error: 'El ID del usuario es obligatorio'
+  }),
+  subtotal: z.number({
+    invalid_type_error: 'El subtotal debe ser un número',
+    required_error: 'El subtotal es obligatorio'
+  }),
+  fee: z.number({
+    invalid_type_error: 'El descuento debe ser un número',
+    required_error: 'El descuento es obligatorio'
+  }),
+  discount: z
+    .number({
+      invalid_type_error: 'El descuento debe ser un número',
+      required_error: 'El descuento es obligatorio'
+    })
+    .optional(),
+  total: z.number({
+    invalid_type_error: 'El total debe ser un número',
+    required_error: 'El total es obligatorio'
+  }),
+  products: z.array(
+    productSchema.extend({
+      id: z.string().min(1, 'El ID del producto es obligatorio'),
+      quantity: z.coerce.number().min(MIN_PRODUCT_QUANTITY, 'La cantidad debe ser mayor a 0')
+    }),
+    {
+      invalid_type_error: 'El producto no es válido',
+      required_error: 'Debe ingresar al menos un producto'
+    }
+  )
+})
+
+/**
+ * Type representing the products cart schema.
+ */
+export type CartSchema = z.infer<typeof cartSchema>
+
+/**
+ * Schema for filtering products.
+ */
+export const productFiltersSchema = z.object({
+  type: z.nativeEnum(ProductType).optional(),
+  limit: z
+    .string()
+    .refine((value) => !isNaN(Number(value)), { message: 'The limit must be a number' })
+    .optional()
+})
+
+/**
+ * Type representing the product filters schema.
+ */
+export type ProductFiltersSchema = z.infer<typeof productFiltersSchema>

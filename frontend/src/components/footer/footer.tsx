@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 function Footer() {
   return (
-    <footer className='bg-footer'>
-      <div className='mx-auto grid max-w-screen-2xl gap-y-12 px-16 py-10'>
+    <footer className='mt-auto bg-footer'>
+      <div className='mx-auto grid max-w-screen-2xl gap-y-12 px-5 py-10'>
         <ul className='flex flex-col gap-x-3 gap-y-6 md:grid md:grid-cols-4 lg:grid-cols-5'>
           {FOOTER_ROUTES.sitemap.map(({ title, routes }) => (
             <li key={title} className='flex flex-col gap-y-3.5'>

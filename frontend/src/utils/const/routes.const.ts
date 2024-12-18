@@ -1,5 +1,8 @@
 import { FacebookIcon, LinkedinIcon, XIcon } from '@/components/icons'
 
+/**
+ * Routes for the application.
+ */
 export enum Routes {
   Home = '/',
   AuthLogin = '/auth/login',
@@ -26,6 +29,7 @@ export enum Routes {
   AppCourses = '/app/courses',
   Dashboard = '/dashboard',
   DashboardCourses = '/dashboard/courses',
+  DashboardCoursesNew = '/dashboard/courses/new',
   DashboardApplications = '/dashboard/applications',
   DashboardApplicationsNew = '/dashboard/applications/new',
   DashboardProfits = '/dashboard/profits'
@@ -33,6 +37,9 @@ export enum Routes {
 
 export const DASHBOARD_ROUTE_REGEX = /^\/dashboard(\/.*)?$/
 
+/**
+ * Routes that require authentication.
+ */
 export const PROTECTED_ROUTES = [
   /^\/app(\/.*)?$/,
   DASHBOARD_ROUTE_REGEX,
@@ -42,6 +49,9 @@ export const PROTECTED_ROUTES = [
   /^\/plans\/payment(\/.*)?$/
 ]
 
+/**
+ * Routes for the application header for explorers.
+ */
 export const EXPLORER_HEADER_ROUTES = [
   { label: 'Cursos y lecciones', href: Routes.Courses },
   { label: 'AppStore', href: Routes.Applications },
@@ -50,6 +60,9 @@ export const EXPLORER_HEADER_ROUTES = [
   { label: 'Sobre Appsheet', href: Routes.AboutAppSheet }
 ]
 
+/**
+ * Routes for the application header for sellers.
+ */
 export const SELLER_HEADER_ROUTES = [
   { label: 'Dashboard', href: Routes.Dashboard },
   { label: 'Ganancias', href: Routes.DashboardProfits },
@@ -58,6 +71,9 @@ export const SELLER_HEADER_ROUTES = [
   { label: 'Sobre Appsheet', href: Routes.AboutAppSheet }
 ]
 
+/**
+ * Routes for the application footer.
+ */
 export const FOOTER_ROUTES = {
   sitemap: [
     {

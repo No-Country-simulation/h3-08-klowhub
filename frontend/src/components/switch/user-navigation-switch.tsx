@@ -7,6 +7,9 @@ import { BookTextIcon, RocketIcon } from 'lucide-react'
 import Link from 'next/link'
 
 interface UserNavigationSwitchProps {
+  /**
+   * The class name.
+   */
   className?: string
 }
 

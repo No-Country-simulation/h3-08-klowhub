@@ -19,6 +19,10 @@ const chartConfig = {
 } satisfies ChartConfig
 
 function LatestSalesSection() {
+  /**
+   * Calculates the total profits of the chart data.
+   * @returns The total profits of the chart data.
+   */
   const totalProfits = useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.movements, 0)
   }, [])

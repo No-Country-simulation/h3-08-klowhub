@@ -1,4 +1,4 @@
-import { MyApplicationsList } from '@/components/list/my-applications-list'
+import { MyApplicationsPublishedList } from '@/components/list/my-applications-published-list'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,9 +10,9 @@ import {
 import { Button } from '@/components/ui/button'
 import { Routes } from '@/utils'
 import Link from 'next/link'
-import { LatestSalesSection } from '../components/latest-sales-section'
+import { LatestSalesSection } from './components/latest-sales-section'
 
-function AppMyApplicationsPage() {
+function DashboardApplicationsPage() {
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-9 lg:px-10 lg:py-8'>
       <Breadcrumb>
@@ -28,7 +28,7 @@ function AppMyApplicationsPage() {
       </Breadcrumb>
       <h1 className='flex flex-wrap items-center gap-2 text-base font-bold'>
         Mis aplicaciones
-        <Button className='ml-auto' asChild>
+        <Button className='ml-auto md:w-full md:max-w-60' asChild>
           <Link href={Routes.DashboardApplicationsNew}>Crear aplicación</Link>
         </Button>
       </h1>
@@ -41,10 +41,10 @@ function AppMyApplicationsPage() {
             creado.
           </p>
         </header>
-        <MyApplicationsList />
+        <MyApplicationsPublishedList />
       </section>
     </main>
   )
 }
 
-export default AppMyApplicationsPage
+export default DashboardApplicationsPage

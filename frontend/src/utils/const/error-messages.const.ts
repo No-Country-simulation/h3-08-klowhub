@@ -1,3 +1,6 @@
+/**
+ * Error messages for authentication errors.
+ */
 export const AUTH_ERROR_MESSAGES: Record<string, string> = {
   bad_code_verifier: '¡El código de verificación de autenticación no es válido!',
   bad_json: '¡El JSON no es válido!',

@@ -1,6 +1,12 @@
 import { ApplicationSchema } from '@/utils'
 import { createClient } from '@/utils/supabase/client'
 
+/**
+ * Uploads a product image to Supabase Storage.
+ * @param file - The file to upload.
+ * @param userId - The user ID.
+ * @returns The public URL of the uploaded image.
+ */
 export async function uploadProductImage(file: File, userId: string) {
   try {
     const supabase = createClient()
@@ -19,6 +25,11 @@ export async function uploadProductImage(file: File, userId: string) {
   }
 }
 
+/**
+ * Creates an application.
+ * @param data - The data to create the application.
+ * @returns The created application.
+ */
 export async function createApplication(data: ApplicationSchema) {
   try {
     const request = await fetch('/api/product/application', {

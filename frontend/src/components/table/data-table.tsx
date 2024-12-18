@@ -20,8 +20,17 @@ import React, { memo, useMemo, useState } from 'react'
 import { DataTablePagination } from './data-table-pagination'
 
 interface DataTableProps<TData, TValue> {
+  /**
+   * The columns to render.
+   */
   columns: Array<ColumnDef<TData, TValue>>
+  /**
+   * The data to render.
+   */
   data: TData[]
+  /**
+   * The function to handle the click on a row.
+   */
   onClickRow?: (ev: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: Row<TData>) => void
 }
 
@@ -50,6 +59,10 @@ export function DataTable<TData, TValue>({ columns, data, onClickRow }: DataTabl
     }
   })
 
+  /**
+   * Calculates the column sizes.
+   * @returns The column sizes.
+   */
   const columnSizeVars = useMemo(() => {
     const headers = table.getFlatHeaders()
     const colSizes: { [key: string]: number } = {}
@@ -77,7 +90,7 @@ export function DataTable<TData, TValue>({ columns, data, onClickRow }: DataTabl
                       onDoubleClick={() => header.column.resetSize()}
                       onMouseDown={header.getResizeHandler()}
                       onTouchStart={header.getResizeHandler()}
-                      className='absolute right-0 top-0 z-50 h-full w-1.5 cursor-col-resize touch-none select-none bg-primary-700'
+                      className='absolute right-0 top-0 z-50 h-full w-1.5 cursor-col-resize touch-none select-none bg-transparent'
                     />
                   </TableHead>
                 )
@@ -97,8 +110,17 @@ export function DataTable<TData, TValue>({ columns, data, onClickRow }: DataTabl
 }
 
 interface DataTableBodyProps<TData, TValue> {
+  /**
+   * The columns to render.
+   */
   columns: Array<ColumnDef<TData, TValue>>
+  /**
+   * The table to render.
+   */
   table: ReactTable<TData>
+  /**
+   * The function to handle the click on a row.
+   */
   onClickRow?: (ev: React.MouseEvent<HTMLTableRowElement, MouseEvent>, row: Row<TData>) => void
 }
 
