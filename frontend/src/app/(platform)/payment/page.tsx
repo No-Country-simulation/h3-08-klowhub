@@ -15,11 +15,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import useSWR from 'swr'
 
-interface AppPaymentPageProps {
+interface PaymentPageProps {
   searchParams: { session_id: string }
 }
 
-function AppPaymentPage({ searchParams }: AppPaymentPageProps) {
+function PaymentPage({ searchParams }: PaymentPageProps) {
   const { data: order, isLoading, error } = useSWR(`/api/stripe/session/products?session_id=${searchParams.session_id}`)
 
   if (isLoading) {
@@ -89,4 +89,4 @@ function AppPaymentPage({ searchParams }: AppPaymentPageProps) {
   )
 }
 
-export default AppPaymentPage
+export default PaymentPage

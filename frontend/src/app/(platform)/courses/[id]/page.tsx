@@ -23,14 +23,14 @@ import { useState } from 'react'
 import useSWR from 'swr'
 import { CourseDetailAside } from './components/course-detail-aside'
 
-interface AppCourseDetailPageProps {
+interface CourseDetailPageProps {
   /**
    * The parameters of the course detail page.
    */
   params: { id: string }
 }
 
-function AppCourseDetailPage({ params }: AppCourseDetailPageProps) {
+function CourseDetailPage({ params }: CourseDetailPageProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const { product: course, isLoadingProduct: isLoadingCourse, errorProduct: errorCourse } = useProduct(params.id)
   const { data: recommendedCourses } = useSWR<Product[]>('/api/products?type=course&limit=3')
@@ -349,4 +349,4 @@ function AppCourseDetailPage({ params }: AppCourseDetailPageProps) {
   )
 }
 
-export default AppCourseDetailPage
+export default CourseDetailPage

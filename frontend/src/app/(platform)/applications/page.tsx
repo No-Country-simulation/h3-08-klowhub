@@ -26,7 +26,7 @@ import { Routes } from '@/utils'
 import { ListOrderedIcon, SearchIcon } from 'lucide-react'
 import useSWR from 'swr'
 
-function AppAppStorePage() {
+function AppStorePage() {
   const { data: apps, isLoading: isLoadingApps } = useSWR<Product[]>('/api/products?type=app')
 
   return (
@@ -87,4 +87,4 @@ function AppAppStorePage() {
   )
 }
 
-export default AppAppStorePage
+export default AppStorePage
