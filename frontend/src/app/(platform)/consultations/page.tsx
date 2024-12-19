@@ -23,7 +23,7 @@ import {
 import { Routes } from '@/utils'
 import { ListOrderedIcon, SearchIcon } from 'lucide-react'
 
-function AppConsultationsPage() {
+function ConsultationsPage() {
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-8 lg:px-10 lg:py-8'>
       <Breadcrumb>
@@ -81,4 +81,4 @@ function AppConsultationsPage() {
   )
 }
 
-export default AppConsultationsPage
+export default ConsultationsPage

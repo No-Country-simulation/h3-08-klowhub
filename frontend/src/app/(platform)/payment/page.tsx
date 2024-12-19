@@ -1,3 +1,4 @@
+'use client'
 import { PurchaseSummaryCard } from '@/components/card/purchase-summary-card'
 import {
   Breadcrumb,
@@ -7,11 +8,43 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator
 } from '@/components/ui/breadcrumb'
+import { Skeleton } from '@/components/ui/skeleton'
 import { Routes } from '@/utils'
+import { XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import useSWR from 'swr'
 
-function AppPaymentPage() {
+interface PaymentPageProps {
+  searchParams: { session_id: string }
+}
+
+function PaymentPage({ searchParams }: PaymentPageProps) {
+  const { data: order, isLoading, error } = useSWR(`/api/stripe/session/products?session_id=${searchParams.session_id}`)
+
+  if (isLoading) {
+    return (
+      <div className='mx-auto grid w-full max-w-screen-2xl gap-y-16 px-5 py-8 lg:px-10 lg:py-8'>
+        <Skeleton className='mx-auto aspect-video w-full' />
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className='mx-auto grid w-full max-w-screen-2xl gap-y-2.5 px-5 py-8 lg:px-10 lg:py-8'>
+        <XIcon className='mx-auto stroke-red-500' size={90} />
+        <h1 className='text-center text-3xl font-bold'>¡Ocurrió un error al procesar el pago!</h1>
+        <p className='text-center text-base'>
+          Ha ocurrido un error al procesar el pago. Por favor, inténtelo de nuevo.
+        </p>
+        <Link className='mx-auto text-sm text-[#D194E2]' href={Routes.Support}>
+          Contactar con soporte
+        </Link>
+      </div>
+    )
+  }
+
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-16 px-5 py-8 lg:px-10 lg:py-8'>
       <Breadcrumb>
@@ -36,7 +69,7 @@ function AppPaymentPage() {
             Ver mis aplicaciones
           </Link>
         </header>
-        <PurchaseSummaryCard />
+        <PurchaseSummaryCard order={order} />
         <div className='flex flex-col items-center justify-center gap-y-6'>
           <p className='text-center text-xs font-medium text-[#95979D]'>
             ¿Tenés alguna pregunta? No dudes en escribirnos a knowhub@soporte.com o visitar nuestro centro de ayuda.
@@ -56,4 +89,4 @@ function AppPaymentPage() {
   )
 }
 
-export default AppPaymentPage
+export default PaymentPage

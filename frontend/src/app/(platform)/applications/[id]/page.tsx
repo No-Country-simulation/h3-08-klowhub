@@ -23,14 +23,14 @@ import { useState } from 'react'
 import useSWR from 'swr'
 import { AppDetailAside } from './components/app-detail-aside'
 
-interface AppAppStoreDetailPageProps {
+interface AppStoreDetailPageProps {
   /**
    * The params of the page.
    */
   params: { id: string }
 }
 
-function AppAppStoreDetailPage({ params }: AppAppStoreDetailPageProps) {
+function AppStoreDetailPage({ params }: AppStoreDetailPageProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const { product: app, isLoadingProduct: isLoading, errorProduct: error } = useProduct(params.id)
   const { data: recommendedApps } = useSWR<Product[]>('/api/products?type=app&limit=4')
@@ -295,4 +295,4 @@ function AppAppStoreDetailPage({ params }: AppAppStoreDetailPageProps) {
   )
 }
 
-export default AppAppStoreDetailPage
+export default AppStoreDetailPage

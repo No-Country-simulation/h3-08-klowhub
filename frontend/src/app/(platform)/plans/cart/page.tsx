@@ -11,7 +11,7 @@ import { Routes } from '@/utils'
 import Link from 'next/link'
 import { PurchaseSummarySection } from '../components/purchase-summary-section'
 
-function AppPlansCartPage() {
+function PlansCartPage() {
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-8 px-5 py-8 lg:px-10 lg:py-8'>
       <Breadcrumb>
@@ -44,4 +44,4 @@ function AppPlansCartPage() {
   )
 }
 
-export default AppPlansCartPage
+export default PlansCartPage

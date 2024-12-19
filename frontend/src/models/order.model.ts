@@ -1,3 +1,5 @@
+import { ProductCart } from './product.model'
+
 /**
  * Order status.
  */
@@ -13,6 +15,10 @@ export interface Order {
    * The ID of the order.
    */
   id: string
+  /**
+   * The ID of the payment.
+   */
+  payment_id: string
   /**
    * The ID of the user who placed the order.
    */
@@ -60,6 +66,10 @@ export interface OrderItem {
    * The ID of the product.
    */
   product_id?: string
+  /**
+   * The product in the order.
+   */
+  product: ProductCart
   /**
    * The ID of the plan.
    */

@@ -18,7 +18,7 @@ import { Routes } from '@/utils'
 import Link from 'next/link'
 import useSWR from 'swr'
 
-function AppCartPage() {
+function CartPage() {
   const { data: recommendedApps, isLoading: isLoadingRecommendedApps } = useSWR<Product[]>(
     '/api/products?type=app&limit=4'
   )
@@ -88,4 +88,4 @@ function AppCartPage() {
   )
 }
 
-export default AppCartPage
+export default CartPage
