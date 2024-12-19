@@ -130,14 +130,14 @@ function DashboardPage() {
   const consultList: Consult[] = [
     {
       title: 'Como crear y configurar una cuenta en appsheet',
-      desc: 'gula vel nisi elementum, sed lacinia lacus cursus. Proin gravida, orci et ullamcorper tristique,gula vel nisi elementum, sed lgula vel nisi elementum, sed lacinia lacus cursus. Proin gravida, orci et ullamcorper tristique,gula vel nisi elementum, sed l',
+      desc: 'Descripción de la consulta',
       state: 'pendiente',
       platform_type: 'powerapp',
       details_url: '/'
     },
     {
       title: 'Como crear y configurar una cuenta en appsheet',
-      desc: 'gula vel nisi elementum, sed lacinia lacus cursus. Proin gravida, orci et ullamcorper tristique,gula vel nisi elementum, sed lgula vel nisi elementum, sed lacinia lacus cursus. Proin gravida, orci et ullamcorper tristique,gula vel nisi elementum, sed l',
+      desc: 'Descripción de la consulta',
       state: 'solucionada',
       platform_type: 'appsheet',
       details_url: '/'
