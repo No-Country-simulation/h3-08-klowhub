@@ -140,3 +140,12 @@ body {
   @apply bg-transparent rounded-md
     flex flex-col gap-4 p-4;
 }
+
+/* Gen - Card */
+.gen-card{
+  @apply flex rounded-md;
+}
+/* Gen - Card Vertical */
+.gen-card__vertical{
+  @apply flex-col bg-[#ffffff10] gap-4 p-4 justify-center;
+}
