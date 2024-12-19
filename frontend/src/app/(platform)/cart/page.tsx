@@ -18,7 +18,7 @@ import { Routes } from '@/utils'
 import Link from 'next/link'
 import useSWR from 'swr'
 
-function AppCartPage() {
+function CartPage() {
   const { data: recommendedApps, isLoading: isLoadingRecommendedApps } = useSWR<Product[]>(
     '/api/products?type=app&limit=4'
   )
@@ -42,7 +42,7 @@ function AppCartPage() {
       <PurchaseSummarySection />
       <div className='my-8 flex flex-col items-center justify-center gap-y-6'>
         <p className='text-center text-xs font-medium text-[#95979D]'>
-          ¿Tenés alguna pregunta? No dudes en escribirnos a knowhub@soporte.com o visitar nuestro centro de ayuda.
+          ¿Tenés alguna pregunta? No dudes en escribirnos a Klowhub@soporte.com o visitar nuestro centro de ayuda.
           ¡Estamos aquí para asistirte!
         </p>
         <div className='flex items-center justify-center gap-x-5 text-center text-xs'>
@@ -88,4 +88,4 @@ function AppCartPage() {
   )
 }
 
-export default AppCartPage
+export default CartPage

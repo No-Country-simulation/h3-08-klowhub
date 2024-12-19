@@ -37,7 +37,7 @@ function DashboardCoursesPage() {
         <header className='grid gap-y-1.5'>
           <h3 className='text-base font-bold'>Cursos publicados</h3>
           <p className='text-sm'>
-            Lista de todos los cursos publicados en Knowhub. Puedes editar o eliminar los cursos que hayas creado.
+            Lista de todos los cursos publicados en Klowhub. Puedes editar o eliminar los cursos que hayas creado.
           </p>
         </header>
         <MyCoursesList />

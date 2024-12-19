@@ -15,11 +15,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import useSWR from 'swr'
 
-interface AppPaymentPageProps {
+interface PaymentPageProps {
   searchParams: { session_id: string }
 }
 
-function AppPaymentPage({ searchParams }: AppPaymentPageProps) {
+function PaymentPage({ searchParams }: PaymentPageProps) {
   const { data: order, isLoading, error } = useSWR(`/api/stripe/session/products?session_id=${searchParams.session_id}`)
 
   if (isLoading) {
@@ -72,7 +72,7 @@ function AppPaymentPage({ searchParams }: AppPaymentPageProps) {
         <PurchaseSummaryCard order={order} />
         <div className='flex flex-col items-center justify-center gap-y-6'>
           <p className='text-center text-xs font-medium text-[#95979D]'>
-            ¿Tenés alguna pregunta? No dudes en escribirnos a knowhub@soporte.com o visitar nuestro centro de ayuda.
+            ¿Tenés alguna pregunta? No dudes en escribirnos a Klowhub@soporte.com o visitar nuestro centro de ayuda.
             ¡Estamos aquí para asistirte!
           </p>
           <div className='flex items-center justify-center gap-x-5 text-center text-xs'>
@@ -89,4 +89,4 @@ function AppPaymentPage({ searchParams }: AppPaymentPageProps) {
   )
 }
 
-export default AppPaymentPage
+export default PaymentPage

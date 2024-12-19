@@ -101,7 +101,7 @@ function TutorProfilePage() {
       {/* Footer */}
       <div className='flex flex-col items-center justify-center gap-8'>
         <p className='w-[60%] text-center text-xs text-slate-200'>
-          ¿Tenés alguna pregunta? No dudes en escribirnos a knowhub@soporte.com o visitar nuestro centro de ayuda.
+          ¿Tenés alguna pregunta? No dudes en escribirnos a Klowhub@soporte.com o visitar nuestro centro de ayuda.
           ¡Estamos aquí para asistirte!
         </p>
         <div className='flex flex-row gap-4'>

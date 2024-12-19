@@ -11,7 +11,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { PurchaseSummaryCard } from '../components/purchase-summary-card'
 
-function AppPlansPaymentPage() {
+function PlansPaymentPage() {
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-16 px-5 py-8 lg:px-10 lg:py-8'>
       <Breadcrumb>
@@ -39,7 +39,7 @@ function AppPlansPaymentPage() {
         <PurchaseSummaryCard />
         <div className='flex flex-col items-center justify-center gap-y-6'>
           <p className='text-center text-xs font-medium text-[#95979D]'>
-            ¿Tenés alguna pregunta? No dudes en escribirnos a knowhub@soporte.com o visitar nuestro centro de ayuda.
+            ¿Tenés alguna pregunta? No dudes en escribirnos a Klowhub@soporte.com o visitar nuestro centro de ayuda.
             ¡Estamos aquí para asistirte!
           </p>
           <div className='flex items-center justify-center gap-x-5 text-center text-xs'>
@@ -56,4 +56,4 @@ function AppPlansPaymentPage() {
   )
 }
 
-export default AppPlansPaymentPage
+export default PlansPaymentPage

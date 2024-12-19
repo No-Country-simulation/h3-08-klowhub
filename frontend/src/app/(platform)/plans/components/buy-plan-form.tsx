@@ -118,7 +118,7 @@ function BuyPlanForm() {
           )}
           {steps === MAX_STEPS && (
             <Button className='w-full sm:max-w-60' type='submit' disabled={isSubmitting}>
-              {isSubmitting ? <Loader2Icon className='animate-spin' /> : 'Crear aplicación'}
+              {isSubmitting ? <Loader2Icon className='animate-spin' /> : 'Comprar plan'}
             </Button>
           )}
         </div>

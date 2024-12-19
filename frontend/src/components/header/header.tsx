@@ -22,7 +22,7 @@ function Header() {
     <header className='bg-primary-800'>
       <div className='mx-auto flex max-w-screen-2xl items-center justify-between gap-x-4 px-5 py-2 lg:px-10 lg:py-2.5'>
         <Link href={Routes.Home}>
-          <Image className='object-cover' src='/assets/logo.png' alt='Logo knowhub' width={52} height={54} />
+          <Image className='object-cover' src='/assets/logo.png' alt='Logo Klowhub' width={52} height={54} />
         </Link>
         <PageNavigationSwitch />
         <nav className='hidden xl:block'>

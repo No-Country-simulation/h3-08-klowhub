@@ -144,3 +144,34 @@ export const faqs = [
       'Sí, ofrecemos varios niveles de soporte. Todos los estudiantes tienen acceso a nuestros foros de la comunidad donde pueden hacer preguntas y obtener ayuda de otros estudiantes y mentores. Además, ofrecemos sesiones de tutoría en vivo y soporte personalizado en nuestros planes premium.'
   }
 ]
+
+export const projects = [
+  {
+    id: crypto.randomUUID(),
+    title: 'Solución integral para la gestión de tareas y seguimiento de proyectos en tiempo real.',
+    description:
+      'Crear una aplicación que permita a los equipos organizar, asignar y priorizar tareas diarias de manera intuitiva. La plataforma centraliza todas las actividades pendientes, mostrando plazos, responsables y estados de avance en tiempo real. Se busca mejorar la eficiencia del equipo, evitando retrasos y sobrecargas de trabajo. Además, se incluirán notificaciones automáticas para recordar fechas límite y reuniones importantes.',
+    tags: ['Gestión', 'Tareas', 'Planificación']
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Herramienta de seguimiento de clientes y ventas en tiempo real.',
+    description:
+      'Crear una aplicación que permita a los clientes rastrear sus ventas y compras en tiempo real. La plataforma permitirá visualizar los datos de ventas y clientes, así como realizar análisis y informes para mejorar la gestión de la empresa. Se busca mejorar la eficiencia de la gestión de ventas y clientes, así como aumentar la transparencia y la confianza en la empresa.',
+    tags: ['Ventas', 'Clientes', 'Análisis']
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Plataforma de gestión de inventarios y seguimiento de productos.',
+    description:
+      'Crear una aplicación que permita a los gestores de inventario rastrear y controlar el inventario de sus productos en tiempo real. La plataforma permitirá visualizar los datos de inventario, así como realizar análisis y informes para mejorar la gestión de la empresa. Se busca mejorar la eficiencia de la gestión de inventarios y aumentar la transparencia y la confianza en la empresa.',
+    tags: ['Inventarios', 'Productos', 'Informes']
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Aplicación para centro de atención al cliente.',
+    description:
+      'Crear una aplicación que permita a los personal de atención al cliente rastrear y controlar las solicitudes de servicio de sus clientes en tiempo real. La plataforma permitirá visualizar los datos de solicitudes de servicio, así como realizar análisis y informes para mejorar la gestión de la empresa. Se busca mejorar la eficiencia de la gestión de solicitudes de servicio y aumentar la transparencia y la confianza en la empresa.',
+    tags: ['Servicios', 'Solicitudes', 'Análisis']
+  }
+]

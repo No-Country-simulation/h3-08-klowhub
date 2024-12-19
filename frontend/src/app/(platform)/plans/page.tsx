@@ -12,7 +12,7 @@ function PlansPage() {
           fill
           sizes='100vw'
         />
-        <p className='text-2xl font-semibold md:text-5xl'>Knowhub</p>
+        <p className='text-2xl font-semibold md:text-5xl'>Klowhub</p>
         <p className='text-sm md:text-xl'>Descubre, Aprende y Crea</p>
       </div>
       <BuyPlanForm />

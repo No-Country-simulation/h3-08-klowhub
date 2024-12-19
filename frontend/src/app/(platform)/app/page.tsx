@@ -22,7 +22,7 @@ function AppPage() {
   return (
     <main className='mx-auto grid w-full max-w-screen-2xl gap-y-16 px-5 py-8 lg:px-10 lg:py-8'>
       <ul className='relative grid items-center gap-x-6 bg-banner before:absolute before:inset-0 before:size-full before:bg-black/50 xsm:grid-cols-2 lg:grid-cols-4'>
-        <li className='z-10 p-7 text-center text-xl font-bold'>Aprende en Knowhub</li>
+        <li className='z-10 p-7 text-center text-xl font-bold'>Aprende en Klowhub</li>
         <li className='z-10 p-7 text-center text-xl font-bold'>Encuentra aplicaciones</li>
         <li className='z-10 p-7 text-center text-xl font-bold'>Publica proyectos</li>
         <li className='z-10 p-7 text-center text-xl font-bold'>Consultas técnicas</li>
